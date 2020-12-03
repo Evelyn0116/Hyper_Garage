@@ -32,10 +32,10 @@
               "client_type": 3
             },
             {
-              "client_id": "1039296933370-nopvc88gcahpl6f0orq8de9o75c84nnl.apps.googleusercontent.com",
+              "client_id": "1039296933370-1c2gu9n9u0u7avjhvlcdro6o2r7laakr.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.example.babyNames"
+                "bundle_id": "com.linz.babynames"
               }
             }
           ]
@@ -68,10 +68,82 @@
               "client_type": 3
             },
             {
-              "client_id": "1039296933370-nopvc88gcahpl6f0orq8de9o75c84nnl.apps.googleusercontent.com",
+              "client_id": "1039296933370-1c2gu9n9u0u7avjhvlcdro6o2r7laakr.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.example.babyNames"
+                "bundle_id": "com.linz.babynames"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1039296933370:android:8bace8a3c00adcdb6fc843",
+        "android_client_info": {
+          "package_name": "com.example.fianl_project_wanqiu_zhouzhou"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1039296933370-io249gs8cqfui2b212i5f5v86u84snbh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBfPapURQgmMe7b2kEzNyhED0SizCFHeJc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1039296933370-io249gs8cqfui2b212i5f5v86u84snbh.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1039296933370-1c2gu9n9u0u7avjhvlcdro6o2r7laakr.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.linz.babynames"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1039296933370:android:4002afe4e6e3510b6fc843",
+        "android_client_info": {
+          "package_name": "com.example.final_garage_sale"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1039296933370-io249gs8cqfui2b212i5f5v86u84snbh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBfPapURQgmMe7b2kEzNyhED0SizCFHeJc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1039296933370-io249gs8cqfui2b212i5f5v86u84snbh.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1039296933370-1c2gu9n9u0u7avjhvlcdro6o2r7laakr.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.linz.babynames"
               }
             }
           ]
@@ -104,10 +176,10 @@
               "client_type": 3
             },
             {
-              "client_id": "1039296933370-nopvc88gcahpl6f0orq8de9o75c84nnl.apps.googleusercontent.com",
+              "client_id": "1039296933370-1c2gu9n9u0u7avjhvlcdro6o2r7laakr.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.example.babyNames"
+                "bundle_id": "com.linz.babynames"
               }
             }
           ]
@@ -116,9 +188,9 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1039296933370:android:acf4b1c5b283a5936fc843",
+        "mobilesdk_app_id": "1:1039296933370:android:699e90a54aff91176fc843",
         "android_client_info": {
-          "package_name": "com.example.hypergarage"
+          "package_name": "com.example.hypergaragesale"
         }
       },
       "oauth_client": [
@@ -140,10 +212,10 @@
               "client_type": 3
             },
             {
-              "client_id": "1039296933370-nopvc88gcahpl6f0orq8de9o75c84nnl.apps.googleusercontent.com",
+              "client_id": "1039296933370-1c2gu9n9u0u7avjhvlcdro6o2r7laakr.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.example.babyNames"
+                "bundle_id": "com.linz.babynames"
               }
             }
           ]
@@ -176,10 +248,10 @@
               "client_type": 3
             },
             {
-              "client_id": "1039296933370-nopvc88gcahpl6f0orq8de9o75c84nnl.apps.googleusercontent.com",
+              "client_id": "1039296933370-1c2gu9n9u0u7avjhvlcdro6o2r7laakr.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.example.babyNames"
+                "bundle_id": "com.linz.babynames"
               }
             }
           ]
@@ -212,10 +284,10 @@
               "client_type": 3
             },
             {
-              "client_id": "1039296933370-nopvc88gcahpl6f0orq8de9o75c84nnl.apps.googleusercontent.com",
+              "client_id": "1039296933370-1c2gu9n9u0u7avjhvlcdro6o2r7laakr.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.example.babyNames"
+                "bundle_id": "com.linz.babynames"
               }
             }
           ]
@@ -248,10 +320,10 @@
               "client_type": 3
             },
             {
-              "client_id": "1039296933370-nopvc88gcahpl6f0orq8de9o75c84nnl.apps.googleusercontent.com",
+              "client_id": "1039296933370-1c2gu9n9u0u7avjhvlcdro6o2r7laakr.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.example.babyNames"
+                "bundle_id": "com.linz.babynames"
               }
             }
           ]
@@ -284,10 +356,10 @@
               "client_type": 3
             },
             {
-              "client_id": "1039296933370-nopvc88gcahpl6f0orq8de9o75c84nnl.apps.googleusercontent.com",
+              "client_id": "1039296933370-1c2gu9n9u0u7avjhvlcdro6o2r7laakr.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.example.babyNames"
+                "bundle_id": "com.linz.babynames"
               }
             }
           ]
@@ -320,10 +392,10 @@
               "client_type": 3
             },
             {
-              "client_id": "1039296933370-nopvc88gcahpl6f0orq8de9o75c84nnl.apps.googleusercontent.com",
+              "client_id": "1039296933370-1c2gu9n9u0u7avjhvlcdro6o2r7laakr.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.example.babyNames"
+                "bundle_id": "com.linz.babynames"
               }
             }
           ]

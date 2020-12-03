@@ -105,7 +105,7 @@
     },
     {
       "name": "firebase",
-      "rootUri": "file:///Users/minmao/development/flutter/.pub-cache/hosted/pub.dartlang.org/firebase-7.3.2",
+      "rootUri": "file:///Users/minmao/development/flutter/.pub-cache/hosted/pub.dartlang.org/firebase-7.3.3",
       "packageUri": "lib/",
       "languageVersion": "2.7"
     },
@@ -434,7 +434,7 @@
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2020-11-25T07:44:39.084477Z",
+  "generated": "2020-12-03T06:49:59.270914Z",
   "generator": "pub",
   "generatorVersion": "2.12.0-29.10.beta"
 }

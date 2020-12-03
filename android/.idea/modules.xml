@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/android.iml" filepath="$PROJECT_DIR$/.idea/modules/android.iml" group="android" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="android/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-625202532/cloud_firestore.iml" filepath="$PROJECT_DIR$/.idea/modules/-625202532/cloud_firestore.iml" group="android/cloud_firestore" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/2041664863/cloud_firestore_web.iml" filepath="$PROJECT_DIR$/.idea/modules/2041664863/cloud_firestore_web.iml" group="android/cloud_firestore_web" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1136711131/firebase_auth.iml" filepath="$PROJECT_DIR$/.idea/modules/-1136711131/firebase_auth.iml" group="android/firebase_auth" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-908213601/firebase_auth_web.iml" filepath="$PROJECT_DIR$/.idea/modules/-908213601/firebase_auth_web.iml" group="android/firebase_auth_web" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/198964256/firebase_core.iml" filepath="$PROJECT_DIR$/.idea/modules/198964256/firebase_core.iml" group="android/firebase_core" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1012661397/firebase_core_web.iml" filepath="$PROJECT_DIR$/.idea/modules/1012661397/firebase_core_web.iml" group="android/firebase_core_web" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1767029819/firebase_storage.iml" filepath="$PROJECT_DIR$/.idea/modules/1767029819/firebase_storage.iml" group="android/firebase_storage" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1653812496/flutter_plugin_android_lifecycle.iml" filepath="$PROJECT_DIR$/.idea/modules/1653812496/flutter_plugin_android_lifecycle.iml" group="android/flutter_plugin_android_lifecycle" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-395114496/fluttertoast.iml" filepath="$PROJECT_DIR$/.idea/modules/-395114496/fluttertoast.iml" group="android/fluttertoast" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/169155265/image_picker.iml" filepath="$PROJECT_DIR$/.idea/modules/169155265/image_picker.iml" group="android/image_picker" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1241198134/path_provider.iml" filepath="$PROJECT_DIR$/.idea/modules/1241198134/path_provider.iml" group="android/path_provider" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1815681432/path_provider_linux.iml" filepath="$PROJECT_DIR$/.idea/modules/-1815681432/path_provider_linux.iml" group="android/path_provider_linux" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/75314171/path_provider_windows.iml" filepath="$PROJECT_DIR$/.idea/modules/75314171/path_provider_windows.iml" group="android/path_provider_windows" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1647677961/shared_preferences.iml" filepath="$PROJECT_DIR$/.idea/modules/1647677961/shared_preferences.iml" group="android/shared_preferences" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-306777620/shared_preferences_linux.iml" filepath="$PROJECT_DIR$/.idea/modules/-306777620/shared_preferences_linux.iml" group="android/shared_preferences_linux" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1464520662/shared_preferences_macos.iml" filepath="$PROJECT_DIR$/.idea/modules/-1464520662/shared_preferences_macos.iml" group="android/shared_preferences_macos" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1690474832/shared_preferences_web.iml" filepath="$PROJECT_DIR$/.idea/modules/1690474832/shared_preferences_web.iml" group="android/shared_preferences_web" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-878843335/shared_preferences_windows.iml" filepath="$PROJECT_DIR$/.idea/modules/-878843335/shared_preferences_windows.iml" group="android/shared_preferences_windows" />
+    </modules>
+  </component>
+</project>
