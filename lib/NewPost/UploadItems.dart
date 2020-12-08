@@ -1,6 +1,9 @@
+
+import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hyper_garage/main.dart';
+import 'package:image_picker/image_picker.dart';
 
 class UploadPage extends StatefulWidget{
   @override
@@ -9,6 +12,7 @@ class UploadPage extends StatefulWidget{
 }
 
 class _UploadPageState extends State<UploadPage> {
+  File file;
   @override
   Widget build(BuildContext context) {
     return displayNewPostScreen();
@@ -61,12 +65,66 @@ class _UploadPageState extends State<UploadPage> {
                   onPressed: () => print("click new post button"),
                 )
             ),
+            Padding(
+                padding: EdgeInsets.only(top: 20.0),
+                child: IconButton(
+                  icon: Icon(Icons.add_a_photo_outlined),
+                  onPressed: () => takeImage(context),
+                )
+            ),
           ]
         ),
       ),
     );
   }
+
+  takeImage(mContext) {
+    return showDialog(
+        context: mContext,
+        builder: (con) {
+          return SimpleDialog(
+            title: Text("Item Image", style: TextStyle(color: Colors.green, fontWeight: FontWeight.bold),),
+            children: [
+              SimpleDialogOption(
+                child: Text("Capture with Camera", style: TextStyle(color: Colors.green)),
+                onPressed: capturePhotoWithCamera,
+              ),
+              SimpleDialogOption(
+                child: Text("Select from gallery", style: TextStyle(color: Colors.green)),
+                onPressed: selectFromGallery,
+              ),
+              SimpleDialogOption(
+                  child: Text("Cancel", style: TextStyle(color: Colors.green)),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  }
+              )
+            ],
+          );
+        }
+    );
+  }
+
+  capturePhotoWithCamera() async {
+    Navigator.pop(context);
+    File imageFile = await ImagePicker.pickImage(source: ImageSource.camera, maxHeight: 680.0, maxWidth: 970.0);
+
+    setState(() {
+      file = imageFile;
+    });
+  }
+
+  selectFromGallery() async {
+    Navigator.pop(context);
+    File imageFile = await ImagePicker.pickImage(source: ImageSource.gallery);
+
+    setState(() {
+      file = imageFile;
+    });
+  }
 }
+
+
 
 Column _buildTextColumn(String title, String text, int maxLines) {
   return Column(
