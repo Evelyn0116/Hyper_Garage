@@ -1,13 +1,25 @@
 import 'dart:async';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'Config/config.dart';
 import 'Store/storehome.dart';
 import 'Authentication/authentication.dart';
 import 'NewPost/UploadItems.dart';
 
-void main() {
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  HyperGarageApp.auth = FirebaseAuth.instance;
+  HyperGarageApp.sharedPreferences = await SharedPreferences.getInstance();
+  HyperGarageApp.firestore = Firestore.instance;
   runApp(MyApp());
 }
+
+// void main() {
+//   runApp(MyApp());
+// }
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -42,15 +54,15 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   displaySplash() {
-    Timer(Duration(seconds: 5), () async {
-      if(await HyperGarageApp.auth.currentUser() != null) {
-        Route route = MaterialPageRoute(builder: (_) => StoreHome());
-        Navigator.pushReplacement(context, route);
-      } else {
+    //Timer(Duration(seconds: 5), () async {
+    //  if(await HyperGarageApp.auth.currentUser() != null) {
+    //     Route route = MaterialPageRoute(builder: (_) => StoreHome());
+    //     Navigator.pushReplacement(context, route);
+      // } else {
         Route route = MaterialPageRoute(builder: (_) => AuthenticScreen());
         Navigator.pushReplacement(context, route);
-      }
-    });
+      // }
+  //  });
   }
 
   @override
