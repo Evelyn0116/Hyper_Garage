@@ -309,7 +309,7 @@
     },
     {
       "name": "provider",
-      "rootUri": "file:///Users/bambi/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/provider-4.3.2+2",
+      "rootUri": "file:///Users/bambi/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/provider-4.3.2+3",
       "packageUri": "lib/",
       "languageVersion": "2.7"
     },
@@ -434,7 +434,7 @@
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2020-12-08T22:26:14.411514Z",
+  "generated": "2020-12-08T22:42:22.376863Z",
   "generator": "pub",
   "generatorVersion": "2.12.0-29.10.beta"
 }

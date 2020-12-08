@@ -54,15 +54,15 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   displaySplash() {
-    //Timer(Duration(seconds: 5), () async {
-    //  if(await HyperGarageApp.auth.currentUser() != null) {
-    //     Route route = MaterialPageRoute(builder: (_) => StoreHome());
-    //     Navigator.pushReplacement(context, route);
-      // } else {
+    Timer(Duration(seconds: 5), () async {
+     if(await HyperGarageApp.auth.currentUser() != null) {
+        Route route = MaterialPageRoute(builder: (_) => StoreHome());
+        Navigator.pushReplacement(context, route);
+      } else {
         Route route = MaterialPageRoute(builder: (_) => AuthenticScreen());
         Navigator.pushReplacement(context, route);
-      // }
-  //  });
+      }
+   });
   }
 
   @override

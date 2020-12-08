@@ -82,7 +82,6 @@ class _LoginState extends State<Login>
                         return ErrorAlertDialog(message: "please fill in the form",);
                       }
                     );
-
               },
               color: Colors.blue,
               child: Text("Log in", style: TextStyle(color: Colors.white),),
