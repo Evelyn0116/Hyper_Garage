@@ -12,7 +12,7 @@ class HyperGarageApp
   static FirebaseAuth auth;
   static Firestore firestore ;
 
-  static String collectionUser = "users";
+  static String collectionUser = "MFUsers";
   static String collectionOrders = "orders";
   static String userCartList = 'userCart';
   static String subCollectionAddress = 'userAddress';
