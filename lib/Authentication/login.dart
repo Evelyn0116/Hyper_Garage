@@ -1,18 +1,12 @@
 
-// import 'package:e_shop/Admin/adminLogin.dart';
-// import 'package:e_shop/Widgets/customTextField.dart';
-// import 'package:e_shop/DialogBox/errorDialog.dart';
-// import 'package:e_shop/DialogBox/loadingDialog.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hyper_garage/Config/config.dart';
 import 'package:hyper_garage/DialogBox/errorDialog.dart';
-import 'package:hyper_garage/DialogBox/loadingDialog.dart';
+import 'package:hyper_garage/Store/storehome.dart';
 import 'package:hyper_garage/Widgets/customTextField.dart';
-import '../Store/storehome.dart';
-//import 'package:e_shop/Config/config.dart';
-
 
 class Login extends StatefulWidget {
   @override
@@ -29,7 +23,7 @@ class _LoginState extends State<Login>
   @override
   Widget build(BuildContext context) {
     double _screenWidth = MediaQuery.of(context).size.width,
-    _screenHeight = MediaQuery.of(context).size.height;
+        _screenHeight = MediaQuery.of(context).size.height;
 
     return SingleChildScrollView(
       child: Container(
@@ -39,9 +33,9 @@ class _LoginState extends State<Login>
             Container(
               alignment: Alignment.bottomCenter,
               child: Image.asset(
-                  "images/welcome.png",
-                  height: 240.0,
-                  width: 240.0,
+                "images/welcome.png",
+                height: 240.0,
+                width: 240.0,
               ),
             ),
             Padding(
@@ -77,11 +71,11 @@ class _LoginState extends State<Login>
                     && _passwordTextEditingController.text.isNotEmpty
                     ? loginUser()
                     : showDialog (
-                      context: context,
-                      builder: (c) {
-                        return ErrorAlertDialog(message: "please fill in the form",);
-                      }
-                    );
+                    context: context,
+                    builder: (c) {
+                      return ErrorAlertDialog(message: "please fill in the form",);
+                    }
+                );
               },
               color: Colors.blue,
               child: Text("Log in", style: TextStyle(color: Colors.white),),
@@ -152,18 +146,18 @@ class _LoginState extends State<Login>
 
   Future readData(FirebaseUser fUser) async{
     Firestore.instance.collection("MFUser").document(fUser.uid).get().then((dataSnapshot)
-      async{
-        await HyperGarageApp.sharedPreferences.setString(
-            "uid", dataSnapshot.data[HyperGarageApp.userUID]);
-        await HyperGarageApp.sharedPreferences.setString(
-            HyperGarageApp.userEmail, dataSnapshot.data[HyperGarageApp.userEmail]);
-        await HyperGarageApp.sharedPreferences.setString(
-            HyperGarageApp.userName, dataSnapshot.data[HyperGarageApp.userName]);
-        await HyperGarageApp.sharedPreferences.setString(
-            HyperGarageApp.userAvatarUrl, dataSnapshot.data[HyperGarageApp.userAvatarUrl]);
-        List<String> cartList = dataSnapshot.data[HyperGarageApp.userCartList].cast<String>();
-        await HyperGarageApp.sharedPreferences.setStringList(
-            HyperGarageApp.userCartList, cartList);
+    async{
+      await HyperGarageApp.sharedPreferences.setString(
+          "uid", dataSnapshot.data[HyperGarageApp.userUID]);
+      await HyperGarageApp.sharedPreferences.setString(
+          HyperGarageApp.userEmail, dataSnapshot.data[HyperGarageApp.userEmail]);
+      await HyperGarageApp.sharedPreferences.setString(
+          HyperGarageApp.userName, dataSnapshot.data[HyperGarageApp.userName]);
+      await HyperGarageApp.sharedPreferences.setString(
+          HyperGarageApp.userAvatarUrl, dataSnapshot.data[HyperGarageApp.userAvatarUrl]);
+      List<String> cartList = dataSnapshot.data[HyperGarageApp.userCartList].cast<String>();
+      await HyperGarageApp.sharedPreferences.setStringList(
+          HyperGarageApp.userCartList, cartList);
 
     });
   }

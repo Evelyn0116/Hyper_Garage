@@ -1,15 +1,16 @@
-import 'dart:io';
+import 'dart:html';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hyper_garage/Config/config.dart';
 import 'package:hyper_garage/DialogBox/errorDialog.dart';
 import 'package:hyper_garage/DialogBox/loadingDialog.dart';
+import 'package:hyper_garage/Store/storehome.dart';
 import 'package:hyper_garage/Widgets/customTextField.dart';
 import 'package:image_picker/image_picker.dart';
-import '../Store/storehome.dart';
-
 
 
 class Register extends StatefulWidget {
@@ -45,19 +46,19 @@ class _RegisterState extends State<Register>
           mainAxisSize: MainAxisSize.max,
           children: [
             SizedBox(height: 10.0,),
-            InkWell(
-              onTap: _selectAndPickImage,
-              child: CircleAvatar(
-                radius: _screenWidth * 0.15,
-                backgroundColor: Colors.white,
-                backgroundImage: _imageFile == null ? null : FileImage(
-                    _imageFile),
-                child: _imageFile == null
-                    ? Icon(Icons.add_photo_alternate, size: _screenWidth * 0.15,
-                  color: Colors.grey,)
-                    : null,
-              ),
-            ),
+            // InkWell(
+            //   onTap: _selectAndPickImage,
+            //   child: CircleAvatar(
+            //     radius: _screenWidth * 0.15,
+            //     backgroundColor: Colors.white,
+            //     // backgroundImage: _imageFile == null ? null : FileImage(
+            //     //     _imageFile),
+            //     child: _imageFile == null
+            //         ? Icon(Icons.add_photo_alternate, size: _screenWidth * 0.15,
+            //       color: Colors.grey,)
+            //         : null,
+            //   ),
+            // ),
             SizedBox(height: 8.0,),
             Form(
               key: _formKey,
@@ -113,10 +114,10 @@ class _RegisterState extends State<Register>
     );
   }
 
-
-  Future<void> _selectAndPickImage() async{
-    _imageFile = await ImagePicker.pickImage(source: ImageSource.gallery);
-  }
+  //
+  // Future<void> _selectAndPickImage() async{
+  //   _imageFile = await ImagePicker.pickImage(source: ImageSource.gallery);
+  // }
 
   Future<void> uploadAndSaveImage() async{
     if (_imageFile == null) {
@@ -159,18 +160,18 @@ class _RegisterState extends State<Register>
         }
     );
 
-    String imageFileName = DateTime.now().millisecondsSinceEpoch.toString();
+    // String imageFileName = DateTime.now().millisecondsSinceEpoch.toString();
 
-    StorageReference storageReference = FirebaseStorage.instance.ref().child(imageFileName);
+    // StorageReference storageReference = FirebaseStorage.instance.ref().child(imageFileName);
 
-    StorageUploadTask storageUploadTask = storageReference.putFile(_imageFile);
+  //  StorageUploadTask storageUploadTask = storageReference.putFile(_imageFile);
 
-    StorageTaskSnapshot taskSnapshot = await storageUploadTask.onComplete;
+  //  StorageTaskSnapshot taskSnapshot = await storageUploadTask.onComplete;
 
-    await taskSnapshot.ref.getDownloadURL().then((urlImage){
-      userImageUrl = urlImage;
-      _registerUser();
-    });
+    // await taskSnapshot.ref.getDownloadURL().then((urlImage){
+    //   userImageUrl = urlImage;
+    //   _registerUser();
+    // });
   }
   FirebaseAuth _auth = FirebaseAuth.instance;
   void _registerUser() async {
