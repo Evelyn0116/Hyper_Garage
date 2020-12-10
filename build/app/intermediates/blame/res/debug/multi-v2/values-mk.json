@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/bambi/FlutterProjects/hyper_garage/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-mk/values-mk.xml",
+            "outputFile": "/Users/bambi/Downloads/hyper_garageOLD/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-mk/values-mk.xml",
             "map": [
                 {
                     "source": "/Users/bambi/.gradle/caches/transforms-2/files-2.1/08bbc39f294d0fbabadeef312c886fdc/jetified-play-services-base-17.1.0/res/values-mk/values.xml",

@@ -12,42 +12,42 @@
 12         to allow setting breakpoints, to provide hot reload, etc.
 13    -->
 14    <uses-permission android:name="android.permission.INTERNET" />
-14-->/Users/bambi/FlutterProjects/hyper_garage/android/app/src/debug/AndroidManifest.xml:6:5-66
-14-->/Users/bambi/FlutterProjects/hyper_garage/android/app/src/debug/AndroidManifest.xml:6:22-64
+14-->/Users/bambi/Downloads/hyper_garageOLD/android/app/src/debug/AndroidManifest.xml:6:5-66
+14-->/Users/bambi/Downloads/hyper_garageOLD/android/app/src/debug/AndroidManifest.xml:6:22-64
 15    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-15-->[:image_picker] /Users/bambi/FlutterProjects/hyper_garage/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-80
-15-->[:image_picker] /Users/bambi/FlutterProjects/hyper_garage/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:7:22-77
+15-->[:image_picker] /Users/bambi/Downloads/hyper_garageOLD/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-80
+15-->[:image_picker] /Users/bambi/Downloads/hyper_garageOLD/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:7:22-77
 16    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
-16-->[:image_picker] /Users/bambi/FlutterProjects/hyper_garage/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:8:5-81
-16-->[:image_picker] /Users/bambi/FlutterProjects/hyper_garage/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:8:22-78
+16-->[:image_picker] /Users/bambi/Downloads/hyper_garageOLD/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:8:5-81
+16-->[:image_picker] /Users/bambi/Downloads/hyper_garageOLD/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:8:22-78
 17    <!-- <uses-sdk android:minSdkVersion="14"/> -->
 18    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 18-->[com.google.firebase:firebase-storage:17.0.0] /Users/bambi/.gradle/caches/transforms-2/files-2.1/f225fd5435d540c9c44b9b481fce3657/jetified-firebase-storage-17.0.0/AndroidManifest.xml:26:5-79
 18-->[com.google.firebase:firebase-storage:17.0.0] /Users/bambi/.gradle/caches/transforms-2/files-2.1/f225fd5435d540c9c44b9b481fce3657/jetified-firebase-storage-17.0.0/AndroidManifest.xml:26:22-76
 19
 20    <application
-20-->/Users/bambi/FlutterProjects/hyper_garage/android/app/src/main/AndroidManifest.xml:3:4-40:19
+20-->/Users/bambi/Downloads/hyper_garageOLD/android/app/src/main/AndroidManifest.xml:3:4-40:19
 21        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 21-->[androidx.core:core:1.1.0] /Users/bambi/.gradle/caches/transforms-2/files-2.1/805e05a71e209033ab91722f2d3217f8/core-1.1.0/AndroidManifest.xml:24:18-86
 22        android:debuggable="true"
 23        android:icon="@mipmap/ic_launcher"
-23-->/Users/bambi/FlutterProjects/hyper_garage/android/app/src/main/AndroidManifest.xml:5:9-43
+23-->/Users/bambi/Downloads/hyper_garageOLD/android/app/src/main/AndroidManifest.xml:5:9-43
 24        android:label="hyper_garage" >
-24-->/Users/bambi/FlutterProjects/hyper_garage/android/app/src/main/AndroidManifest.xml:4:9-37
+24-->/Users/bambi/Downloads/hyper_garageOLD/android/app/src/main/AndroidManifest.xml:4:9-37
 25        <activity
-25-->/Users/bambi/FlutterProjects/hyper_garage/android/app/src/main/AndroidManifest.xml:6:9-34:20
+25-->/Users/bambi/Downloads/hyper_garageOLD/android/app/src/main/AndroidManifest.xml:6:9-34:20
 26            android:name="com.example.hyper_garage.MainActivity"
-26-->/Users/bambi/FlutterProjects/hyper_garage/android/app/src/main/AndroidManifest.xml:7:13-41
+26-->/Users/bambi/Downloads/hyper_garageOLD/android/app/src/main/AndroidManifest.xml:7:13-41
 27            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
-27-->/Users/bambi/FlutterProjects/hyper_garage/android/app/src/main/AndroidManifest.xml:10:13-163
+27-->/Users/bambi/Downloads/hyper_garageOLD/android/app/src/main/AndroidManifest.xml:10:13-163
 28            android:hardwareAccelerated="true"
-28-->/Users/bambi/FlutterProjects/hyper_garage/android/app/src/main/AndroidManifest.xml:11:13-47
+28-->/Users/bambi/Downloads/hyper_garageOLD/android/app/src/main/AndroidManifest.xml:11:13-47
 29            android:launchMode="singleTop"
-29-->/Users/bambi/FlutterProjects/hyper_garage/android/app/src/main/AndroidManifest.xml:8:13-43
+29-->/Users/bambi/Downloads/hyper_garageOLD/android/app/src/main/AndroidManifest.xml:8:13-43
 30            android:theme="@style/LaunchTheme"
-30-->/Users/bambi/FlutterProjects/hyper_garage/android/app/src/main/AndroidManifest.xml:9:13-47
+30-->/Users/bambi/Downloads/hyper_garageOLD/android/app/src/main/AndroidManifest.xml:9:13-47
 31            android:windowSoftInputMode="adjustResize" >
-31-->/Users/bambi/FlutterProjects/hyper_garage/android/app/src/main/AndroidManifest.xml:12:13-55
+31-->/Users/bambi/Downloads/hyper_garageOLD/android/app/src/main/AndroidManifest.xml:12:13-55
 32
 33            <!--
 34                 Specifies an Android theme to apply to this Activity as soon as
@@ -56,11 +56,11 @@
 37                 to determine the Window background behind the Flutter UI.
 38            -->
 39            <meta-data
-39-->/Users/bambi/FlutterProjects/hyper_garage/android/app/src/main/AndroidManifest.xml:17:13-20:17
+39-->/Users/bambi/Downloads/hyper_garageOLD/android/app/src/main/AndroidManifest.xml:17:13-20:17
 40                android:name="io.flutter.embedding.android.NormalTheme"
-40-->/Users/bambi/FlutterProjects/hyper_garage/android/app/src/main/AndroidManifest.xml:18:15-70
+40-->/Users/bambi/Downloads/hyper_garageOLD/android/app/src/main/AndroidManifest.xml:18:15-70
 41                android:resource="@style/NormalTheme" />
-41-->/Users/bambi/FlutterProjects/hyper_garage/android/app/src/main/AndroidManifest.xml:19:15-52
+41-->/Users/bambi/Downloads/hyper_garageOLD/android/app/src/main/AndroidManifest.xml:19:15-52
 42            <!--
 43                 Displays an Android View that continues showing the launch screen
 44                 Drawable until Flutter paints its first frame, then this splash
@@ -69,21 +69,21 @@
 47                 Flutter's first frame.
 48            -->
 49            <meta-data
-49-->/Users/bambi/FlutterProjects/hyper_garage/android/app/src/main/AndroidManifest.xml:26:13-29:17
+49-->/Users/bambi/Downloads/hyper_garageOLD/android/app/src/main/AndroidManifest.xml:26:13-29:17
 50                android:name="io.flutter.embedding.android.SplashScreenDrawable"
-50-->/Users/bambi/FlutterProjects/hyper_garage/android/app/src/main/AndroidManifest.xml:27:15-79
+50-->/Users/bambi/Downloads/hyper_garageOLD/android/app/src/main/AndroidManifest.xml:27:15-79
 51                android:resource="@drawable/launch_background" />
-51-->/Users/bambi/FlutterProjects/hyper_garage/android/app/src/main/AndroidManifest.xml:28:15-61
+51-->/Users/bambi/Downloads/hyper_garageOLD/android/app/src/main/AndroidManifest.xml:28:15-61
 52
 53            <intent-filter>
-53-->/Users/bambi/FlutterProjects/hyper_garage/android/app/src/main/AndroidManifest.xml:30:13-33:29
+53-->/Users/bambi/Downloads/hyper_garageOLD/android/app/src/main/AndroidManifest.xml:30:13-33:29
 54                <action android:name="android.intent.action.MAIN" />
-54-->/Users/bambi/FlutterProjects/hyper_garage/android/app/src/main/AndroidManifest.xml:31:17-68
-54-->/Users/bambi/FlutterProjects/hyper_garage/android/app/src/main/AndroidManifest.xml:31:25-66
+54-->/Users/bambi/Downloads/hyper_garageOLD/android/app/src/main/AndroidManifest.xml:31:17-68
+54-->/Users/bambi/Downloads/hyper_garageOLD/android/app/src/main/AndroidManifest.xml:31:25-66
 55
 56                <category android:name="android.intent.category.LAUNCHER" />
-56-->/Users/bambi/FlutterProjects/hyper_garage/android/app/src/main/AndroidManifest.xml:32:17-76
-56-->/Users/bambi/FlutterProjects/hyper_garage/android/app/src/main/AndroidManifest.xml:32:27-74
+56-->/Users/bambi/Downloads/hyper_garageOLD/android/app/src/main/AndroidManifest.xml:32:17-76
+56-->/Users/bambi/Downloads/hyper_garageOLD/android/app/src/main/AndroidManifest.xml:32:27-74
 57            </intent-filter>
 58        </activity>
 59        <!--
@@ -91,44 +91,44 @@
 61             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
 62        -->
 63        <meta-data
-63-->/Users/bambi/FlutterProjects/hyper_garage/android/app/src/main/AndroidManifest.xml:37:9-39:33
+63-->/Users/bambi/Downloads/hyper_garageOLD/android/app/src/main/AndroidManifest.xml:37:9-39:33
 64            android:name="flutterEmbedding"
-64-->/Users/bambi/FlutterProjects/hyper_garage/android/app/src/main/AndroidManifest.xml:38:13-44
+64-->/Users/bambi/Downloads/hyper_garageOLD/android/app/src/main/AndroidManifest.xml:38:13-44
 65            android:value="2" />
-65-->/Users/bambi/FlutterProjects/hyper_garage/android/app/src/main/AndroidManifest.xml:39:13-30
+65-->/Users/bambi/Downloads/hyper_garageOLD/android/app/src/main/AndroidManifest.xml:39:13-30
 66
 67        <service
-67-->[:firebase_storage] /Users/bambi/FlutterProjects/hyper_garage/build/firebase_storage/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-12:19
+67-->[:firebase_storage] /Users/bambi/Downloads/hyper_garageOLD/build/firebase_storage/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-12:19
 68            android:name="com.google.firebase.components.ComponentDiscoveryService"
-68-->[:firebase_storage] /Users/bambi/FlutterProjects/hyper_garage/build/firebase_storage/intermediates/library_manifest/debug/AndroidManifest.xml:8:18-89
+68-->[:firebase_storage] /Users/bambi/Downloads/hyper_garageOLD/build/firebase_storage/intermediates/library_manifest/debug/AndroidManifest.xml:8:18-89
 69            android:directBootAware="true"
 69-->[com.google.firebase:firebase-common:19.3.0] /Users/bambi/.gradle/caches/transforms-2/files-2.1/1dcdfb91de8a58badbcaf3dd8f509821/jetified-firebase-common-19.3.0/AndroidManifest.xml:34:13-43
 70            android:exported="false" >
 70-->[com.google.firebase:firebase-auth:19.2.0] /Users/bambi/.gradle/caches/transforms-2/files-2.1/05d7a97490c90cb544cf1744ca557a57/jetified-firebase-auth-19.2.0/AndroidManifest.xml:35:13-37
 71            <meta-data
-71-->[:firebase_storage] /Users/bambi/FlutterProjects/hyper_garage/build/firebase_storage/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-11:85
+71-->[:firebase_storage] /Users/bambi/Downloads/hyper_garageOLD/build/firebase_storage/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-11:85
 72                android:name="com.google.firebase.components:io.flutter.plugins.firebase.storage.FlutterFirebaseAppRegistrar"
-72-->[:firebase_storage] /Users/bambi/FlutterProjects/hyper_garage/build/firebase_storage/intermediates/library_manifest/debug/AndroidManifest.xml:10:17-126
+72-->[:firebase_storage] /Users/bambi/Downloads/hyper_garageOLD/build/firebase_storage/intermediates/library_manifest/debug/AndroidManifest.xml:10:17-126
 73                android:value="com.google.firebase.components.ComponentRegistrar" />
-73-->[:firebase_storage] /Users/bambi/FlutterProjects/hyper_garage/build/firebase_storage/intermediates/library_manifest/debug/AndroidManifest.xml:11:17-82
+73-->[:firebase_storage] /Users/bambi/Downloads/hyper_garageOLD/build/firebase_storage/intermediates/library_manifest/debug/AndroidManifest.xml:11:17-82
 74            <meta-data
-74-->[:firebase_auth] /Users/bambi/FlutterProjects/hyper_garage/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-11:85
+74-->[:firebase_auth] /Users/bambi/Downloads/hyper_garageOLD/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-11:85
 75                android:name="com.google.firebase.components:io.flutter.plugins.firebaseauth.FlutterFirebaseAppRegistrar"
-75-->[:firebase_auth] /Users/bambi/FlutterProjects/hyper_garage/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:10:17-122
+75-->[:firebase_auth] /Users/bambi/Downloads/hyper_garageOLD/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:10:17-122
 76                android:value="com.google.firebase.components.ComponentRegistrar" />
-76-->[:firebase_auth] /Users/bambi/FlutterProjects/hyper_garage/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:11:17-82
+76-->[:firebase_auth] /Users/bambi/Downloads/hyper_garageOLD/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:11:17-82
 77            <meta-data
-77-->[:cloud_firestore] /Users/bambi/FlutterProjects/hyper_garage/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-11:85
+77-->[:cloud_firestore] /Users/bambi/Downloads/hyper_garageOLD/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-11:85
 78                android:name="com.google.firebase.components:io.flutter.plugins.firebase.cloudfirestore.FlutterFirebaseAppRegistrar"
-78-->[:cloud_firestore] /Users/bambi/FlutterProjects/hyper_garage/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:10:17-133
+78-->[:cloud_firestore] /Users/bambi/Downloads/hyper_garageOLD/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:10:17-133
 79                android:value="com.google.firebase.components.ComponentRegistrar" />
-79-->[:cloud_firestore] /Users/bambi/FlutterProjects/hyper_garage/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:11:17-82
+79-->[:cloud_firestore] /Users/bambi/Downloads/hyper_garageOLD/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:11:17-82
 80            <meta-data
-80-->[:firebase_core] /Users/bambi/FlutterProjects/hyper_garage/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-11:85
+80-->[:firebase_core] /Users/bambi/Downloads/hyper_garageOLD/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-11:85
 81                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseAppRegistrar"
-81-->[:firebase_core] /Users/bambi/FlutterProjects/hyper_garage/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:10:17-123
+81-->[:firebase_core] /Users/bambi/Downloads/hyper_garageOLD/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:10:17-123
 82                android:value="com.google.firebase.components.ComponentRegistrar" />
-82-->[:firebase_core] /Users/bambi/FlutterProjects/hyper_garage/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:11:17-82
+82-->[:firebase_core] /Users/bambi/Downloads/hyper_garageOLD/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:11:17-82
 83            <meta-data
 83-->[com.google.firebase:firebase-auth:19.2.0] /Users/bambi/.gradle/caches/transforms-2/files-2.1/05d7a97490c90cb544cf1744ca557a57/jetified-firebase-auth-19.2.0/AndroidManifest.xml:36:13-38:85
 84                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
@@ -150,21 +150,21 @@
 92        </service>
 93
 94        <provider
-94-->[:image_picker] /Users/bambi/FlutterProjects/hyper_garage/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:11:9-19:20
+94-->[:image_picker] /Users/bambi/Downloads/hyper_garageOLD/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:11:9-19:20
 95            android:name="io.flutter.plugins.imagepicker.ImagePickerFileProvider"
-95-->[:image_picker] /Users/bambi/FlutterProjects/hyper_garage/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:12:13-82
+95-->[:image_picker] /Users/bambi/Downloads/hyper_garageOLD/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:12:13-82
 96            android:authorities="com.mmyqf.hypergarage.flutter.image_provider"
-96-->[:image_picker] /Users/bambi/FlutterProjects/hyper_garage/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:13:13-74
+96-->[:image_picker] /Users/bambi/Downloads/hyper_garageOLD/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:13:13-74
 97            android:exported="false"
-97-->[:image_picker] /Users/bambi/FlutterProjects/hyper_garage/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:14:13-37
+97-->[:image_picker] /Users/bambi/Downloads/hyper_garageOLD/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:14:13-37
 98            android:grantUriPermissions="true" >
-98-->[:image_picker] /Users/bambi/FlutterProjects/hyper_garage/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:15:13-47
+98-->[:image_picker] /Users/bambi/Downloads/hyper_garageOLD/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:15:13-47
 99            <meta-data
-99-->[:image_picker] /Users/bambi/FlutterProjects/hyper_garage/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:16:13-18:75
+99-->[:image_picker] /Users/bambi/Downloads/hyper_garageOLD/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:16:13-18:75
 100                android:name="android.support.FILE_PROVIDER_PATHS"
-100-->[:image_picker] /Users/bambi/FlutterProjects/hyper_garage/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:17:17-67
+100-->[:image_picker] /Users/bambi/Downloads/hyper_garageOLD/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:17:17-67
 101                android:resource="@xml/flutter_image_picker_file_paths" />
-101-->[:image_picker] /Users/bambi/FlutterProjects/hyper_garage/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:18:17-72
+101-->[:image_picker] /Users/bambi/Downloads/hyper_garageOLD/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:18:17-72
 102        </provider>
 103
 104        <activity
