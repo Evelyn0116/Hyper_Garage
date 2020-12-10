@@ -2,6 +2,7 @@
 import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:hyper_garage/Widgets/loadingWidget.dart';
 import 'package:hyper_garage/main.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -13,6 +14,13 @@ class UploadPage extends StatefulWidget{
 
 class _UploadPageState extends State<UploadPage> {
   File file;
+  TextEditingController _descriptionTextEditingController = TextEditingController();
+  TextEditingController _priceTextEditingController = TextEditingController();
+  TextEditingController _titleTextEditingController = TextEditingController();
+  TextEditingController _shortInfoTextEditingController = TextEditingController();
+  String productId = DateTime.now().microsecondsSinceEpoch.toString();
+  bool uploading = false;
+
   @override
   Widget build(BuildContext context) {
     return displayNewPostScreen();
@@ -47,35 +55,59 @@ class _UploadPageState extends State<UploadPage> {
   }
 
   getNewPostBody() {
-    return Container(
-      child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            _buildTextColumn("Product Name", "Please enter product name", 1),
-            _buildTextColumn("Price", "Please enter a price", 1),
-            _buildTextColumn("Description", "Please enter the description", 4),
+    return ListView(
+      children: [
+        Container(
+          child: Center(
+          child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                _buildTextColumn("Product Name", "Please enter product name", 1),
+                _buildTextColumn("Price", "Please enter a price", 1),
+                _buildTextColumn("Description", "Please enter the description", 4),
 
-            Padding(
-                padding: EdgeInsets.only(top: 20.0),
-                child: RaisedButton(
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular((9.0))),
-                  child: Text("Add New Items", style: TextStyle(color: Colors.white),),
-                  color: Colors.blueAccent,
-                  onPressed: () => print("click new post button"),
-                )
-            ),
-            Padding(
-                padding: EdgeInsets.only(top: 20.0),
-                child: IconButton(
+                Padding(
+                    padding: EdgeInsets.only(top: 20.0),
+                    child: RaisedButton(
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular((9.0))),
+                      child: Text("Add New Items", style: TextStyle(color: Colors.white),),
+                      color: Colors.blueAccent,
+                      onPressed: () => print("click new post button"),
+                    )
+                ),
+                IconButton(
                   icon: Icon(Icons.add_a_photo_outlined),
                   onPressed: () => takeImage(context),
-                )
-            ),
-          ]
-        ),
-      ),
+                ),
+                chooseImage()
+              ]
+          ),
+          ),
+        )
+      ],
     );
+  }
+//BoxDecoration(image: DecorationImage(image: FileImage(file), fit: BoxFit.cover))
+  chooseImage() {
+    return
+        Container(
+          height: 50.0,
+          width: MediaQuery.of(context).size.width * 0.5,
+          child: Center(
+            child: AspectRatio(
+              aspectRatio: 16/9,
+              child: Container(
+              decoration:
+                  BoxDecoration(
+                    border: Border.all(
+                      color: Colors.black,
+                      width: 1
+                    )
+                  )
+              ),
+            )
+          )
+        ) ;
   }
 
   takeImage(mContext) {
@@ -121,6 +153,10 @@ class _UploadPageState extends State<UploadPage> {
     setState(() {
       file = imageFile;
     });
+  }
+
+  clearFormInfo() {
+
   }
 }
 

@@ -35,6 +35,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/' : (context) => SplashScreen(),
         '/newpost': (context) => UploadPage(),
+        '/login': (context) => AuthenticScreen(),
       }
     );
   }
@@ -86,6 +87,14 @@ class _SplashScreenState extends State<SplashScreen> {
               child: Text(
                 "New Post"
               )
+            ),
+            FlatButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/login');
+                },
+                child: Text(
+                    "Login"
+                )
             )
           ]
         )
