@@ -1,13 +1,16 @@
 import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:hyper_garage/DialogBox/errorDialog.dart';
 import 'package:hyper_garage/Widgets/loadingWidget.dart';
 import 'package:hyper_garage/main.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:hyper_garage/DialogBox/loadingDialog.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:image/image.dart' as ImD;
+import 'package:hyper_garage/Widgets/customTextField.dart';
 
 class UploadPage extends StatefulWidget{
   @override
@@ -16,7 +19,7 @@ class UploadPage extends StatefulWidget{
 }
 
 class _UploadPageState extends State<UploadPage> {
-  File file;
+  File file ;
   TextEditingController _descriptionTextEditingController = TextEditingController();
   TextEditingController _priceTextEditingController = TextEditingController();
   TextEditingController _titleTextEditingController = TextEditingController();
@@ -42,6 +45,7 @@ class _UploadPageState extends State<UploadPage> {
               FlatButton(
                   child: Text("Logout",
                       style: TextStyle(
+                        color: Colors.white,
                         fontSize: 16.0,
                         fontWeight: FontWeight.bold,
                       )),
@@ -57,7 +61,8 @@ class _UploadPageState extends State<UploadPage> {
   }
 
   getNewPostBody() {
-    return ListView(
+    return
+      ListView(
       children: [
         uploading ? circularProgress() : Text(""),
         Container(
@@ -65,9 +70,34 @@ class _UploadPageState extends State<UploadPage> {
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  // _buildTextColumn("Product Name", "Please enter product name", 1),
-                  // _buildTextColumn("Price", "Please enter a price", 1),
-                  // _buildTextColumn("Description", "Please enter the description", 4),
+                  enterItemInfo(),
+                  // Padding(padding: EdgeInsets.only(top: 12.0)),
+
+                  Container(
+                      width: MediaQuery
+                          .of(context)
+                          .size
+                          .width * 0.5,
+                      height: MediaQuery
+                          .of(context)
+                          .size
+                          .width * 0.5,
+                      decoration: BoxDecoration(
+                        border: file == null ? Border.all(color: Colors.blue) : null,
+                        borderRadius: BorderRadius.circular(20)
+                      ),
+                      child: Material (
+                          color: Colors.transparent,
+                          child: InkWell(
+                              onTap: () {
+                                setState(() {
+                                  takeImage(context);
+                                });
+                              },
+                              child: file == null ? Icon(Icons.add_a_photo_rounded, size: 30, color: Colors.blue,) : new Image.file(file, fit: BoxFit.fitWidth)
+                          )
+                      )
+                  ),
 
                   Padding(
                       padding: EdgeInsets.only(top: 20.0),
@@ -78,11 +108,7 @@ class _UploadPageState extends State<UploadPage> {
                         onPressed: () => uploadImageAndSaveItemInfo(),
                       )
                   ),
-                  IconButton(
-                    icon: Icon(Icons.add_a_photo_outlined),
-                    onPressed: () => takeImage(context),
-                  ),
-                  chooseImage()
+
                 ]
             ),
           ),
@@ -91,97 +117,68 @@ class _UploadPageState extends State<UploadPage> {
     );
   }
 
-  testFun() {
-    setState(() {
-      uploading = true;
-    });
-
-    testFunTwo();
-  }
-
-  testFunTwo() {
-    print("add clicked");
-    uploading = false;
-    Route route = MaterialPageRoute(builder: (_) => SplashScreen());
-    Navigator.pushReplacement(context, route);
-  }
-
 //BoxDecoration(image: DecorationImage(image: FileImage(file), fit: BoxFit.cover))
-  chooseImage() {
-    return Column(
-      children: <Widget>[
-        Container(
-            height: 50.0,
-            width: MediaQuery.of(context).size.width * 0.5,
-            child: Center(
-                child: AspectRatio(
-                  aspectRatio: 16/9,
-                  child: Container(
-                      decoration:
-                      BoxDecoration(
-                          border: Border.all(
-                              color: Colors.black,
-                              width: 1
-                          )
-                      )
-                  ),
-                )
-            )
-        ) ,
-        Padding(padding: EdgeInsets.only(top: 12.0)),
+  enterItemInfo() {
+    return Container(
+      padding: EdgeInsets.all(20),
+      child: Column(
+        children: <Widget>[
+          Padding(padding: EdgeInsets.only(top: 12.0)),
+          ListTile(
+              leading: Icon(Icons.insert_emoticon, color: Colors.blue),
+              title: Container(
+                  width: 250.0,
+                  child: TextField(
+                    style: TextStyle(color: Colors.blue),
+                    controller: _titleTextEditingController,
+                    decoration: InputDecoration(
+                      hintText: "Product Name",
+                      hintStyle: TextStyle(color: Colors.blue),
+                      border: InputBorder.none,
+                    ),
+                  )
+              )
+          ),
+          Divider(color:Colors.blue),
 
-        ListTile(
-            leading: Icon(Icons.insert_emoticon, color: Colors.blue),
-            title: Container(
-                width: 250.0,
-                child: TextField(
-                  style: TextStyle(color: Colors.blue),
-                  controller: _titleTextEditingController,
-                  decoration: InputDecoration(
-                    hintText: "Product Name",
-                    hintStyle: TextStyle(color: Colors.blue),
-                    border: InputBorder.none,
-                  ),
-                )
-            )
-        ),
-        Divider(color:Colors.blue),
+          ListTile(
 
-        ListTile(
-            leading: Icon(CupertinoIcons.money_dollar_circle, color: Colors.blue),
-            title: Container(
-                width: 250.0,
-                child: TextField(
-                  keyboardType: TextInputType.number,
-                  style: TextStyle(color: Colors.blue),
-                  controller: _priceTextEditingController,
-                  decoration: InputDecoration(
-                    hintText: "Price",
-                    hintStyle: TextStyle(color: Colors.blue),
-                    border: InputBorder.none,
-                  ),
-                )
-            )
-        ),
-        Divider(color:Colors.blue),
+              leading: Icon(CupertinoIcons.money_dollar_circle, color: Colors.blue),
+              title: Container(
+                  width: 250.0,
+                  child: TextField(
+                    keyboardType: TextInputType.number,
+                    style: TextStyle(color: Colors.blue),
+                    controller: _priceTextEditingController,
+                    decoration: InputDecoration(
+                      hintText: "Price",
+                      hintStyle: TextStyle(color: Colors.blue),
+                      border: InputBorder.none,
+                    ),
+                  )
+              )
+          ),
+          Divider(color:Colors.blue),
 
-        ListTile(
-            leading: Icon(Icons.info_rounded, color: Colors.blue),
-            title: Container(
-                width: 250.0,
-                child: TextField(
-                  style: TextStyle(color: Colors.blue),
-                  controller: _descriptionTextEditingController,
-                  decoration: InputDecoration(
-                    hintText: "Description",
-                    hintStyle: TextStyle(color: Colors.blue),
-                    border: InputBorder.none,
-                  ),
-                )
-            )
-        ),
-        Divider(color:Colors.blue)
-      ],
+          ListTile(
+              leading: Icon(Icons.info_rounded, color: Colors.blue),
+              title: Container(
+                  width: 250.0,
+                  height: 150,
+                  child: TextField(
+                    style: TextStyle(color: Colors.blue),
+                    controller: _descriptionTextEditingController,
+                    decoration: InputDecoration(
+                      hintText: "Description",
+                      hintStyle: TextStyle(color: Colors.blue),
+                      border: InputBorder.none,
+                    ),
+                  )
+              )
+          ),
+          Divider(color:Colors.blue)
+        ],
+      )
     );
 
   }
@@ -241,21 +238,50 @@ class _UploadPageState extends State<UploadPage> {
   }
 
   uploadImageAndSaveItemInfo() async {
-    setState(() {
-      uploading = true;
-    });
 
-    print("func1");
-    String imageDownloadUrl = await uploadItemImage(file);
-    print(imageDownloadUrl);
-    saveItemInfo(imageDownloadUrl);
+    if (file == null) {
+      showDialog(
+          context: context,
+          builder: (c){
+            return ErrorAlertDialog(message: "please select an image file", );
+          }
+      );
+    } else {
+      if( _titleTextEditingController.text.isNotEmpty &&
+          _priceTextEditingController.text.isNotEmpty &&
+          _descriptionTextEditingController.text.isNotEmpty ) {
+
+        setState(() {
+          uploading = true;
+        });
+
+        String imageDownloadUrl = await uploadItemImage(file);
+        // showDialog(
+        //     context: context,
+        //     builder: (c) {
+        //       return LoadingAlertDialog(message: "'Uploading, Please wait...'",);
+        //     }
+        // );
+        saveItemInfo(imageDownloadUrl);
+        displayDialog("Upload successfully");
+      } else {
+        displayDialog("Please fill up the form ");
+      }
+    }
   }
 
   Future<String> uploadItemImage(mFileImage) async {
     setState(() {
       uploading = false;
     });
-    print("func2");
+
+    // showDialog(
+    //     context: context,
+    //     builder: (c) {
+    //       return LoadingAlertDialog(message: "'Authenticating, Please wait...'",);
+    //     }
+    // );
+
     final StorageReference storageReference = FirebaseStorage.instance.ref().child("MM.YQF");
 
     StorageUploadTask uploadTask = storageReference.child("product $productId.jpg").putFile(mFileImage);
@@ -283,37 +309,14 @@ class _UploadPageState extends State<UploadPage> {
       _descriptionTextEditingController.clear();
     });
   }
-}
 
 
-
-Column _buildTextColumn(String title, String text, int maxLines) {
-  return Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: [
-      Container(
-          padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
-          child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                Text(
-                  title,
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 15
-                  ),
-                ),
-                SizedBox(height: 10),
-                TextField(
-                  maxLines: maxLines,
-                  decoration: InputDecoration(
-                      labelText: text,
-                      border: OutlineInputBorder()
-                  ),
-                )
-              ]
-          )
-      ),
-    ],
-  );
+  displayDialog(String msg) {
+    showDialog(
+        context: context,
+        builder: (c) {
+          return ErrorAlertDialog(message: msg,);
+        }
+    );
+  }
 }
