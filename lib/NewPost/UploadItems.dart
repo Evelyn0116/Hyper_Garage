@@ -1,12 +1,13 @@
-
 import 'dart:io';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:hyper_garage/Widgets/loadingWidget.dart';
 import 'package:hyper_garage/main.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:firebase_storage/firebase_storage.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:image/image.dart' as ImD;
 
 class UploadPage extends StatefulWidget{
   @override
@@ -134,7 +135,6 @@ class _UploadPageState extends State<UploadPage> {
             title: Container(
                 width: 250.0,
                 child: TextField(
-                  keyboardType: TextInputType.number,
                   style: TextStyle(color: Colors.blue),
                   controller: _titleTextEditingController,
                   decoration: InputDecoration(
@@ -152,6 +152,7 @@ class _UploadPageState extends State<UploadPage> {
             title: Container(
                 width: 250.0,
                 child: TextField(
+                  keyboardType: TextInputType.number,
                   style: TextStyle(color: Colors.blue),
                   controller: _priceTextEditingController,
                   decoration: InputDecoration(
@@ -256,7 +257,7 @@ class _UploadPageState extends State<UploadPage> {
     });
     print("func2");
     final StorageReference storageReference = FirebaseStorage.instance.ref().child("MM.YQF");
-    print("func3");
+
     StorageUploadTask uploadTask = storageReference.child("product $productId.jpg").putFile(mFileImage);
     StorageTaskSnapshot taskSnapshot = await uploadTask.onComplete;
     String downloadUrl = await taskSnapshot.ref.getDownloadURL();

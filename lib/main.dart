@@ -7,6 +7,7 @@ import 'Config/config.dart';
 import 'Store/storehome.dart';
 import 'Authentication/authentication.dart';
 import 'NewPost/UploadItems.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 
 Future<void> main() async {

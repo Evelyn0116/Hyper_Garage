@@ -6,6 +6,7 @@ import 'package:hyper_garage/Config/config.dart';
 import 'package:hyper_garage/DialogBox/errorDialog.dart';
 import 'package:hyper_garage/Store/storehome.dart';
 import 'package:hyper_garage/Widgets/customTextField.dart';
+import '../NewPost/UploadItems.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -95,6 +96,13 @@ class _LoginState extends State<Login>
             //   icon:(Icon(Icons.nature_people,color:Colors.orange,)),
             //   label: Text,
             // ),
+            FlatButton(
+              child: Text("new Post page"),
+              onPressed: () {
+                Route route = MaterialPageRoute(builder: (_) => UploadPage());
+                Navigator.pushReplacement(context, route);
+              },
+            )
           ],
         ),
       ),

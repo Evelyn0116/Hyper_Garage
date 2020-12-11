@@ -102,6 +102,14 @@
     <string name="common_open_on_phone">Open on phone</string>
     <string name="common_signin_button_text">Sign in</string>
     <string name="common_signin_button_text_long">Sign in with Google</string>
+    <string name="default_web_client_id" translatable="false">1039296933370-io249gs8cqfui2b212i5f5v86u84snbh.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://neu-fall2020.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">1039296933370</string>
+    <string name="google_api_key" translatable="false">AIzaSyBfPapURQgmMe7b2kEzNyhED0SizCFHeJc</string>
+    <string name="google_app_id" translatable="false">1:1039296933370:android:29d1b966e924b7e26fc843</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBfPapURQgmMe7b2kEzNyhED0SizCFHeJc</string>
+    <string name="google_storage_bucket" translatable="false">neu-fall2020.appspot.com</string>
+    <string name="project_id" translatable="false">neu-fall2020</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <style name="LaunchTheme" parent="@android:style/Theme.Light.NoTitleBar">
         <!-- Show a splash screen on the activity. Automatically removed when
