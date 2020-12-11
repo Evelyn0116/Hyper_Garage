@@ -18,10 +18,6 @@ Future<void> main() async {
   runApp(MyApp());
 }
 
-// void main() {
-//   runApp(MyApp());
-// }
-
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
@@ -52,20 +48,20 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
 
-    displaySplash();
+  //  displaySplash();
   }
 
-  displaySplash() {
-    Timer(Duration(seconds: 5), () async {
-     if(await HyperGarageApp.auth.currentUser() != null) {
-        Route route = MaterialPageRoute(builder: (_) => StoreHome());
-        Navigator.pushReplacement(context, route);
-      } else {
-        Route route = MaterialPageRoute(builder: (_) => AuthenticScreen());
-        Navigator.pushReplacement(context, route);
-      }
-   });
-  }
+  // displaySplash() {
+  //   Timer(Duration(seconds: 5), () async {
+  //    if(await HyperGarageApp.auth.currentUser() != null) {
+  //       Route route = MaterialPageRoute(builder: (_) => StoreHome());
+  //       Navigator.pushReplacement(context, route);
+  //     } else {
+  //       Route route = MaterialPageRoute(builder: (_) => AuthenticScreen());
+  //       Navigator.pushReplacement(context, route);
+  //     }
+  //  });
+  // }
 
   @override
   Widget build(BuildContext context) {
