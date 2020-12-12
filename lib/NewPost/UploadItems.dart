@@ -8,9 +8,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:hyper_garage/DialogBox/loadingDialog.dart';
-import 'package:path_provider/path_provider.dart';
 import 'package:image/image.dart' as ImD;
-import 'package:hyper_garage/Widgets/customTextField.dart';
 
 class UploadPage extends StatefulWidget{
   @override
@@ -19,12 +17,14 @@ class UploadPage extends StatefulWidget{
 }
 
 class _UploadPageState extends State<UploadPage> {
-  File file ;
+  // File file ;
   TextEditingController _descriptionTextEditingController = TextEditingController();
   TextEditingController _priceTextEditingController = TextEditingController();
   TextEditingController _titleTextEditingController = TextEditingController();
   String productId = DateTime.now().microsecondsSinceEpoch.toString();
   bool uploading = false;
+  List<File> files = [];
+  List<String> urls = [];
 
   @override
   Widget build(BuildContext context) {
@@ -63,6 +63,7 @@ class _UploadPageState extends State<UploadPage> {
   getNewPostBody() {
     return
       ListView(
+        padding: EdgeInsets.only(left:10.0, right: 10.0),
       children: [
         uploading ? circularProgress() : Text(""),
         Container(
@@ -71,43 +72,88 @@ class _UploadPageState extends State<UploadPage> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   enterItemInfo(),
-                  // Padding(padding: EdgeInsets.only(top: 12.0)),
 
-                  Container(
-                      width: MediaQuery
-                          .of(context)
-                          .size
-                          .width * 0.5,
-                      height: MediaQuery
-                          .of(context)
-                          .size
-                          .width * 0.5,
-                      decoration: BoxDecoration(
-                        border: file == null ? Border.all(color: Colors.blue) : null,
-                        borderRadius: BorderRadius.circular(20)
-                      ),
-                      child: Material (
-                          color: Colors.transparent,
-                          child: InkWell(
-                              onTap: () {
-                                setState(() {
-                                  takeImage(context);
-                                });
-                              },
-                              child: file == null ? Icon(Icons.add_a_photo_rounded, size: 30, color: Colors.blue,) : new Image.file(file, fit: BoxFit.fitWidth)
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Container(
+                          width: MediaQuery.of(context).size.width * 0.25,
+                          height: MediaQuery.of(context).size.width * 0.25,
+
+                          decoration: BoxDecoration(
+                              border: files.length < 1 ? Border.all(color: Colors.blue) : null,
+                              borderRadius: BorderRadius.circular(20)
+                          ),
+                          child: Material (
+                              color: Colors.transparent,
+                              child: InkWell(
+                                  onTap: () {
+                                    setState(() {
+                                      takeImage(context);
+                                    });
+                                  },
+                                  child: files.length < 1 ? Icon(Icons.add_a_photo_rounded, size: 30, color: Colors.blue,) :
+                                  new Image.file(files[0], fit: BoxFit.fitWidth)
+                              )
                           )
-                      )
+                      ),
+
+                      Container(
+                        width: MediaQuery.of(context).size.width * 0.25,
+                        height: MediaQuery.of(context).size.width * 0.25,
+
+                          decoration: BoxDecoration(
+                              border: files.length < 2 ? Border.all(color: Colors.blue) : null,
+                              borderRadius: BorderRadius.circular(20)
+                          ),
+                          child: Material (
+                              color: Colors.transparent,
+                              child: InkWell(
+                                  onTap: () {
+                                    setState(() {
+                                      takeImage(context);
+                                    });
+                                  },
+                                  child: files.length < 2 ? Icon(Icons.add_a_photo_rounded, size: 30, color: Colors.blue,) :
+                                  new Image.file(files[1], fit: BoxFit.fitWidth)
+                              )
+                          )
+                      ),
+
+                      Container(
+                          width: MediaQuery.of(context).size.width * 0.25,
+                          height: MediaQuery.of(context).size.width * 0.25,
+
+                          decoration: BoxDecoration(
+                              border: files.length < 3 ? Border.all(color: Colors.blue) : null,
+                              borderRadius: BorderRadius.circular(20)
+                          ),
+                          child: Material (
+                              color: Colors.transparent,
+                              child: InkWell(
+                                  onTap: () {
+                                    setState(() {
+                                      takeImage(context);
+                                    });
+                                  },
+                                  child: files.length < 3 ? Icon(Icons.add_a_photo_rounded, size: 30, color: Colors.blue,) :
+                                  new Image.file(files[2], fit: BoxFit.fitWidth)
+                              )
+                          )
+                      ),
+                    ],
                   ),
 
-                  Padding(
-                      padding: EdgeInsets.only(top: 20.0),
-                      child: RaisedButton(
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular((9.0))),
-                        child: Text("Add New Items", style: TextStyle(color: Colors.white),),
-                        color: Colors.blueAccent,
-                        onPressed: () => uploadImageAndSaveItemInfo(),
-                      )
-                  ),
+
+    Padding(
+    padding: EdgeInsets.only(top: 20.0),
+    child: RaisedButton(
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular((9.0))),
+    child: Text("Add New Items", style: TextStyle(color: Colors.white),),
+    color: Colors.blueAccent,
+    onPressed: () => uploadImageAndSaveItemInfo(),
+    )
+    ),
 
                 ]
             ),
@@ -117,10 +163,8 @@ class _UploadPageState extends State<UploadPage> {
     );
   }
 
-//BoxDecoration(image: DecorationImage(image: FileImage(file), fit: BoxFit.cover))
   enterItemInfo() {
     return Container(
-      padding: EdgeInsets.all(20),
       child: Column(
         children: <Widget>[
           Padding(padding: EdgeInsets.only(top: 12.0)),
@@ -132,7 +176,7 @@ class _UploadPageState extends State<UploadPage> {
                     style: TextStyle(color: Colors.blue),
                     controller: _titleTextEditingController,
                     decoration: InputDecoration(
-                      hintText: "Product Name",
+                      hintText: "Title",
                       hintStyle: TextStyle(color: Colors.blue),
                       border: InputBorder.none,
                     ),
@@ -188,7 +232,7 @@ class _UploadPageState extends State<UploadPage> {
         context: mContext,
         builder: (con) {
           return SimpleDialog(
-            title: Text("Item Image", style: TextStyle(color: Colors.green, fontWeight: FontWeight.bold),),
+            title: Text("Choose Image", style: TextStyle(color: Colors.green, fontWeight: FontWeight.bold),),
             children: [
               SimpleDialogOption(
                 child: Text("Capture with Camera", style: TextStyle(color: Colors.green)),
@@ -214,8 +258,12 @@ class _UploadPageState extends State<UploadPage> {
     Navigator.pop(context);
     File imageFile = await ImagePicker.pickImage(source: ImageSource.camera, maxHeight: 680.0, maxWidth: 970.0);
 
+    // setState(() {
+    //   file = imageFile;
+    // });
+
     setState(() {
-      file = imageFile;
+      files.add(imageFile);
     });
   }
 
@@ -223,14 +271,18 @@ class _UploadPageState extends State<UploadPage> {
     Navigator.pop(context);
     File imageFile = await ImagePicker.pickImage(source: ImageSource.gallery);
 
+    // setState(() {
+    //   file = imageFile;
+    // });
+
     setState(() {
-      file = imageFile;
+      files.add(imageFile);
     });
   }
 
   clearFormInfo() {
     setState(() {
-      file = null;
+      files.clear();
       _titleTextEditingController.clear();
       _priceTextEditingController.clear();
       _descriptionTextEditingController.clear();
@@ -239,7 +291,7 @@ class _UploadPageState extends State<UploadPage> {
 
   uploadImageAndSaveItemInfo() async {
 
-    if (file == null) {
+    if (files.length < 0) {
       showDialog(
           context: context,
           builder: (c){
@@ -255,14 +307,13 @@ class _UploadPageState extends State<UploadPage> {
           uploading = true;
         });
 
-        String imageDownloadUrl = await uploadItemImage(file);
-        // showDialog(
-        //     context: context,
-        //     builder: (c) {
-        //       return LoadingAlertDialog(message: "'Uploading, Please wait...'",);
-        //     }
-        // );
-        saveItemInfo(imageDownloadUrl);
+        for (int i = 0; i < files.length; i++) {
+          String imageDownloadUrl = await uploadItemImage(files[i], i);
+          urls.add(imageDownloadUrl);
+        }
+
+
+        saveItemInfo(urls);
         displayDialog("Upload successfully");
       } else {
         displayDialog("Please fill up the form ");
@@ -270,38 +321,34 @@ class _UploadPageState extends State<UploadPage> {
     }
   }
 
-  Future<String> uploadItemImage(mFileImage) async {
+  Future<String> uploadItemImage(mFileImage, i) async {
     setState(() {
       uploading = false;
     });
 
-    // showDialog(
-    //     context: context,
-    //     builder: (c) {
-    //       return LoadingAlertDialog(message: "'Authenticating, Please wait...'",);
-    //     }
-    // );
-
     final StorageReference storageReference = FirebaseStorage.instance.ref().child("MM.YQF");
 
-    StorageUploadTask uploadTask = storageReference.child("product $productId.jpg").putFile(mFileImage);
+    StorageUploadTask uploadTask = storageReference.child("product $productId $i.jpg").putFile(mFileImage);
     StorageTaskSnapshot taskSnapshot = await uploadTask.onComplete;
     String downloadUrl = await taskSnapshot.ref.getDownloadURL();
     return downloadUrl;
   }
 
-  saveItemInfo(String downloadUrl) {
+  saveItemInfo(List<String> urls) {
     final itemsRef = Firestore.instance.collection("MFItems");
     itemsRef.document(productId).setData({
       "title": _titleTextEditingController.text.trim(),
       "price": _priceTextEditingController.text.trim(),
       "description": _descriptionTextEditingController.text.trim(),
-      "thumbnailUrl": downloadUrl,
+      "thumbnailUrl": urls[0],
       "publishedDate": DateTime.now(),
+      "image1": urls.length < 2 ? '' : urls[1],
+      "image2": urls.length < 3 ? '' : urls[2],
     });
 
     setState(() {
-      file = null;
+      // file = null;
+      files.clear();
       uploading = false;
       productId = DateTime.now().millisecondsSinceEpoch.toString();
       _titleTextEditingController.clear();
