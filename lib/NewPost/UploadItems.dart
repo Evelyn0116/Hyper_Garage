@@ -210,6 +210,7 @@ class _UploadPageState extends State<UploadPage> {
                   width: 250.0,
                   height: 150,
                   child: TextField(
+                    maxLines: 6,
                     style: TextStyle(color: Colors.blue),
                     controller: _descriptionTextEditingController,
                     decoration: InputDecoration(
