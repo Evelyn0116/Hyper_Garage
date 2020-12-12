@@ -63,122 +63,122 @@ class _UploadPageState extends State<UploadPage> {
   getNewPostBody() {
     return
       ListView(
-      children: [
-        uploading ? circularProgress() : Text(""),
-        Container(
-          child: Center(
-            child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  enterItemInfo(),
-                  // Padding(padding: EdgeInsets.only(top: 12.0)),
+        children: [
+          uploading ? circularProgress() : Text(""),
+          Container(
+            child: Center(
+              child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    enterItemInfo(),
+                    // Padding(padding: EdgeInsets.only(top: 12.0)),
 
-                  Container(
-                      width: MediaQuery
-                          .of(context)
-                          .size
-                          .width * 0.5,
-                      height: MediaQuery
-                          .of(context)
-                          .size
-                          .width * 0.5,
-                      decoration: BoxDecoration(
-                        border: file == null ? Border.all(color: Colors.blue) : null,
-                        borderRadius: BorderRadius.circular(20)
-                      ),
-                      child: Material (
-                          color: Colors.transparent,
-                          child: InkWell(
-                              onTap: () {
-                                setState(() {
-                                  takeImage(context);
-                                });
-                              },
-                              child: file == null ? Icon(Icons.add_a_photo_rounded, size: 30, color: Colors.blue,) : new Image.file(file, fit: BoxFit.fitWidth)
-                          )
-                      )
-                  ),
+                    Container(
+                        width: MediaQuery
+                            .of(context)
+                            .size
+                            .width * 0.5,
+                        height: MediaQuery
+                            .of(context)
+                            .size
+                            .width * 0.5,
+                        decoration: BoxDecoration(
+                            border: file == null ? Border.all(color: Colors.blue) : null,
+                            borderRadius: BorderRadius.circular(20)
+                        ),
+                        child: Material (
+                            color: Colors.transparent,
+                            child: InkWell(
+                                onTap: () {
+                                  setState(() {
+                                    takeImage(context);
+                                  });
+                                },
+                                child: file == null ? Icon(Icons.add_a_photo_rounded, size: 30, color: Colors.blue,) : new Image.file(file, fit: BoxFit.fitWidth)
+                            )
+                        )
+                    ),
 
-                  Padding(
-                      padding: EdgeInsets.only(top: 20.0),
-                      child: RaisedButton(
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular((9.0))),
-                        child: Text("Add New Items", style: TextStyle(color: Colors.white),),
-                        color: Colors.blueAccent,
-                        onPressed: () => uploadImageAndSaveItemInfo(),
-                      )
-                  ),
+                    Padding(
+                        padding: EdgeInsets.only(top: 20.0),
+                        child: RaisedButton(
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular((9.0))),
+                          child: Text("Add New Items", style: TextStyle(color: Colors.white),),
+                          color: Colors.blueAccent,
+                          onPressed: () => uploadImageAndSaveItemInfo(),
+                        )
+                    ),
 
-                ]
+                  ]
+              ),
             ),
-          ),
-        )
-      ],
-    );
+          )
+        ],
+      );
   }
 
 //BoxDecoration(image: DecorationImage(image: FileImage(file), fit: BoxFit.cover))
   enterItemInfo() {
     return Container(
-      padding: EdgeInsets.all(20),
-      child: Column(
-        children: <Widget>[
-          Padding(padding: EdgeInsets.only(top: 12.0)),
-          ListTile(
-              leading: Icon(Icons.insert_emoticon, color: Colors.blue),
-              title: Container(
-                  width: 250.0,
-                  child: TextField(
-                    style: TextStyle(color: Colors.blue),
-                    controller: _titleTextEditingController,
-                    decoration: InputDecoration(
-                      hintText: "Product Name",
-                      hintStyle: TextStyle(color: Colors.blue),
-                      border: InputBorder.none,
-                    ),
-                  )
-              )
-          ),
-          Divider(color:Colors.blue),
+        padding: EdgeInsets.all(20),
+        child: Column(
+          children: <Widget>[
+            Padding(padding: EdgeInsets.only(top: 12.0)),
+            ListTile(
+                leading: Icon(Icons.insert_emoticon, color: Colors.blue),
+                title: Container(
+                    width: 250.0,
+                    child: TextField(
+                      style: TextStyle(color: Colors.blue),
+                      controller: _titleTextEditingController,
+                      decoration: InputDecoration(
+                        hintText: "Product Name",
+                        hintStyle: TextStyle(color: Colors.blue),
+                        border: InputBorder.none,
+                      ),
+                    )
+                )
+            ),
+            Divider(color:Colors.blue),
 
-          ListTile(
+            ListTile(
 
-              leading: Icon(CupertinoIcons.money_dollar_circle, color: Colors.blue),
-              title: Container(
-                  width: 250.0,
-                  child: TextField(
-                    keyboardType: TextInputType.number,
-                    style: TextStyle(color: Colors.blue),
-                    controller: _priceTextEditingController,
-                    decoration: InputDecoration(
-                      hintText: "Price",
-                      hintStyle: TextStyle(color: Colors.blue),
-                      border: InputBorder.none,
-                    ),
-                  )
-              )
-          ),
-          Divider(color:Colors.blue),
+                leading: Icon(CupertinoIcons.money_dollar_circle, color: Colors.blue),
+                title: Container(
+                    width: 250.0,
+                    child: TextField(
+                      keyboardType: TextInputType.number,
+                      style: TextStyle(color: Colors.blue),
+                      controller: _priceTextEditingController,
+                      decoration: InputDecoration(
+                        hintText: "Price",
+                        hintStyle: TextStyle(color: Colors.blue),
+                        border: InputBorder.none,
+                      ),
+                    )
+                )
+            ),
+            Divider(color:Colors.blue),
 
-          ListTile(
-              leading: Icon(Icons.info_rounded, color: Colors.blue),
-              title: Container(
-                  width: 250.0,
-                  height: 150,
-                  child: TextField(
-                    style: TextStyle(color: Colors.blue),
-                    controller: _descriptionTextEditingController,
-                    decoration: InputDecoration(
-                      hintText: "Description",
-                      hintStyle: TextStyle(color: Colors.blue),
-                      border: InputBorder.none,
-                    ),
-                  )
-              )
-          ),
-          Divider(color:Colors.blue)
-        ],
-      )
+            ListTile(
+                leading: Icon(Icons.info_rounded, color: Colors.blue),
+                title: Container(
+                    width: 250.0,
+                    height: 150,
+                    child: TextField(
+                      style: TextStyle(color: Colors.blue),
+                      controller: _descriptionTextEditingController,
+                      decoration: InputDecoration(
+                        hintText: "Description",
+                        hintStyle: TextStyle(color: Colors.blue),
+                        border: InputBorder.none,
+                      ),
+                    )
+                )
+            ),
+            Divider(color:Colors.blue)
+          ],
+        )
     );
 
   }
