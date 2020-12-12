@@ -41,7 +41,8 @@ class _ProductPageState extends State<ProductPage> {
             Stack(
               children: [
                 IconButton(
-                  icon: Icon(Icons.table_chart)
+                  icon: Icon(Icons.table_chart),
+                  onPressed: () => print("clicked")
                 )
               ],
             )
