@@ -5,7 +5,7 @@ class ItemModel {
   Timestamp publishedDate;
   String thumbnailUrl;
   String description;
-  int price;
+  String price;
   String image1;
   String image2;
 

@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:hyper_garage/DialogBox/errorDialog.dart';
+import 'package:hyper_garage/Store/storehome.dart';
 import 'package:hyper_garage/Widgets/loadingWidget.dart';
 import 'package:hyper_garage/main.dart';
 import 'package:firebase_storage/firebase_storage.dart';
@@ -56,7 +57,16 @@ class _UploadPageState extends State<UploadPage> {
               )
             ]
         ),
-        body: getNewPostBody()
+        body: getNewPostBody(),
+      floatingActionButton: FloatingActionButton(
+        //  icon: Icon(Icons.add, color: Colors.blue,),
+        onPressed: () {
+          Route route = MaterialPageRoute(builder: (_) => StoreHome());
+          Navigator.pushReplacement(context, route);
+        },
+        child: Icon(Icons.add),
+        backgroundColor: Colors.orange,
+      ),
     );
   }
 
@@ -64,166 +74,166 @@ class _UploadPageState extends State<UploadPage> {
     return
       ListView(
         padding: EdgeInsets.only(left:10.0, right: 10.0),
-      children: [
-        uploading ? circularProgress() : Text(""),
-        Container(
-          child: Center(
-            child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  enterItemInfo(),
+        children: [
+          uploading ? circularProgress() : Text(""),
+          Container(
+            child: Center(
+              child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    enterItemInfo(),
 
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Container(
-                          width: MediaQuery.of(context).size.width * 0.25,
-                          height: MediaQuery.of(context).size.width * 0.25,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Container(
+                            width: MediaQuery.of(context).size.width * 0.25,
+                            height: MediaQuery.of(context).size.width * 0.25,
 
-                          decoration: BoxDecoration(
-                              border: files.length < 1 ? Border.all(color: Colors.blue) : null,
-                              borderRadius: BorderRadius.circular(20)
-                          ),
-                          child: Material (
-                              color: Colors.transparent,
-                              child: InkWell(
-                                  onTap: () {
-                                    setState(() {
-                                      takeImage(context);
-                                    });
-                                  },
-                                  child: files.length < 1 ? Icon(Icons.add_a_photo_rounded, size: 30, color: Colors.blue,) :
-                                  new Image.file(files[0], fit: BoxFit.fitWidth)
-                              )
-                          )
-                      ),
+                            decoration: BoxDecoration(
+                                border: files.length < 1 ? Border.all(color: Colors.blue) : null,
+                                borderRadius: BorderRadius.circular(20)
+                            ),
+                            child: Material (
+                                color: Colors.transparent,
+                                child: InkWell(
+                                    onTap: () {
+                                      setState(() {
+                                        takeImage(context);
+                                      });
+                                    },
+                                    child: files.length < 1 ? Icon(Icons.add_a_photo_rounded, size: 30, color: Colors.blue,) :
+                                    new Image.file(files[0], fit: BoxFit.fitWidth)
+                                )
+                            )
+                        ),
 
-                      Container(
-                        width: MediaQuery.of(context).size.width * 0.25,
-                        height: MediaQuery.of(context).size.width * 0.25,
+                        Container(
+                            width: MediaQuery.of(context).size.width * 0.25,
+                            height: MediaQuery.of(context).size.width * 0.25,
 
-                          decoration: BoxDecoration(
-                              border: files.length < 2 ? Border.all(color: Colors.blue) : null,
-                              borderRadius: BorderRadius.circular(20)
-                          ),
-                          child: Material (
-                              color: Colors.transparent,
-                              child: InkWell(
-                                  onTap: () {
-                                    setState(() {
-                                      takeImage(context);
-                                    });
-                                  },
-                                  child: files.length < 2 ? Icon(Icons.add_a_photo_rounded, size: 30, color: Colors.blue,) :
-                                  new Image.file(files[1], fit: BoxFit.fitWidth)
-                              )
-                          )
-                      ),
+                            decoration: BoxDecoration(
+                                border: files.length < 2 ? Border.all(color: Colors.blue) : null,
+                                borderRadius: BorderRadius.circular(20)
+                            ),
+                            child: Material (
+                                color: Colors.transparent,
+                                child: InkWell(
+                                    onTap: () {
+                                      setState(() {
+                                        takeImage(context);
+                                      });
+                                    },
+                                    child: files.length < 2 ? Icon(Icons.add_a_photo_rounded, size: 30, color: Colors.blue,) :
+                                    new Image.file(files[1], fit: BoxFit.fitWidth)
+                                )
+                            )
+                        ),
 
-                      Container(
-                          width: MediaQuery.of(context).size.width * 0.25,
-                          height: MediaQuery.of(context).size.width * 0.25,
+                        Container(
+                            width: MediaQuery.of(context).size.width * 0.25,
+                            height: MediaQuery.of(context).size.width * 0.25,
 
-                          decoration: BoxDecoration(
-                              border: files.length < 3 ? Border.all(color: Colors.blue) : null,
-                              borderRadius: BorderRadius.circular(20)
-                          ),
-                          child: Material (
-                              color: Colors.transparent,
-                              child: InkWell(
-                                  onTap: () {
-                                    setState(() {
-                                      takeImage(context);
-                                    });
-                                  },
-                                  child: files.length < 3 ? Icon(Icons.add_a_photo_rounded, size: 30, color: Colors.blue,) :
-                                  new Image.file(files[2], fit: BoxFit.fitWidth)
-                              )
-                          )
-                      ),
-                    ],
-                  ),
+                            decoration: BoxDecoration(
+                                border: files.length < 3 ? Border.all(color: Colors.blue) : null,
+                                borderRadius: BorderRadius.circular(20)
+                            ),
+                            child: Material (
+                                color: Colors.transparent,
+                                child: InkWell(
+                                    onTap: () {
+                                      setState(() {
+                                        takeImage(context);
+                                      });
+                                    },
+                                    child: files.length < 3 ? Icon(Icons.add_a_photo_rounded, size: 30, color: Colors.blue,) :
+                                    new Image.file(files[2], fit: BoxFit.fitWidth)
+                                )
+                            )
+                        ),
+                      ],
+                    ),
 
 
-    Padding(
-    padding: EdgeInsets.only(top: 20.0),
-    child: RaisedButton(
-    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular((9.0))),
-    child: Text("Add New Items", style: TextStyle(color: Colors.white),),
-    color: Colors.blueAccent,
-    onPressed: () => uploadImageAndSaveItemInfo(),
-    )
-    ),
+                    Padding(
+                        padding: EdgeInsets.only(top: 20.0),
+                        child: RaisedButton(
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular((9.0))),
+                          child: Text("Add New Items", style: TextStyle(color: Colors.white),),
+                          color: Colors.blueAccent,
+                          onPressed: () => uploadImageAndSaveItemInfo(),
+                        )
+                    ),
 
-                ]
+                  ]
+              ),
             ),
-          ),
-        )
-      ],
-    );
+          )
+        ],
+      );
   }
 
   enterItemInfo() {
     return Container(
-      child: Column(
-        children: <Widget>[
-          Padding(padding: EdgeInsets.only(top: 12.0)),
-          ListTile(
-              leading: Icon(Icons.insert_emoticon, color: Colors.blue),
-              title: Container(
-                  width: 250.0,
-                  child: TextField(
-                    style: TextStyle(color: Colors.blue),
-                    controller: _titleTextEditingController,
-                    decoration: InputDecoration(
-                      hintText: "Title",
-                      hintStyle: TextStyle(color: Colors.blue),
-                      border: InputBorder.none,
-                    ),
-                  )
-              )
-          ),
-          Divider(color:Colors.blue),
+        child: Column(
+          children: <Widget>[
+            Padding(padding: EdgeInsets.only(top: 12.0)),
+            ListTile(
+                leading: Icon(Icons.insert_emoticon, color: Colors.blue),
+                title: Container(
+                    width: 250.0,
+                    child: TextField(
+                      style: TextStyle(color: Colors.blue),
+                      controller: _titleTextEditingController,
+                      decoration: InputDecoration(
+                        hintText: "Title",
+                        hintStyle: TextStyle(color: Colors.blue),
+                        border: InputBorder.none,
+                      ),
+                    )
+                )
+            ),
+            Divider(color:Colors.blue),
 
-          ListTile(
+            ListTile(
 
-              leading: Icon(CupertinoIcons.money_dollar_circle, color: Colors.blue),
-              title: Container(
-                  width: 250.0,
-                  child: TextField(
-                    keyboardType: TextInputType.number,
-                    style: TextStyle(color: Colors.blue),
-                    controller: _priceTextEditingController,
-                    decoration: InputDecoration(
-                      hintText: "Price",
-                      hintStyle: TextStyle(color: Colors.blue),
-                      border: InputBorder.none,
-                    ),
-                  )
-              )
-          ),
-          Divider(color:Colors.blue),
+                leading: Icon(CupertinoIcons.money_dollar_circle, color: Colors.blue),
+                title: Container(
+                    width: 250.0,
+                    child: TextField(
+                      keyboardType: TextInputType.number,
+                      style: TextStyle(color: Colors.blue),
+                      controller: _priceTextEditingController,
+                      decoration: InputDecoration(
+                        hintText: "Price",
+                        hintStyle: TextStyle(color: Colors.blue),
+                        border: InputBorder.none,
+                      ),
+                    )
+                )
+            ),
+            Divider(color:Colors.blue),
 
-          ListTile(
-              leading: Icon(Icons.info_rounded, color: Colors.blue),
-              title: Container(
-                  width: 250.0,
-                  height: 150,
-                  child: TextField(
-                    maxLines: 6,
-                    style: TextStyle(color: Colors.blue),
-                    controller: _descriptionTextEditingController,
-                    decoration: InputDecoration(
-                      hintText: "Description",
-                      hintStyle: TextStyle(color: Colors.blue),
-                      border: InputBorder.none,
-                    ),
-                  )
-              )
-          ),
-          Divider(color:Colors.blue)
-        ],
-      )
+            ListTile(
+                leading: Icon(Icons.info_rounded, color: Colors.blue),
+                title: Container(
+                    width: 250.0,
+                    height: 150,
+                    child: TextField(
+                      maxLines: 6,
+                      style: TextStyle(color: Colors.blue),
+                      controller: _descriptionTextEditingController,
+                      decoration: InputDecoration(
+                        hintText: "Description",
+                        hintStyle: TextStyle(color: Colors.blue),
+                        border: InputBorder.none,
+                      ),
+                    )
+                )
+            ),
+            Divider(color:Colors.blue)
+          ],
+        )
     );
 
   }
@@ -316,10 +326,16 @@ class _UploadPageState extends State<UploadPage> {
 
         saveItemInfo(urls);
         displayDialog("Upload successfully");
+        //TODO: notification
+        showSnackBar(context);
       } else {
         displayDialog("Please fill up the form ");
       }
     }
+  }
+  
+  void showSnackBar(BuildContext context){
+    Scaffold.of(context).showSnackBar(SnackBar(content: Text('A new item is posted')));
   }
 
   Future<String> uploadItemImage(mFileImage, i) async {

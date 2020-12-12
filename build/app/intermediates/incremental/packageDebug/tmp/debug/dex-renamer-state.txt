@@ -1,14 +1,7 @@
-<<<<<<< HEAD
-#Fri Dec 11 00:55:20 PST 2020
-base.2=/Users/minmao/Documents/NEUFall2020/6350_smartphone/hyper_garage/build/app/intermediates/dex/debug/mergeExtDexDebug/classes2.dex
-base.1=/Users/minmao/Documents/NEUFall2020/6350_smartphone/hyper_garage/build/app/intermediates/dex/debug/mergeProjectDexDebug/classes.dex
-base.0=/Users/minmao/Documents/NEUFall2020/6350_smartphone/hyper_garage/build/app/intermediates/dex/debug/mergeExtDexDebug/classes.dex
-=======
-#Thu Dec 10 22:24:39 PST 2020
+#Sat Dec 12 12:56:44 PST 2020
 base.2=/Users/bambi/FlutterProjects/hyper_garage/build/app/intermediates/dex/debug/mergeExtDexDebug/classes2.dex
 base.1=/Users/bambi/FlutterProjects/hyper_garage/build/app/intermediates/dex/debug/mergeProjectDexDebug/classes.dex
 base.0=/Users/bambi/FlutterProjects/hyper_garage/build/app/intermediates/dex/debug/mergeExtDexDebug/classes.dex
->>>>>>> 9bc666532cf56193807fa7279731bd718889ee80
 path.9=classes_4.dex
 path.8=classes_3.dex
 path.7=classes_2.dex
