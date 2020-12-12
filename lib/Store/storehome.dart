@@ -51,43 +51,6 @@ class _StoreHomeState extends State<StoreHome> {
             centerTitle: true,
           ),
           body:  ShowPosts(),
-          //SafeArea(
-            // child:Column(
-            //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            //       crossAxisAlignment: CrossAxisAlignment.stretch,
-            //       children: <Widget>[
-            //         ItemStream(collection: "MFItems"),
-         // CustomScrollView(
-          //  slivers: [
-            //         StreamBuilder<QuerySnapshot>(
-            //           stream: Firestore.instance.collection("MFItems").orderBy("publishedDate", descending: true).snapshots(),
-            //           builder: (context, dataSnapshot){
-            //             return
-            //               !dataSnapshot.hasData
-            //                   ? SliverToBoxAdapter(child: Center(child:circularProgress(),),)
-            //                   : SliverStaggeredGrid.countBuilder(
-            //                   crossAxisCount: 1,
-            //                   staggeredTileBuilder: (c) => StaggeredTile.fit(1),
-            //                   itemBuilder: (context, index){
-            //                     ItemModel model = ItemModel.fromJson(dataSnapshot.data.documents[index].data);
-            //                     return sourceInfo(model, context);
-            //                   },
-            //                   itemCount: dataSnapshot.data.documents.length
-            //               );
-            //           },
-            //         ),
-
-         //   ],
-         // ),
-          // body: SafeArea(
-          //   child: Column(
-          //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          //     crossAxisAlignment: CrossAxisAlignment.stretch,
-          //     children: <Widget>[
-          //       ItemStream(collection: "MFItems"),
-          //     ],
-          //   ),
-          // ),
           floatingActionButton: FloatingActionButton(
             //  icon: Icon(Icons.add, color: Colors.blue,),
             onPressed: () {
@@ -100,64 +63,6 @@ class _StoreHomeState extends State<StoreHome> {
     );
   }
 }
-
-
-
-
-
-    //     !dataSnapshot.hasData
-    //         ? SliverToBoxAdapter(child: Center(child: circularProgress(),),)
-    //         : SliverStaggeredGrid.countBuilder(
-    //         crossAxisCount: 1,
-    //         staggeredTileBuilder: (c) => StaggeredTile.fit(1),
-    //         itemBuilder: (context, index) {
-    //           ItemModel model = ItemModel.fromJson(
-    //               dataSnapshot.data.documents[index].data);
-    //           return sourceInfo(model, context);
-    //         },
-    //         itemCount: dataSnapshot.data.documents.length
-    //     );
-    // }
-    // ,
-
-
-
-    // return StreamBuilder<QuerySnapshot>(
-    //     stream: _firestore.collection(collection).snapshots(),
-    //     builder: (context, dataSnapshot){
-    //           return
-    //             !dataSnapshot.hasData
-    //                 ? SliverToBoxAdapter(child: Center(child:circularProgress(),),)
-    //                 : SliverStaggeredGrid.countBuilder(
-    //                 crossAxisCount: 1,
-    //                 staggeredTileBuilder: (c) => StaggeredTile.fit(1),
-    //                 itemBuilder: (context, index){
-    //                   ItemModel model = ItemModel.fromJson(dataSnapshot.data.documents[index].data);
-    //                   return sourceInfo(model, context);
-    //                 },
-    //                 itemCount: dataSnapshot.data.documents.length
-    //             );
-    //         },
-
-        //   final items = snapshot.data.documents.reversed;
-        //   List<ItemBubble> ItemBubbles = [];
-        //   for (var item in items) {
-        //     final map = item.data;
-        //     final itemBubble = ItemBubble(
-        //       map: map,
-        //     );
-        //     ItemBubbles.add(itemBubble);
-        //   }
-        //   return Expanded(
-        //     child: ListView(
-        //       padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
-        //       children: ItemBubbles,
-        //     ),
-        //   );
-        // }
-
-//         );
-
 
 class ShowPosts extends StatefulWidget {
   @override
@@ -228,159 +133,25 @@ class _ShowPostsState extends State<ShowPosts> {
                     )
                   ],
                 ),
-                // subtitle: Text(
-                //   '${record.description}',
-                //   maxLines: 3,
-                //   style: textStyle.get('description'),
-                // ),
+                subtitle: Text(
+                  '${model.description}',
+                  maxLines: 3,
+                //  style: textStyle.get('description'),
+                ),
               ),
-              // onTap: () {
-              //   Navigator.push(context,
-              //       new MaterialPageRoute(builder: (BuildContext context) {
-              //         return DetailPage(
-              //           postDetail: postItem,
-              //         );
-              //       }));
-              // },
+              onTap: () {
+                Navigator.push(context,
+                    new MaterialPageRoute(builder: (BuildContext context) {
+                      return ProductPage(itemModel: model,);
+                    }));
+              },
             ),
-
-//            ButtonBarTheme(
-//              data: ButtonBarThemeData(),
-//              child: ButtonBar(
-//                children: <Widget>[
-//                  FlatButton(
-//                    child: const Text('View Detial'),
-//                    onPressed: (){
-//                      Navigator.push(context, new MaterialPageRoute(builder: (BuildContext context){
-//                        return DetailPage(postDetail: postItem,);
-//                      }));
-//
-//                    },
-//                  ),
-//                ],
-//              ),
-//            ),
           ],
         ),
       ),
     );
   }
 }
-
-
-
-// Widget sourceInfo(ItemModel model, BuildContext context,
-//     {Color background, removeCartFunction}) {
-//   return InkWell(
-//     splashColor: Colors.blue,
-//     child: Padding(
-//       padding: EdgeInsets.all(6.0),
-//       child: Container(
-//         height: 190.0,
-//         width: width,
-//         child: Row(
-//           children: [
-//             Image.network(
-//               model.thumbnailUrl,
-//               width: 140.0,
-//               height: 140.0,
-//             ),
-//             SizedBox(
-//               width: 4.0,
-//             ),
-//             Expanded(
-//               child: Column(
-//                 crossAxisAlignment: CrossAxisAlignment.start,
-//                 children: [
-//                   SizedBox(
-//                     height: 15.0,
-//                   ),
-//                   Container(
-//                     child: Row(
-//                       mainAxisSize: MainAxisSize.max,
-//                       children: [
-//                         Expanded(
-//                           child: Text(
-//                             model.title,
-//                             style:
-//                                 TextStyle(color: Colors.black, fontSize: 14.0),
-//                           ),
-//                         ),
-//                       ],
-//                     ),
-//                   ),
-//                   SizedBox(
-//                     height: 5.0,
-//                   ),
-//                   // Container(
-//                   //   child: Row(
-//                   //     mainAxisSize: MainAxisSize.max,
-//                   //     children: [
-//                   //       Expanded(
-//                   //         child: Text(
-//                   //           model.shortInfo,
-//                   //           style: TextStyle(
-//                   //               color: Colors.black54, fontSize: 12.0),
-//                   //         ),
-//                   //       ),
-//                   //     ],
-//                   //   ),
-//                   // ),
-//                   // SizedBox(height: 20.0,),
-//                   // Row(
-//                   //   children: [
-//                   //     Container(
-//                   //       decoration: BoxDecoration(
-//                   //         shape: BoxShape.rectangle,
-//                   //         color: Colors.orange,
-//                   //       ),
-//                   //       alignment: Alignment.topLeft,
-//                   //       width: 40.0,
-//                   //       height: 43.0,
-//                   //       child: Center(
-//                   //         child: Column(
-//                   //           mainAxisAlignment: MainAxisAlignment.center,
-//                   //           children: [
-//                   //             Text(
-//                   //               "50%",style:TextStyle(fontSize: 15.0,),
-//                   //             ),
-//                   //             Text(
-//                   //               "OFF",style:TextStyle(fontSize: 15.0,),
-//                   //             ),
-//                   //           ],
-//                   //         ),
-//                   //       ),
-//                   //     ),
-//                   //     SizedBox(width: 10.0,),
-//                   //     Column(
-//                   //       crossAxisAlignment: CrossAxisAlignment.start,
-//                   //       children: [
-//                   //         Padding(
-//                   //           padding: EdgeInsets.only(top: 0.0),
-//                   //           child: Row(
-//                   //             children: [
-//                   //               Text(
-//                   //                 "Origin"
-//                   //               ),
-//                   //               Text(
-//                   //                 "cat"
-//                   //               ),
-//                   //             ],
-//                   //           ),
-//                   //         ),
-//                   //       ],
-//                   //     ),
-//                   //   ],
-//                   // ),
-//                 ],
-//               ),
-//             ),
-//           ],
-//         ),
-//       ),
-//     ),
-//   );
-// }
 
 Widget card({Color primaryColor = Colors.redAccent, String imgPath}) {
   return Container();
