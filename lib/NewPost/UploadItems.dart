@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:hyper_garage/DialogBox/errorDialog.dart';
+import 'package:hyper_garage/Store/storehome.dart';
 import 'package:hyper_garage/Widgets/loadingWidget.dart';
 import 'package:hyper_garage/main.dart';
 import 'package:firebase_storage/firebase_storage.dart';
@@ -56,7 +57,16 @@ class _UploadPageState extends State<UploadPage> {
               )
             ]
         ),
-        body: getNewPostBody()
+        body: getNewPostBody(),
+      floatingActionButton: FloatingActionButton(
+        //  icon: Icon(Icons.add, color: Colors.blue,),
+        onPressed: () {
+          Route route = MaterialPageRoute(builder: (_) => StoreHome());
+          Navigator.pushReplacement(context, route);
+        },
+        child: Icon(Icons.add),
+        backgroundColor: Colors.orange,
+      ),
     );
   }
 

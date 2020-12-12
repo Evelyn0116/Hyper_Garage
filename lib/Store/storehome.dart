@@ -59,7 +59,8 @@ class _StoreHomeState extends State<StoreHome> {
             },
             child: Icon(Icons.add),
             backgroundColor: Colors.orange,
-          )),
+          ),
+      ),
     );
   }
 }
