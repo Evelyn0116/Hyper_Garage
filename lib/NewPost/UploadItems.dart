@@ -316,10 +316,16 @@ class _UploadPageState extends State<UploadPage> {
 
         saveItemInfo(urls);
         displayDialog("Upload successfully");
+        //TODO: notification
+        showSnackBar(context);
       } else {
         displayDialog("Please fill up the form ");
       }
     }
+  }
+  
+  void showSnackBar(BuildContext context){
+    Scaffold.of(context).showSnackBar(SnackBar(content: Text('A new item is posted')));
   }
 
   Future<String> uploadItemImage(mFileImage, i) async {
