@@ -36,10 +36,10 @@ class _UploadPageState extends State<UploadPage> {
     return Scaffold(
         appBar: AppBar(
             leading: IconButton(
-                icon: Icon(Icons.border_color, color: Colors.white),
+                icon: Icon(Icons.arrow_back_ios, color: Colors.white),
                 onPressed: () {
-                  // Route route = MaterialPageRoute(builder: (c) => HomePage());
-                  // Navigator.pushReplacement(context, route);
+                  Route route = MaterialPageRoute(builder: (c) => StoreHome());
+                  Navigator.pushReplacement(context, route);
                 }
             ),
             actions: [
@@ -153,6 +153,28 @@ class _UploadPageState extends State<UploadPage> {
                         ),
                       ],
                     ),
+                    SizedBox(height: 5.0),
+                    Container(
+                        width: MediaQuery.of(context).size.width * 0.25,
+                        height: MediaQuery.of(context).size.width * 0.25,
+
+                        decoration: BoxDecoration(
+                            border: files.length < 4 ? Border.all(color: Colors.blue) : null,
+                            borderRadius: BorderRadius.circular(20)
+                        ),
+                        child: Material (
+                            color: Colors.transparent,
+                            child: InkWell(
+                                onTap: () {
+                                  setState(() {
+                                    takeImage(context);
+                                  });
+                                },
+                                child: files.length < 4 ? Icon(Icons.add_a_photo_rounded, size: 30, color: Colors.blue,) :
+                                new Image.file(files[3], fit: BoxFit.fitWidth)
+                            )
+                        )
+                    ),
 
 
                     Padding(
@@ -164,7 +186,6 @@ class _UploadPageState extends State<UploadPage> {
                           onPressed: () => uploadImageAndSaveItemInfo(),
                         )
                     ),
-
                   ]
               ),
             ),
@@ -361,6 +382,7 @@ class _UploadPageState extends State<UploadPage> {
       "publishedDate": DateTime.now(),
       "image1": urls.length < 2 ? '' : urls[1],
       "image2": urls.length < 3 ? '' : urls[2],
+      "image3": urls.length < 4 ? '' : urls[3],
     });
 
     setState(() {

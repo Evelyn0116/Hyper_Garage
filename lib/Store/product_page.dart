@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import '../Models/item.dart';class ProductPage extends StatefulWidget {
+import '../Models/item.dart';
+
+class ProductPage extends StatefulWidget {
 
   final ItemModel itemModel;
   ProductPage({this.itemModel});
@@ -22,46 +24,21 @@ class _ProductPageState extends State<ProductPage> {
               iconTheme: IconThemeData(
                 color: Colors.white,
               ),
-<<<<<<< HEAD
-            ),
-          ),
-          centerTitle: true,
-          title: Text(
-            "Hyper Garage",
-            style: TextStyle(fontSize: 55.0, color: Colors.white),
-          ),
-          actions: [
-            Stack(
-              children: [
-                IconButton(
-                  icon: Icon(Icons.table_chart),
-                  onPressed: () => print("clicked")
-=======
               flexibleSpace: Container(
-                decoration: new BoxDecoration(
-                  gradient: new LinearGradient(
-                    colors: [Colors.blue, Colors.blueGrey],
-                    begin: const FractionalOffset(0.0, 0.0 ),
-                    end: const FractionalOffset(1.0, 0.0),
-                    stops:[0.0, 1.0],
+                  decoration: new BoxDecoration(
+                    gradient: new LinearGradient(
+                      colors: [Colors.blue, Colors.blueGrey],
+                      begin: const FractionalOffset(0.0, 0.0 ),
+                      end: const FractionalOffset(1.0, 0.0),
+                      stops:[0.0, 1.0],
+                    ),
                   ),
-                ),
               ),
-              centerTitle: true,
-              title: Text(
-                "Hyper Garage",
-                style: TextStyle(fontSize: 55.0, color: Colors.white),
-              ),
-              actions: [
-                Stack(
-                  children: [
-                    IconButton(
-                        icon: Icon(Icons.table_chart)
-                    )
-                  ],
->>>>>>> c9cdc903aba86c8abe0a32d4199d5046dfa3531b
-                )
-              ]
+            centerTitle: true,
+            title: Text(
+              "🐱",
+              style: TextStyle(fontSize: 20.0, color: Colors.white),
+            ),
           ),
           // drawer: MyDrawer(), // 新的widget,没写
           body: ListView(
@@ -71,12 +48,17 @@ class _ProductPageState extends State<ProductPage> {
                   width: MediaQuery.of(context).size.width,
                   color: Colors.white,
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Stack(
                         children: [
                           Center(
-                            child: Image.network(widget.itemModel.thumbnailUrl),
+                            child: SmallPicture(
+                                  tag: 'thumbnailUrl', imagePath: widget.itemModel.thumbnailUrl
+                                  ),
+                              // width: screenSize.width * 0.85,
+                              // height: 300.0,
+
                           ),
                           Container(
                               color: Colors.grey[300],
@@ -91,10 +73,10 @@ class _ProductPageState extends State<ProductPage> {
                           padding: EdgeInsets.all(20.0),
                           child: Center(
                               child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Text(
-                                    widget.itemModel.title,
+                                    widget.itemModel.title.toUpperCase(),
                                     style: boldTextStyle,
                                   ),
                                   SizedBox(
@@ -102,7 +84,7 @@ class _ProductPageState extends State<ProductPage> {
                                   ),
 
                                   Text(
-                                    "\$" + widget.itemModel.price.toString(),
+                                    "💰" + widget.itemModel.price.toString(),
                                     style: boldTextStyle,
                                   ),
                                   SizedBox(
@@ -119,33 +101,92 @@ class _ProductPageState extends State<ProductPage> {
                               )
                           )
                       ),
+                      widget.itemModel.image1 == null ?
+                      Text("") :
+                      SmallPicture(
+                          tag: 'picture1', imagePath: widget.itemModel.image1),
+                      SizedBox(
+                          height: 8.0
+                      ),
 
-                      //"Add to Cart"
-                      // Padding(
-                      //   padding: EdgeInsets.only(top: 10.0),
-                      //   child: Center(
-                      //     child: InkWell(
-                      //       onTap: () => print("clicked"),
-                      //       child: Container(
-                      //         color: Colors.blue,
-                      //         width: MediaQuery.of(context).size.width - 40.0,
-                      //         height: 50.0,
-                      //         child: Center(
-                      //           child: Text("Add to Cart", style: TextStyle(color: Colors.white)),
-                      //         )
-                      //       )
-                      //     )
-                      //   )
-                      // ),
+                      widget.itemModel.image2 == null ?
+                      Text("") :
+                      SmallPicture(
+                          tag: 'picture2', imagePath: widget.itemModel.image2),
+                      SizedBox(
+                          height: 8.0
+                      ),
+
+                      SizedBox(
+                          height: 8.0
+                      ),
+
+                       widget.itemModel.image3 == null ?
+                       Text("") :
+                       SmallPicture(
+                           tag: 'picture3', imagePath: widget.itemModel.image3),
+                       SizedBox(
+                          height: 8.0
+                       ),
                     ],
                   )
               )
             ],
           )
+        ),
+      );
+  }
+}
+
+class SmallPicture extends StatelessWidget {
+  final String tag;
+  final String imagePath;
+
+  SmallPicture({@required this.tag, @required this.imagePath});
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => FullPicture(tag: tag, imagePath: imagePath),
+          ),
+        );
+      },
+      child: Hero(
+        tag: tag,
+        child: Container(
+            width: MediaQuery.of(context).size.width *0.8,
+            child: Image.network(imagePath)),
       ),
     );
   }
+}
 
+class FullPicture extends StatelessWidget {
+  final String tag;
+  final String imagePath;
+
+  FullPicture({@required this.tag, @required this.imagePath});
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.pop(context);
+      },
+      child: Scaffold(
+        body: Center(
+          child: Hero(
+            tag: 'picture0',
+            child: Image.network(imagePath),
+          ),
+        ),
+      ),
+    );
+  }
 }
 
 const boldTextStyle = TextStyle(fontWeight: FontWeight.bold, fontSize: 20);

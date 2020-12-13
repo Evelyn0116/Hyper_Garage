@@ -52,56 +52,55 @@ class _SplashScreenState extends State<SplashScreen> {
     //   displaySplash();
   }
 
-  // displaySplash() {
-  //  Timer(Duration(seconds: 5), () async {
-  //   if(await HyperGarageApp.auth.currentUser() != null) {
-  //      Route route = MaterialPageRoute(builder: (_) => StoreHome());
-  //      Navigator.pushReplacement(context, route);
-  //    } else {
-  //      Route route = MaterialPageRoute(builder: (_) => AuthenticScreen());
-  //      Navigator.pushReplacement(context, route);
-  //    }
-  // });
-  // }
+  displaySplash() {
+   Timer(Duration(seconds: 5), () async {
+    if(await HyperGarageApp.auth.currentUser() != null) {
+       // Route route = MaterialPageRoute(builder: (_) => StoreHome());
+       // Navigator.pushReplacement(context, route);
+     } else {
+       Route route = MaterialPageRoute(builder: (_) => AuthenticScreen());
+       Navigator.pushReplacement(context, route);
+     }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Material(
-        child: Center(
+        child: Container(
+            padding: EdgeInsets.all(20),
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
+
                 children: [
                   Text(
-                      "MM YQF Hyper Garage",
-                      style: TextStyle(color: Colors.deepPurple, fontSize: 30)
+                      "Welcome to Cat World",
+                      style: TextStyle(color: Colors.blue, fontSize: 30)
 
                   ),
+                  SizedBox(height: 20.0),
                   Image.asset("images/welcome2.jpg"),
-                  SizedBox(height: 30.0,),
+
+                  SizedBox(height: 20.0),
                   FlatButton(
+                      padding: EdgeInsets.all(5.0),
+                      color: Colors.blue,
+                      textColor: Colors.white,
                       onPressed: () {
-                        Navigator.pushNamed(context, '/newpost');
+                        Navigator.pushNamed(context, '/login');
                       },
                       child: Text(
-                          "New Post"
+                          "Login",
                       )
                   ),
                   // FlatButton(
                   //     onPressed: () {
-                  //       Navigator.pushNamed(context, '/login');
+                  //       Navigator.pushNamed(context, '/storehome');
                   //     },
                   //     child: Text(
-                  //         "Login"
+                  //         "StoreHome"
                   //     )
-                  // ),
-                  FlatButton(
-                      onPressed: () {
-                        Navigator.pushNamed(context, '/storehome');
-                      },
-                      child: Text(
-                          "StoreHome"
-                      )
-                  )
+                  // )
                 ]
             )
         )
