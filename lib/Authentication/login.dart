@@ -96,13 +96,6 @@ class _LoginState extends State<Login>
             //   icon:(Icon(Icons.nature_people,color:Colors.orange,)),
             //   label: Text,
             // ),
-            FlatButton(
-              child: Text("new Post page"),
-              onPressed: () {
-                Route route = MaterialPageRoute(builder: (_) => UploadPage());
-                Navigator.pushReplacement(context, route);
-              },
-            )
           ],
         ),
       ),
