@@ -1,27 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/bambi/FlutterProjects/hyper_garage/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-uk/values-uk.xml",
+            "outputFile": "/Users/minmao/Documents/NEUFall2020/6350_smartphone/hyper_garage/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-uk/values-uk.xml",
             "map": [
                 {
-                    "source": "/Users/bambi/.gradle/caches/transforms-2/files-2.1/3fb7ab13353e6f7613955c1f03c08ef6/jetified-play-services-basement-17.0.0/res/values-uk/values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "247",
-                        "endColumns": "204",
-                        "endOffsets": "451"
-                    },
-                    "to": {
-                        "startLines": "10",
-                        "startColumns": "4",
-                        "startOffsets": "1274",
-                        "endColumns": "204",
-                        "endOffsets": "1474"
-                    }
-                },
-                {
-                    "source": "/Users/bambi/.gradle/caches/transforms-2/files-2.1/a9a18b2bf4f378c68bf6895b5a8fd1d9/jetified-play-services-base-17.1.0/res/values-uk/values.xml",
+                    "source": "/Users/minmao/.gradle/caches/transforms-2/files-2.1/a9a18b2bf4f378c68bf6895b5a8fd1d9/jetified-play-services-base-17.1.0/res/values-uk/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -38,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/Users/bambi/.gradle/caches/transforms-2/files-2.1/e51d7aefc02ba3a7f77a874b6ef20217/core-1.1.0/res/values-uk/values-uk.xml",
+                    "source": "/Users/minmao/.gradle/caches/transforms-2/files-2.1/e51d7aefc02ba3a7f77a874b6ef20217/core-1.1.0/res/values-uk/values-uk.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -52,6 +35,23 @@
                         "startOffsets": "2820",
                         "endColumns": "100",
                         "endOffsets": "2916"
+                    }
+                },
+                {
+                    "source": "/Users/minmao/.gradle/caches/transforms-2/files-2.1/3fb7ab13353e6f7613955c1f03c08ef6/jetified-play-services-basement-17.0.0/res/values-uk/values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "247",
+                        "endColumns": "204",
+                        "endOffsets": "451"
+                    },
+                    "to": {
+                        "startLines": "10",
+                        "startColumns": "4",
+                        "startOffsets": "1274",
+                        "endColumns": "204",
+                        "endOffsets": "1474"
                     }
                 }
             ]

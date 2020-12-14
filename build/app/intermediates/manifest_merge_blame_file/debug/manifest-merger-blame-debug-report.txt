@@ -12,42 +12,42 @@
 12         to allow setting breakpoints, to provide hot reload, etc.
 13    -->
 14    <uses-permission android:name="android.permission.INTERNET" />
-14-->/Users/bambi/FlutterProjects/hyper_garage/android/app/src/debug/AndroidManifest.xml:6:5-66
-14-->/Users/bambi/FlutterProjects/hyper_garage/android/app/src/debug/AndroidManifest.xml:6:22-64
+14-->/Users/minmao/Documents/NEUFall2020/6350_smartphone/hyper_garage/android/app/src/debug/AndroidManifest.xml:6:5-66
+14-->/Users/minmao/Documents/NEUFall2020/6350_smartphone/hyper_garage/android/app/src/debug/AndroidManifest.xml:6:22-64
 15    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-15-->[:image_picker] /Users/bambi/FlutterProjects/hyper_garage/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-80
-15-->[:image_picker] /Users/bambi/FlutterProjects/hyper_garage/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:7:22-77
+15-->[:image_picker] /Users/minmao/Documents/NEUFall2020/6350_smartphone/hyper_garage/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-80
+15-->[:image_picker] /Users/minmao/Documents/NEUFall2020/6350_smartphone/hyper_garage/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:7:22-77
 16    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
-16-->[:image_picker] /Users/bambi/FlutterProjects/hyper_garage/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:8:5-81
-16-->[:image_picker] /Users/bambi/FlutterProjects/hyper_garage/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:8:22-78
+16-->[:image_picker] /Users/minmao/Documents/NEUFall2020/6350_smartphone/hyper_garage/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:8:5-81
+16-->[:image_picker] /Users/minmao/Documents/NEUFall2020/6350_smartphone/hyper_garage/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:8:22-78
 17    <!-- <uses-sdk android:minSdkVersion="14"/> -->
 18    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-18-->[com.google.firebase:firebase-storage:17.0.0] /Users/bambi/.gradle/caches/transforms-2/files-2.1/f9e266563c490c9d4f40562efde02189/jetified-firebase-storage-17.0.0/AndroidManifest.xml:26:5-79
-18-->[com.google.firebase:firebase-storage:17.0.0] /Users/bambi/.gradle/caches/transforms-2/files-2.1/f9e266563c490c9d4f40562efde02189/jetified-firebase-storage-17.0.0/AndroidManifest.xml:26:22-76
+18-->[com.google.firebase:firebase-storage:17.0.0] /Users/minmao/.gradle/caches/transforms-2/files-2.1/65524597610d973e4651edf4dace44fe/jetified-firebase-storage-17.0.0/AndroidManifest.xml:26:5-79
+18-->[com.google.firebase:firebase-storage:17.0.0] /Users/minmao/.gradle/caches/transforms-2/files-2.1/65524597610d973e4651edf4dace44fe/jetified-firebase-storage-17.0.0/AndroidManifest.xml:26:22-76
 19
 20    <application
-20-->/Users/bambi/FlutterProjects/hyper_garage/android/app/src/main/AndroidManifest.xml:3:4-40:19
+20-->/Users/minmao/Documents/NEUFall2020/6350_smartphone/hyper_garage/android/app/src/main/AndroidManifest.xml:3:4-40:19
 21        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-21-->[androidx.core:core:1.1.0] /Users/bambi/.gradle/caches/transforms-2/files-2.1/e51d7aefc02ba3a7f77a874b6ef20217/core-1.1.0/AndroidManifest.xml:24:18-86
+21-->[androidx.core:core:1.1.0] /Users/minmao/.gradle/caches/transforms-2/files-2.1/e51d7aefc02ba3a7f77a874b6ef20217/core-1.1.0/AndroidManifest.xml:24:18-86
 22        android:debuggable="true"
 23        android:icon="@mipmap/ic_launcher"
-23-->/Users/bambi/FlutterProjects/hyper_garage/android/app/src/main/AndroidManifest.xml:5:9-43
+23-->/Users/minmao/Documents/NEUFall2020/6350_smartphone/hyper_garage/android/app/src/main/AndroidManifest.xml:5:9-43
 24        android:label="hyper_garage" >
-24-->/Users/bambi/FlutterProjects/hyper_garage/android/app/src/main/AndroidManifest.xml:4:9-37
+24-->/Users/minmao/Documents/NEUFall2020/6350_smartphone/hyper_garage/android/app/src/main/AndroidManifest.xml:4:9-37
 25        <activity
-25-->/Users/bambi/FlutterProjects/hyper_garage/android/app/src/main/AndroidManifest.xml:6:9-34:20
+25-->/Users/minmao/Documents/NEUFall2020/6350_smartphone/hyper_garage/android/app/src/main/AndroidManifest.xml:6:9-34:20
 26            android:name="com.example.hyper_garage.MainActivity"
-26-->/Users/bambi/FlutterProjects/hyper_garage/android/app/src/main/AndroidManifest.xml:7:13-41
+26-->/Users/minmao/Documents/NEUFall2020/6350_smartphone/hyper_garage/android/app/src/main/AndroidManifest.xml:7:13-41
 27            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
-27-->/Users/bambi/FlutterProjects/hyper_garage/android/app/src/main/AndroidManifest.xml:10:13-163
+27-->/Users/minmao/Documents/NEUFall2020/6350_smartphone/hyper_garage/android/app/src/main/AndroidManifest.xml:10:13-163
 28            android:hardwareAccelerated="true"
-28-->/Users/bambi/FlutterProjects/hyper_garage/android/app/src/main/AndroidManifest.xml:11:13-47
+28-->/Users/minmao/Documents/NEUFall2020/6350_smartphone/hyper_garage/android/app/src/main/AndroidManifest.xml:11:13-47
 29            android:launchMode="singleTop"
-29-->/Users/bambi/FlutterProjects/hyper_garage/android/app/src/main/AndroidManifest.xml:8:13-43
+29-->/Users/minmao/Documents/NEUFall2020/6350_smartphone/hyper_garage/android/app/src/main/AndroidManifest.xml:8:13-43
 30            android:theme="@style/LaunchTheme"
-30-->/Users/bambi/FlutterProjects/hyper_garage/android/app/src/main/AndroidManifest.xml:9:13-47
+30-->/Users/minmao/Documents/NEUFall2020/6350_smartphone/hyper_garage/android/app/src/main/AndroidManifest.xml:9:13-47
 31            android:windowSoftInputMode="adjustResize" >
-31-->/Users/bambi/FlutterProjects/hyper_garage/android/app/src/main/AndroidManifest.xml:12:13-55
+31-->/Users/minmao/Documents/NEUFall2020/6350_smartphone/hyper_garage/android/app/src/main/AndroidManifest.xml:12:13-55
 32
 33            <!--
 34                 Specifies an Android theme to apply to this Activity as soon as
@@ -56,11 +56,11 @@
 37                 to determine the Window background behind the Flutter UI.
 38            -->
 39            <meta-data
-39-->/Users/bambi/FlutterProjects/hyper_garage/android/app/src/main/AndroidManifest.xml:17:13-20:17
+39-->/Users/minmao/Documents/NEUFall2020/6350_smartphone/hyper_garage/android/app/src/main/AndroidManifest.xml:17:13-20:17
 40                android:name="io.flutter.embedding.android.NormalTheme"
-40-->/Users/bambi/FlutterProjects/hyper_garage/android/app/src/main/AndroidManifest.xml:18:15-70
+40-->/Users/minmao/Documents/NEUFall2020/6350_smartphone/hyper_garage/android/app/src/main/AndroidManifest.xml:18:15-70
 41                android:resource="@style/NormalTheme" />
-41-->/Users/bambi/FlutterProjects/hyper_garage/android/app/src/main/AndroidManifest.xml:19:15-52
+41-->/Users/minmao/Documents/NEUFall2020/6350_smartphone/hyper_garage/android/app/src/main/AndroidManifest.xml:19:15-52
 42            <!--
 43                 Displays an Android View that continues showing the launch screen
 44                 Drawable until Flutter paints its first frame, then this splash
@@ -69,21 +69,21 @@
 47                 Flutter's first frame.
 48            -->
 49            <meta-data
-49-->/Users/bambi/FlutterProjects/hyper_garage/android/app/src/main/AndroidManifest.xml:26:13-29:17
+49-->/Users/minmao/Documents/NEUFall2020/6350_smartphone/hyper_garage/android/app/src/main/AndroidManifest.xml:26:13-29:17
 50                android:name="io.flutter.embedding.android.SplashScreenDrawable"
-50-->/Users/bambi/FlutterProjects/hyper_garage/android/app/src/main/AndroidManifest.xml:27:15-79
+50-->/Users/minmao/Documents/NEUFall2020/6350_smartphone/hyper_garage/android/app/src/main/AndroidManifest.xml:27:15-79
 51                android:resource="@drawable/launch_background" />
-51-->/Users/bambi/FlutterProjects/hyper_garage/android/app/src/main/AndroidManifest.xml:28:15-61
+51-->/Users/minmao/Documents/NEUFall2020/6350_smartphone/hyper_garage/android/app/src/main/AndroidManifest.xml:28:15-61
 52
 53            <intent-filter>
-53-->/Users/bambi/FlutterProjects/hyper_garage/android/app/src/main/AndroidManifest.xml:30:13-33:29
+53-->/Users/minmao/Documents/NEUFall2020/6350_smartphone/hyper_garage/android/app/src/main/AndroidManifest.xml:30:13-33:29
 54                <action android:name="android.intent.action.MAIN" />
-54-->/Users/bambi/FlutterProjects/hyper_garage/android/app/src/main/AndroidManifest.xml:31:17-68
-54-->/Users/bambi/FlutterProjects/hyper_garage/android/app/src/main/AndroidManifest.xml:31:25-66
+54-->/Users/minmao/Documents/NEUFall2020/6350_smartphone/hyper_garage/android/app/src/main/AndroidManifest.xml:31:17-68
+54-->/Users/minmao/Documents/NEUFall2020/6350_smartphone/hyper_garage/android/app/src/main/AndroidManifest.xml:31:25-66
 55
 56                <category android:name="android.intent.category.LAUNCHER" />
-56-->/Users/bambi/FlutterProjects/hyper_garage/android/app/src/main/AndroidManifest.xml:32:17-76
-56-->/Users/bambi/FlutterProjects/hyper_garage/android/app/src/main/AndroidManifest.xml:32:27-74
+56-->/Users/minmao/Documents/NEUFall2020/6350_smartphone/hyper_garage/android/app/src/main/AndroidManifest.xml:32:17-76
+56-->/Users/minmao/Documents/NEUFall2020/6350_smartphone/hyper_garage/android/app/src/main/AndroidManifest.xml:32:27-74
 57            </intent-filter>
 58        </activity>
 59        <!--
@@ -91,123 +91,123 @@
 61             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
 62        -->
 63        <meta-data
-63-->/Users/bambi/FlutterProjects/hyper_garage/android/app/src/main/AndroidManifest.xml:37:9-39:33
+63-->/Users/minmao/Documents/NEUFall2020/6350_smartphone/hyper_garage/android/app/src/main/AndroidManifest.xml:37:9-39:33
 64            android:name="flutterEmbedding"
-64-->/Users/bambi/FlutterProjects/hyper_garage/android/app/src/main/AndroidManifest.xml:38:13-44
+64-->/Users/minmao/Documents/NEUFall2020/6350_smartphone/hyper_garage/android/app/src/main/AndroidManifest.xml:38:13-44
 65            android:value="2" />
-65-->/Users/bambi/FlutterProjects/hyper_garage/android/app/src/main/AndroidManifest.xml:39:13-30
+65-->/Users/minmao/Documents/NEUFall2020/6350_smartphone/hyper_garage/android/app/src/main/AndroidManifest.xml:39:13-30
 66
 67        <service
-67-->[:firebase_storage] /Users/bambi/FlutterProjects/hyper_garage/build/firebase_storage/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-12:19
+67-->[:firebase_storage] /Users/minmao/Documents/NEUFall2020/6350_smartphone/hyper_garage/build/firebase_storage/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-12:19
 68            android:name="com.google.firebase.components.ComponentDiscoveryService"
-68-->[:firebase_storage] /Users/bambi/FlutterProjects/hyper_garage/build/firebase_storage/intermediates/library_manifest/debug/AndroidManifest.xml:8:18-89
+68-->[:firebase_storage] /Users/minmao/Documents/NEUFall2020/6350_smartphone/hyper_garage/build/firebase_storage/intermediates/library_manifest/debug/AndroidManifest.xml:8:18-89
 69            android:directBootAware="true"
-69-->[com.google.firebase:firebase-common:19.3.0] /Users/bambi/.gradle/caches/transforms-2/files-2.1/a5e2747bb8dec3b53a3008d4f62f6886/jetified-firebase-common-19.3.0/AndroidManifest.xml:34:13-43
+69-->[com.google.firebase:firebase-common:19.3.0] /Users/minmao/.gradle/caches/transforms-2/files-2.1/a5e2747bb8dec3b53a3008d4f62f6886/jetified-firebase-common-19.3.0/AndroidManifest.xml:34:13-43
 70            android:exported="false" >
-70-->[com.google.firebase:firebase-auth:19.2.0] /Users/bambi/.gradle/caches/transforms-2/files-2.1/79cd8439b29c72b30398c676b691c33b/jetified-firebase-auth-19.2.0/AndroidManifest.xml:35:13-37
+70-->[com.google.firebase:firebase-auth:19.2.0] /Users/minmao/.gradle/caches/transforms-2/files-2.1/79cd8439b29c72b30398c676b691c33b/jetified-firebase-auth-19.2.0/AndroidManifest.xml:35:13-37
 71            <meta-data
-71-->[:firebase_storage] /Users/bambi/FlutterProjects/hyper_garage/build/firebase_storage/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-11:85
+71-->[:firebase_storage] /Users/minmao/Documents/NEUFall2020/6350_smartphone/hyper_garage/build/firebase_storage/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-11:85
 72                android:name="com.google.firebase.components:io.flutter.plugins.firebase.storage.FlutterFirebaseAppRegistrar"
-72-->[:firebase_storage] /Users/bambi/FlutterProjects/hyper_garage/build/firebase_storage/intermediates/library_manifest/debug/AndroidManifest.xml:10:17-126
+72-->[:firebase_storage] /Users/minmao/Documents/NEUFall2020/6350_smartphone/hyper_garage/build/firebase_storage/intermediates/library_manifest/debug/AndroidManifest.xml:10:17-126
 73                android:value="com.google.firebase.components.ComponentRegistrar" />
-73-->[:firebase_storage] /Users/bambi/FlutterProjects/hyper_garage/build/firebase_storage/intermediates/library_manifest/debug/AndroidManifest.xml:11:17-82
+73-->[:firebase_storage] /Users/minmao/Documents/NEUFall2020/6350_smartphone/hyper_garage/build/firebase_storage/intermediates/library_manifest/debug/AndroidManifest.xml:11:17-82
 74            <meta-data
-74-->[:firebase_auth] /Users/bambi/FlutterProjects/hyper_garage/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-11:85
+74-->[:firebase_auth] /Users/minmao/Documents/NEUFall2020/6350_smartphone/hyper_garage/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-11:85
 75                android:name="com.google.firebase.components:io.flutter.plugins.firebaseauth.FlutterFirebaseAppRegistrar"
-75-->[:firebase_auth] /Users/bambi/FlutterProjects/hyper_garage/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:10:17-122
+75-->[:firebase_auth] /Users/minmao/Documents/NEUFall2020/6350_smartphone/hyper_garage/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:10:17-122
 76                android:value="com.google.firebase.components.ComponentRegistrar" />
-76-->[:firebase_auth] /Users/bambi/FlutterProjects/hyper_garage/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:11:17-82
+76-->[:firebase_auth] /Users/minmao/Documents/NEUFall2020/6350_smartphone/hyper_garage/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:11:17-82
 77            <meta-data
-77-->[:cloud_firestore] /Users/bambi/FlutterProjects/hyper_garage/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-11:85
+77-->[:cloud_firestore] /Users/minmao/Documents/NEUFall2020/6350_smartphone/hyper_garage/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-11:85
 78                android:name="com.google.firebase.components:io.flutter.plugins.firebase.cloudfirestore.FlutterFirebaseAppRegistrar"
-78-->[:cloud_firestore] /Users/bambi/FlutterProjects/hyper_garage/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:10:17-133
+78-->[:cloud_firestore] /Users/minmao/Documents/NEUFall2020/6350_smartphone/hyper_garage/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:10:17-133
 79                android:value="com.google.firebase.components.ComponentRegistrar" />
-79-->[:cloud_firestore] /Users/bambi/FlutterProjects/hyper_garage/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:11:17-82
+79-->[:cloud_firestore] /Users/minmao/Documents/NEUFall2020/6350_smartphone/hyper_garage/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:11:17-82
 80            <meta-data
-80-->[:firebase_core] /Users/bambi/FlutterProjects/hyper_garage/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-11:85
+80-->[:firebase_core] /Users/minmao/Documents/NEUFall2020/6350_smartphone/hyper_garage/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-11:85
 81                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseAppRegistrar"
-81-->[:firebase_core] /Users/bambi/FlutterProjects/hyper_garage/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:10:17-123
+81-->[:firebase_core] /Users/minmao/Documents/NEUFall2020/6350_smartphone/hyper_garage/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:10:17-123
 82                android:value="com.google.firebase.components.ComponentRegistrar" />
-82-->[:firebase_core] /Users/bambi/FlutterProjects/hyper_garage/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:11:17-82
+82-->[:firebase_core] /Users/minmao/Documents/NEUFall2020/6350_smartphone/hyper_garage/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:11:17-82
 83            <meta-data
-83-->[com.google.firebase:firebase-auth:19.2.0] /Users/bambi/.gradle/caches/transforms-2/files-2.1/79cd8439b29c72b30398c676b691c33b/jetified-firebase-auth-19.2.0/AndroidManifest.xml:36:13-38:85
+83-->[com.google.firebase:firebase-auth:19.2.0] /Users/minmao/.gradle/caches/transforms-2/files-2.1/79cd8439b29c72b30398c676b691c33b/jetified-firebase-auth-19.2.0/AndroidManifest.xml:36:13-38:85
 84                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
-84-->[com.google.firebase:firebase-auth:19.2.0] /Users/bambi/.gradle/caches/transforms-2/files-2.1/79cd8439b29c72b30398c676b691c33b/jetified-firebase-auth-19.2.0/AndroidManifest.xml:37:17-109
+84-->[com.google.firebase:firebase-auth:19.2.0] /Users/minmao/.gradle/caches/transforms-2/files-2.1/79cd8439b29c72b30398c676b691c33b/jetified-firebase-auth-19.2.0/AndroidManifest.xml:37:17-109
 85                android:value="com.google.firebase.components.ComponentRegistrar" />
-85-->[com.google.firebase:firebase-auth:19.2.0] /Users/bambi/.gradle/caches/transforms-2/files-2.1/79cd8439b29c72b30398c676b691c33b/jetified-firebase-auth-19.2.0/AndroidManifest.xml:38:17-82
+85-->[com.google.firebase:firebase-auth:19.2.0] /Users/minmao/.gradle/caches/transforms-2/files-2.1/79cd8439b29c72b30398c676b691c33b/jetified-firebase-auth-19.2.0/AndroidManifest.xml:38:17-82
 86            <meta-data
-86-->[com.google.firebase:firebase-storage:17.0.0] /Users/bambi/.gradle/caches/transforms-2/files-2.1/f9e266563c490c9d4f40562efde02189/jetified-firebase-storage-17.0.0/AndroidManifest.xml:31:13-33:85
+86-->[com.google.firebase:firebase-storage:17.0.0] /Users/minmao/.gradle/caches/transforms-2/files-2.1/65524597610d973e4651edf4dace44fe/jetified-firebase-storage-17.0.0/AndroidManifest.xml:31:13-33:85
 87                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
-87-->[com.google.firebase:firebase-storage:17.0.0] /Users/bambi/.gradle/caches/transforms-2/files-2.1/f9e266563c490c9d4f40562efde02189/jetified-firebase-storage-17.0.0/AndroidManifest.xml:32:17-107
+87-->[com.google.firebase:firebase-storage:17.0.0] /Users/minmao/.gradle/caches/transforms-2/files-2.1/65524597610d973e4651edf4dace44fe/jetified-firebase-storage-17.0.0/AndroidManifest.xml:32:17-107
 88                android:value="com.google.firebase.components.ComponentRegistrar" />
-88-->[com.google.firebase:firebase-storage:17.0.0] /Users/bambi/.gradle/caches/transforms-2/files-2.1/f9e266563c490c9d4f40562efde02189/jetified-firebase-storage-17.0.0/AndroidManifest.xml:33:17-82
+88-->[com.google.firebase:firebase-storage:17.0.0] /Users/minmao/.gradle/caches/transforms-2/files-2.1/65524597610d973e4651edf4dace44fe/jetified-firebase-storage-17.0.0/AndroidManifest.xml:33:17-82
 89            <meta-data
-89-->[com.google.firebase:firebase-firestore:21.3.0] /Users/bambi/.gradle/caches/transforms-2/files-2.1/2ea8eed173943892be1c169553f360a5/jetified-firebase-firestore-21.3.0/AndroidManifest.xml:20:13-22:85
+89-->[com.google.firebase:firebase-firestore:21.3.0] /Users/minmao/.gradle/caches/transforms-2/files-2.1/2ea8eed173943892be1c169553f360a5/jetified-firebase-firestore-21.3.0/AndroidManifest.xml:20:13-22:85
 90                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
-90-->[com.google.firebase:firebase-firestore:21.3.0] /Users/bambi/.gradle/caches/transforms-2/files-2.1/2ea8eed173943892be1c169553f360a5/jetified-firebase-firestore-21.3.0/AndroidManifest.xml:21:17-111
+90-->[com.google.firebase:firebase-firestore:21.3.0] /Users/minmao/.gradle/caches/transforms-2/files-2.1/2ea8eed173943892be1c169553f360a5/jetified-firebase-firestore-21.3.0/AndroidManifest.xml:21:17-111
 91                android:value="com.google.firebase.components.ComponentRegistrar" />
-91-->[com.google.firebase:firebase-firestore:21.3.0] /Users/bambi/.gradle/caches/transforms-2/files-2.1/2ea8eed173943892be1c169553f360a5/jetified-firebase-firestore-21.3.0/AndroidManifest.xml:22:17-82
+91-->[com.google.firebase:firebase-firestore:21.3.0] /Users/minmao/.gradle/caches/transforms-2/files-2.1/2ea8eed173943892be1c169553f360a5/jetified-firebase-firestore-21.3.0/AndroidManifest.xml:22:17-82
 92        </service>
 93
 94        <provider
-94-->[:image_picker] /Users/bambi/FlutterProjects/hyper_garage/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:11:9-19:20
+94-->[:image_picker] /Users/minmao/Documents/NEUFall2020/6350_smartphone/hyper_garage/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:11:9-19:20
 95            android:name="io.flutter.plugins.imagepicker.ImagePickerFileProvider"
-95-->[:image_picker] /Users/bambi/FlutterProjects/hyper_garage/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:12:13-82
+95-->[:image_picker] /Users/minmao/Documents/NEUFall2020/6350_smartphone/hyper_garage/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:12:13-82
 96            android:authorities="com.mmyqf.hypergarage.flutter.image_provider"
-96-->[:image_picker] /Users/bambi/FlutterProjects/hyper_garage/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:13:13-74
+96-->[:image_picker] /Users/minmao/Documents/NEUFall2020/6350_smartphone/hyper_garage/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:13:13-74
 97            android:exported="false"
-97-->[:image_picker] /Users/bambi/FlutterProjects/hyper_garage/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:14:13-37
+97-->[:image_picker] /Users/minmao/Documents/NEUFall2020/6350_smartphone/hyper_garage/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:14:13-37
 98            android:grantUriPermissions="true" >
-98-->[:image_picker] /Users/bambi/FlutterProjects/hyper_garage/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:15:13-47
+98-->[:image_picker] /Users/minmao/Documents/NEUFall2020/6350_smartphone/hyper_garage/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:15:13-47
 99            <meta-data
-99-->[:image_picker] /Users/bambi/FlutterProjects/hyper_garage/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:16:13-18:75
+99-->[:image_picker] /Users/minmao/Documents/NEUFall2020/6350_smartphone/hyper_garage/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:16:13-18:75
 100                android:name="android.support.FILE_PROVIDER_PATHS"
-100-->[:image_picker] /Users/bambi/FlutterProjects/hyper_garage/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:17:17-67
+100-->[:image_picker] /Users/minmao/Documents/NEUFall2020/6350_smartphone/hyper_garage/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:17:17-67
 101                android:resource="@xml/flutter_image_picker_file_paths" />
-101-->[:image_picker] /Users/bambi/FlutterProjects/hyper_garage/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:18:17-72
+101-->[:image_picker] /Users/minmao/Documents/NEUFall2020/6350_smartphone/hyper_garage/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:18:17-72
 102        </provider>
 103
 104        <activity
-104-->[com.google.firebase:firebase-auth:19.2.0] /Users/bambi/.gradle/caches/transforms-2/files-2.1/79cd8439b29c72b30398c676b691c33b/jetified-firebase-auth-19.2.0/AndroidManifest.xml:24:9-31:50
+104-->[com.google.firebase:firebase-auth:19.2.0] /Users/minmao/.gradle/caches/transforms-2/files-2.1/79cd8439b29c72b30398c676b691c33b/jetified-firebase-auth-19.2.0/AndroidManifest.xml:24:9-31:50
 105            android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
-105-->[com.google.firebase:firebase-auth:19.2.0] /Users/bambi/.gradle/caches/transforms-2/files-2.1/79cd8439b29c72b30398c676b691c33b/jetified-firebase-auth-19.2.0/AndroidManifest.xml:25:13-85
+105-->[com.google.firebase:firebase-auth:19.2.0] /Users/minmao/.gradle/caches/transforms-2/files-2.1/79cd8439b29c72b30398c676b691c33b/jetified-firebase-auth-19.2.0/AndroidManifest.xml:25:13-85
 106            android:excludeFromRecents="true"
-106-->[com.google.firebase:firebase-auth:19.2.0] /Users/bambi/.gradle/caches/transforms-2/files-2.1/79cd8439b29c72b30398c676b691c33b/jetified-firebase-auth-19.2.0/AndroidManifest.xml:26:13-46
+106-->[com.google.firebase:firebase-auth:19.2.0] /Users/minmao/.gradle/caches/transforms-2/files-2.1/79cd8439b29c72b30398c676b691c33b/jetified-firebase-auth-19.2.0/AndroidManifest.xml:26:13-46
 107            android:exported="true"
-107-->[com.google.firebase:firebase-auth:19.2.0] /Users/bambi/.gradle/caches/transforms-2/files-2.1/79cd8439b29c72b30398c676b691c33b/jetified-firebase-auth-19.2.0/AndroidManifest.xml:27:13-36
+107-->[com.google.firebase:firebase-auth:19.2.0] /Users/minmao/.gradle/caches/transforms-2/files-2.1/79cd8439b29c72b30398c676b691c33b/jetified-firebase-auth-19.2.0/AndroidManifest.xml:27:13-36
 108            android:launchMode="singleTask"
-108-->[com.google.firebase:firebase-auth:19.2.0] /Users/bambi/.gradle/caches/transforms-2/files-2.1/79cd8439b29c72b30398c676b691c33b/jetified-firebase-auth-19.2.0/AndroidManifest.xml:28:13-44
+108-->[com.google.firebase:firebase-auth:19.2.0] /Users/minmao/.gradle/caches/transforms-2/files-2.1/79cd8439b29c72b30398c676b691c33b/jetified-firebase-auth-19.2.0/AndroidManifest.xml:28:13-44
 109            android:permission="com.google.firebase.auth.api.gms.permission.LAUNCH_FEDERATED_SIGN_IN"
-109-->[com.google.firebase:firebase-auth:19.2.0] /Users/bambi/.gradle/caches/transforms-2/files-2.1/79cd8439b29c72b30398c676b691c33b/jetified-firebase-auth-19.2.0/AndroidManifest.xml:29:13-102
+109-->[com.google.firebase:firebase-auth:19.2.0] /Users/minmao/.gradle/caches/transforms-2/files-2.1/79cd8439b29c72b30398c676b691c33b/jetified-firebase-auth-19.2.0/AndroidManifest.xml:29:13-102
 110            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-110-->[com.google.firebase:firebase-auth:19.2.0] /Users/bambi/.gradle/caches/transforms-2/files-2.1/79cd8439b29c72b30398c676b691c33b/jetified-firebase-auth-19.2.0/AndroidManifest.xml:30:13-72
+110-->[com.google.firebase:firebase-auth:19.2.0] /Users/minmao/.gradle/caches/transforms-2/files-2.1/79cd8439b29c72b30398c676b691c33b/jetified-firebase-auth-19.2.0/AndroidManifest.xml:30:13-72
 111
 112        <provider
-112-->[com.google.firebase:firebase-common:19.3.0] /Users/bambi/.gradle/caches/transforms-2/files-2.1/a5e2747bb8dec3b53a3008d4f62f6886/jetified-firebase-common-19.3.0/AndroidManifest.xml:26:9-30:39
+112-->[com.google.firebase:firebase-common:19.3.0] /Users/minmao/.gradle/caches/transforms-2/files-2.1/a5e2747bb8dec3b53a3008d4f62f6886/jetified-firebase-common-19.3.0/AndroidManifest.xml:26:9-30:39
 113            android:name="com.google.firebase.provider.FirebaseInitProvider"
-113-->[com.google.firebase:firebase-common:19.3.0] /Users/bambi/.gradle/caches/transforms-2/files-2.1/a5e2747bb8dec3b53a3008d4f62f6886/jetified-firebase-common-19.3.0/AndroidManifest.xml:27:13-77
+113-->[com.google.firebase:firebase-common:19.3.0] /Users/minmao/.gradle/caches/transforms-2/files-2.1/a5e2747bb8dec3b53a3008d4f62f6886/jetified-firebase-common-19.3.0/AndroidManifest.xml:27:13-77
 114            android:authorities="com.mmyqf.hypergarage.firebaseinitprovider"
-114-->[com.google.firebase:firebase-common:19.3.0] /Users/bambi/.gradle/caches/transforms-2/files-2.1/a5e2747bb8dec3b53a3008d4f62f6886/jetified-firebase-common-19.3.0/AndroidManifest.xml:28:13-72
+114-->[com.google.firebase:firebase-common:19.3.0] /Users/minmao/.gradle/caches/transforms-2/files-2.1/a5e2747bb8dec3b53a3008d4f62f6886/jetified-firebase-common-19.3.0/AndroidManifest.xml:28:13-72
 115            android:exported="false"
-115-->[com.google.firebase:firebase-common:19.3.0] /Users/bambi/.gradle/caches/transforms-2/files-2.1/a5e2747bb8dec3b53a3008d4f62f6886/jetified-firebase-common-19.3.0/AndroidManifest.xml:29:13-37
+115-->[com.google.firebase:firebase-common:19.3.0] /Users/minmao/.gradle/caches/transforms-2/files-2.1/a5e2747bb8dec3b53a3008d4f62f6886/jetified-firebase-common-19.3.0/AndroidManifest.xml:29:13-37
 116            android:initOrder="100" />
-116-->[com.google.firebase:firebase-common:19.3.0] /Users/bambi/.gradle/caches/transforms-2/files-2.1/a5e2747bb8dec3b53a3008d4f62f6886/jetified-firebase-common-19.3.0/AndroidManifest.xml:30:13-36
+116-->[com.google.firebase:firebase-common:19.3.0] /Users/minmao/.gradle/caches/transforms-2/files-2.1/a5e2747bb8dec3b53a3008d4f62f6886/jetified-firebase-common-19.3.0/AndroidManifest.xml:30:13-36
 117
 118        <activity
-118-->[com.google.android.gms:play-services-base:17.1.0] /Users/bambi/.gradle/caches/transforms-2/files-2.1/a9a18b2bf4f378c68bf6895b5a8fd1d9/jetified-play-services-base-17.1.0/AndroidManifest.xml:23:9-26:75
+118-->[com.google.android.gms:play-services-base:17.1.0] /Users/minmao/.gradle/caches/transforms-2/files-2.1/a9a18b2bf4f378c68bf6895b5a8fd1d9/jetified-play-services-base-17.1.0/AndroidManifest.xml:23:9-26:75
 119            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-119-->[com.google.android.gms:play-services-base:17.1.0] /Users/bambi/.gradle/caches/transforms-2/files-2.1/a9a18b2bf4f378c68bf6895b5a8fd1d9/jetified-play-services-base-17.1.0/AndroidManifest.xml:24:13-79
+119-->[com.google.android.gms:play-services-base:17.1.0] /Users/minmao/.gradle/caches/transforms-2/files-2.1/a9a18b2bf4f378c68bf6895b5a8fd1d9/jetified-play-services-base-17.1.0/AndroidManifest.xml:24:13-79
 120            android:exported="false"
-120-->[com.google.android.gms:play-services-base:17.1.0] /Users/bambi/.gradle/caches/transforms-2/files-2.1/a9a18b2bf4f378c68bf6895b5a8fd1d9/jetified-play-services-base-17.1.0/AndroidManifest.xml:25:13-37
+120-->[com.google.android.gms:play-services-base:17.1.0] /Users/minmao/.gradle/caches/transforms-2/files-2.1/a9a18b2bf4f378c68bf6895b5a8fd1d9/jetified-play-services-base-17.1.0/AndroidManifest.xml:25:13-37
 121            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-121-->[com.google.android.gms:play-services-base:17.1.0] /Users/bambi/.gradle/caches/transforms-2/files-2.1/a9a18b2bf4f378c68bf6895b5a8fd1d9/jetified-play-services-base-17.1.0/AndroidManifest.xml:26:13-72
+121-->[com.google.android.gms:play-services-base:17.1.0] /Users/minmao/.gradle/caches/transforms-2/files-2.1/a9a18b2bf4f378c68bf6895b5a8fd1d9/jetified-play-services-base-17.1.0/AndroidManifest.xml:26:13-72
 122
 123        <meta-data
-123-->[com.google.android.gms:play-services-basement:17.0.0] /Users/bambi/.gradle/caches/transforms-2/files-2.1/3fb7ab13353e6f7613955c1f03c08ef6/jetified-play-services-basement-17.0.0/AndroidManifest.xml:23:9-25:69
+123-->[com.google.android.gms:play-services-basement:17.0.0] /Users/minmao/.gradle/caches/transforms-2/files-2.1/3fb7ab13353e6f7613955c1f03c08ef6/jetified-play-services-basement-17.0.0/AndroidManifest.xml:23:9-25:69
 124            android:name="com.google.android.gms.version"
-124-->[com.google.android.gms:play-services-basement:17.0.0] /Users/bambi/.gradle/caches/transforms-2/files-2.1/3fb7ab13353e6f7613955c1f03c08ef6/jetified-play-services-basement-17.0.0/AndroidManifest.xml:24:13-58
+124-->[com.google.android.gms:play-services-basement:17.0.0] /Users/minmao/.gradle/caches/transforms-2/files-2.1/3fb7ab13353e6f7613955c1f03c08ef6/jetified-play-services-basement-17.0.0/AndroidManifest.xml:24:13-58
 125            android:value="@integer/google_play_services_version" />
-125-->[com.google.android.gms:play-services-basement:17.0.0] /Users/bambi/.gradle/caches/transforms-2/files-2.1/3fb7ab13353e6f7613955c1f03c08ef6/jetified-play-services-basement-17.0.0/AndroidManifest.xml:25:13-66
+125-->[com.google.android.gms:play-services-basement:17.0.0] /Users/minmao/.gradle/caches/transforms-2/files-2.1/3fb7ab13353e6f7613955c1f03c08ef6/jetified-play-services-basement-17.0.0/AndroidManifest.xml:25:13-66
 126    </application>
 127
 128</manifest>

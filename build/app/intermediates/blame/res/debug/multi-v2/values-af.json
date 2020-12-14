@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/bambi/FlutterProjects/hyper_garage/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-af/values-af.xml",
+            "outputFile": "/Users/minmao/Documents/NEUFall2020/6350_smartphone/hyper_garage/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-af/values-af.xml",
             "map": [
                 {
-                    "source": "/Users/bambi/.gradle/caches/transforms-2/files-2.1/a9a18b2bf4f378c68bf6895b5a8fd1d9/jetified-play-services-base-17.1.0/res/values-af/values.xml",
+                    "source": "/Users/minmao/.gradle/caches/transforms-2/files-2.1/a9a18b2bf4f378c68bf6895b5a8fd1d9/jetified-play-services-base-17.1.0/res/values-af/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/Users/bambi/.gradle/caches/transforms-2/files-2.1/3fb7ab13353e6f7613955c1f03c08ef6/jetified-play-services-basement-17.0.0/res/values-af/values.xml",
+                    "source": "/Users/minmao/.gradle/caches/transforms-2/files-2.1/3fb7ab13353e6f7613955c1f03c08ef6/jetified-play-services-basement-17.0.0/res/values-af/values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -38,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "/Users/bambi/.gradle/caches/transforms-2/files-2.1/e51d7aefc02ba3a7f77a874b6ef20217/core-1.1.0/res/values-af/values-af.xml",
+                    "source": "/Users/minmao/.gradle/caches/transforms-2/files-2.1/e51d7aefc02ba3a7f77a874b6ef20217/core-1.1.0/res/values-af/values-af.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
