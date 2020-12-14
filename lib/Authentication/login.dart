@@ -31,6 +31,9 @@ class _LoginState extends State<Login>
         child: Column(
           mainAxisSize: MainAxisSize.max,
           children: [
+            SizedBox(
+              height: 10.0,
+            ),
             Container(
               alignment: Alignment.bottomCenter,
               child: Image.asset(
@@ -39,13 +42,17 @@ class _LoginState extends State<Login>
                 width: 240.0,
               ),
             ),
-            Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Text(
-                "Login to your account",
-                style: TextStyle(color: Colors.white),
-              ),
-            ),
+            // Padding(
+            //   padding: EdgeInsets.all(8.0),
+            //   child: Text(
+            //     "Login to your account",
+            //     style: TextStyle(
+            //         color: Colors.white,
+            //         fontFamily: "IndieFlower",
+            //         fontSize: 15,
+            //     ),
+            //   ),
+            // ),
             Form(
               key: _formKey,
               child: Column(
@@ -65,6 +72,9 @@ class _LoginState extends State<Login>
                 ],
               ),
             ),
+            SizedBox(
+              height: 25.0,
+            ),
             RaisedButton(
               // onPressed:(){uploadAndSaveImage();},
               onPressed:() {
@@ -78,17 +88,15 @@ class _LoginState extends State<Login>
                     }
                 );
               },
-              color: Colors.orangeAccent,
-              child: Text("Log in", style: TextStyle(color: Colors.white),),
+              color: Colors.cyanAccent[700],
+              child: Text("Log in", style: TextStyle(color: Colors.white, fontFamily: "IndieFlower", fontSize: 25),),
             ),
-            SizedBox(
-              height: 50.0,
-            ),
-            Container(
-              height: 4.0,
-              width: _screenWidth * 8.0,
-              color: Colors.orange,
-            ),
+
+            // Container(
+            //   height: 4.0,
+            //   width: _screenWidth * 8.0,
+            //   color: Colors.orange,
+            // ),
             SizedBox(
               height: 10.0,
             ),

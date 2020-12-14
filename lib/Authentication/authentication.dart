@@ -18,16 +18,16 @@ class _AuthenticScreenState extends State<AuthenticScreen> {
           flexibleSpace: Container(
             decoration: new BoxDecoration(
               gradient: new LinearGradient(
-                colors: [Colors.blue, Colors.blueGrey],
-                begin: const FractionalOffset(0.0, 0.0 ),
+                colors: [Colors.blue[300], Colors.blue[400]],
+                begin: const FractionalOffset(0.0, 0.0),
                 end: const FractionalOffset(1.0, 0.0),
                 stops:[0.0, 1.0],
               ),
             ),
           ),
           // title: Text(
-          //   "❤️🐱❤️",
-          //   style: TextStyle(fontSize: 55.0, color: Colors.white),
+          //   "🧡 🐱 🧡",
+          //   style: TextStyle(fontSize: 20.0, color: Colors.white),
           // ),
           centerTitle: true,
           bottom: TabBar(
@@ -48,7 +48,7 @@ class _AuthenticScreenState extends State<AuthenticScreen> {
         body: Container(
           decoration: BoxDecoration(
               gradient: new LinearGradient(
-                colors: [Colors.blue, Colors.blueGrey],
+                colors: [Colors.blue[400], Colors.blue[300]],
                 begin: Alignment.topRight,
                 end: Alignment.bottomLeft,
               ),

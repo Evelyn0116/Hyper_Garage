@@ -50,13 +50,17 @@ class _StoreHomeState extends State<StoreHome> {
       child: Scaffold(
           appBar: AppBar(
             title: Text(
-              "🐱find your lovely cat🐱",
+              "find your lovely cat 🔍",
+              style: TextStyle(
+                  fontFamily: "EastSeaDokdo",
+                fontSize: 30
+              ),
             ),
             centerTitle: true,
             flexibleSpace: Container(
               decoration: new BoxDecoration(
                 gradient: new LinearGradient(
-                  colors: [Colors.blue, Colors.blueGrey],
+                  colors: [Colors.blue[300], Colors.blue[400]],
                   begin: const FractionalOffset(0.0, 0.0 ),
                   end: const FractionalOffset(1.0, 0.0),
                   stops:[0.0, 1.0],
@@ -68,8 +72,9 @@ class _StoreHomeState extends State<StoreHome> {
                     child: Text("Logout",
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: 16.0,
-                          fontWeight: FontWeight.bold,
+                          fontSize: 30.0,
+                         // fontWeight: FontWeight.bold,
+                          fontFamily: "EastSeaDokdo"
                         )),
                     onPressed: () {
                       logOut();
@@ -87,7 +92,7 @@ class _StoreHomeState extends State<StoreHome> {
               Navigator.pushReplacement(context, route);
             },
             child: Icon(Icons.add),
-            backgroundColor: Colors.orange,
+            backgroundColor: Colors.amber[400],
           ),
       ),
     );
@@ -127,8 +132,6 @@ class _ShowPostsState extends State<ShowPosts> {
 
   Widget _buildListItem(BuildContext context, DocumentSnapshot dataSnapshot) {
     final model = ItemModel.fromJson(dataSnapshot.data);
-    // PostDetail postItem = new PostDetail(
-    //     record.title, record.price, record.description, record.photos);
   //  MyTextStyle textStyle = new MyTextStyle();
 
     return Center(
@@ -154,15 +157,18 @@ class _ShowPostsState extends State<ShowPosts> {
                     Text(
                       '${model.title}',
                       style: TextStyle(
-                          fontSize: 17,
-                          fontWeight: FontWeight.w500
+                          fontSize: 25,
+                          fontWeight: FontWeight.w500,
+                          fontFamily: "EastSeaDokdo"
                       ),
                     ),
                     Text(
                       '💰\$${model.price}',
                       style: TextStyle(
-                          fontSize: 17,
-                          fontWeight: FontWeight.w500
+                          fontSize: 25,
+                          fontWeight: FontWeight.w500,
+                          fontFamily: "EastSeaDokdo"
+
                       ),
                     )
                   ],

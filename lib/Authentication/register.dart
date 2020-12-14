@@ -97,8 +97,8 @@ class _RegisterState extends State<Register>
             ),
             RaisedButton(
               onPressed:(){uploadAndSaveImage();},
-              color: Colors.orangeAccent,
-              child: Text("Sign up", style: TextStyle(color: Colors.white),),
+              color: Colors.cyanAccent[700],
+              child: Text("Sign up", style: TextStyle(color: Colors.white, fontFamily:"IndieFlower", fontSize: 25),),
             ),
             SizedBox(
               height: 20.0,
@@ -112,7 +112,7 @@ class _RegisterState extends State<Register>
               height: 15.0,
             ),
             Text(
-              "🧡 Welcome to cat world 🧡"
+              "💙 Welcome to cat world 💙"
             )
           ],
         ),

@@ -12,6 +12,10 @@ import 'package:image_picker/image_picker.dart';
 import 'package:hyper_garage/DialogBox/loadingDialog.dart';
 import 'package:image/image.dart' as ImD;
 
+
+FirebaseUser loggedInUser;
+
+
 class UploadPage extends StatefulWidget{
   @override
   _UploadPageState createState() => _UploadPageState();
@@ -19,6 +23,29 @@ class UploadPage extends StatefulWidget{
 }
 
 class _UploadPageState extends State<UploadPage> {
+  final _auth = FirebaseAuth.instance;
+
+  @override
+  void initState() {
+    super.initState();
+    getCurrentUser();
+  }
+  void getCurrentUser() async {
+    try {
+      final user = await _auth.currentUser();
+      if (user != null) {
+        loggedInUser = user;
+        print(loggedInUser.email);
+      }
+    } catch (e) {
+      print(e);
+    }
+  }
+
+  Future<void> logOut() async {
+    FirebaseUser user = _auth.signOut() as FirebaseUser;
+  }
+
   // File file ;
   TextEditingController _descriptionTextEditingController = TextEditingController();
   TextEditingController _priceTextEditingController = TextEditingController();
@@ -28,9 +55,7 @@ class _UploadPageState extends State<UploadPage> {
   List<File> files = [];
   List<String> urls = [];
 
-  // Future<void> logOut() async {
-  //   FirebaseUser user = _auth.signOut() as FirebaseUser;
-  // }
+
 
   @override
   Widget build(BuildContext context) {
@@ -40,6 +65,16 @@ class _UploadPageState extends State<UploadPage> {
   displayNewPostScreen() {
     return Scaffold(
       appBar: AppBar(
+          flexibleSpace: Container(
+            decoration: new BoxDecoration(
+              gradient: new LinearGradient(
+                colors: [Colors.blue[300], Colors.blue[400]],
+                begin: const FractionalOffset(0.0, 0.0 ),
+                end: const FractionalOffset(1.0, 0.0),
+                stops:[0.0, 1.0],
+              ),
+            ),
+          ),
           leading: IconButton(
               icon: Icon(Icons.arrow_back_ios, color: Colors.white),
               onPressed: () {
@@ -51,12 +86,13 @@ class _UploadPageState extends State<UploadPage> {
             FlatButton(
                 child: Text("Logout",
                     style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16.0,
-                      fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                        fontSize: 30.0,
+                        // fontWeight: FontWeight.bold,
+                        fontFamily: "EastSeaDokdo"
                     )),
                 onPressed: () {
-                 // logOut();
+                  logOut();
                   Route route = MaterialPageRoute(builder: (c) => SplashScreen());
                   Navigator.pushReplacement(context, route);
                 }
@@ -70,8 +106,8 @@ class _UploadPageState extends State<UploadPage> {
           Route route = MaterialPageRoute(builder: (_) => StoreHome());
           Navigator.pushReplacement(context, route);
         },
-        child: Icon(Icons.add),
-        backgroundColor: Colors.orange,
+        child: Icon(Icons.list_alt),
+        backgroundColor: Colors.amber[400],
       ),
     );
   }
@@ -187,8 +223,8 @@ class _UploadPageState extends State<UploadPage> {
                         padding: EdgeInsets.only(top: 20.0),
                         child: RaisedButton(
                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular((9.0))),
-                          child: Text("Add New Items", style: TextStyle(color: Colors.white),),
-                          color: Colors.blueAccent,
+                          child: Text("Add New Items", style: TextStyle(color: Colors.white, fontFamily: "EastSeaDokdo",fontSize: 30),),
+                          color: Colors.blue[400],
                           onPressed: () => uploadImageAndSaveItemInfo(),
                         )
                     ),

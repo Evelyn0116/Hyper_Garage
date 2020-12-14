@@ -27,7 +27,7 @@ class _ProductPageState extends State<ProductPage> {
             flexibleSpace: Container(
               decoration: new BoxDecoration(
                 gradient: new LinearGradient(
-                  colors: [Colors.blue, Colors.blueGrey],
+                  colors: [Colors.blue[300], Colors.blue[400]],
                   begin: const FractionalOffset(0.0, 0.0 ),
                   end: const FractionalOffset(1.0, 0.0),
                   stops:[0.0, 1.0],
@@ -189,5 +189,5 @@ class FullPicture extends StatelessWidget {
   }
 }
 
-const boldTextStyle = TextStyle(fontWeight: FontWeight.bold, fontSize: 20);
+const boldTextStyle = TextStyle(fontWeight: FontWeight.bold, fontSize: 30, fontFamily: "EastSeaDokdo");
 const largeTextStyle = TextStyle(fontWeight: FontWeight.normal, fontSize: 20);

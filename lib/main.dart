@@ -34,7 +34,8 @@ class MyApp extends StatelessWidget {
           '/newpost': (context) => UploadPage(),
           '/login': (context) => AuthenticScreen(),
           '/storehome': (context) => StoreHome(),
-        }
+        },
+        color: Colors.amber[300],
     );
   }
 }
@@ -49,7 +50,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
 
-    displaySplash();
+  //  displaySplash();
   }
 
   displaySplash() {
@@ -74,9 +75,12 @@ class _SplashScreenState extends State<SplashScreen> {
 
                 children: [
                   Text(
-                      "Welcome to Cat World",
-                      style: TextStyle(color: Colors.blue, fontSize: 30)
-
+                      "Welcome to Cat World !",
+                      style: TextStyle(
+                          color: Colors.redAccent[100],
+                          fontSize: 50,
+                          fontFamily: "SueEllenFrancisco",
+                      ),
                   ),
                   SizedBox(height: 20.0),
                   Image.asset("images/welcome2.jpg"),
@@ -84,13 +88,17 @@ class _SplashScreenState extends State<SplashScreen> {
                   SizedBox(height: 20.0),
                   FlatButton(
                       padding: EdgeInsets.all(5.0),
-                      color: Colors.blue,
+                      color: Colors.redAccent[100],
                       textColor: Colors.white,
                       onPressed: () {
                         Navigator.pushNamed(context, '/login');
                       },
                       child: Text(
                         "Login or Register",
+                        style: TextStyle(
+                          fontFamily:"IndieFlower",
+                          fontSize: 20,
+                        ),
                       )
                   ),
                   // FlatButton(
