@@ -25,10 +25,10 @@ class _AuthenticScreenState extends State<AuthenticScreen> {
               ),
             ),
           ),
-          title: Text(
-            "cats",
-            style: TextStyle(fontSize: 55.0, color: Colors.white),
-          ),
+          // title: Text(
+          //   "❤️🐱❤️",
+          //   style: TextStyle(fontSize: 55.0, color: Colors.white),
+          // ),
           centerTitle: true,
           bottom: TabBar(
             tabs:[

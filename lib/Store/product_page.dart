@@ -21,19 +21,19 @@ class _ProductPageState extends State<ProductPage> {
     return SafeArea(
       child: Scaffold(
           appBar: AppBar(
-              iconTheme: IconThemeData(
-                color: Colors.white,
+            iconTheme: IconThemeData(
+              color: Colors.white,
+            ),
+            flexibleSpace: Container(
+              decoration: new BoxDecoration(
+                gradient: new LinearGradient(
+                  colors: [Colors.blue, Colors.blueGrey],
+                  begin: const FractionalOffset(0.0, 0.0 ),
+                  end: const FractionalOffset(1.0, 0.0),
+                  stops:[0.0, 1.0],
+                ),
               ),
-              flexibleSpace: Container(
-                  decoration: new BoxDecoration(
-                    gradient: new LinearGradient(
-                      colors: [Colors.blue, Colors.blueGrey],
-                      begin: const FractionalOffset(0.0, 0.0 ),
-                      end: const FractionalOffset(1.0, 0.0),
-                      stops:[0.0, 1.0],
-                    ),
-                  ),
-              ),
+            ),
             centerTitle: true,
             title: Text(
               "🐱",
@@ -54,10 +54,10 @@ class _ProductPageState extends State<ProductPage> {
                         children: [
                           Center(
                             child: SmallPicture(
-                                  tag: 'thumbnailUrl', imagePath: widget.itemModel.thumbnailUrl
-                                  ),
-                              // width: screenSize.width * 0.85,
-                              // height: 300.0,
+                                tag: 'thumbnailUrl', imagePath: widget.itemModel.thumbnailUrl
+                            ),
+                            // width: screenSize.width * 0.85,
+                            // height: 300.0,
 
                           ),
                           Container(
@@ -121,20 +121,20 @@ class _ProductPageState extends State<ProductPage> {
                           height: 8.0
                       ),
 
-                       widget.itemModel.image3 == null ?
-                       Text("") :
-                       SmallPicture(
-                           tag: 'picture3', imagePath: widget.itemModel.image3),
-                       SizedBox(
+                      widget.itemModel.image3 == null ?
+                      Text("") :
+                      SmallPicture(
+                          tag: 'picture3', imagePath: widget.itemModel.image3),
+                      SizedBox(
                           height: 8.0
-                       ),
+                      ),
                     ],
                   )
               )
             ],
           )
-        ),
-      );
+      ),
+    );
   }
 }
 

@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:hyper_garage/DialogBox/errorDialog.dart';
 import 'package:hyper_garage/Store/storehome.dart';
@@ -27,6 +28,10 @@ class _UploadPageState extends State<UploadPage> {
   List<File> files = [];
   List<String> urls = [];
 
+  // Future<void> logOut() async {
+  //   FirebaseUser user = _auth.signOut() as FirebaseUser;
+  // }
+
   @override
   Widget build(BuildContext context) {
     return displayNewPostScreen();
@@ -34,30 +39,31 @@ class _UploadPageState extends State<UploadPage> {
 
   displayNewPostScreen() {
     return Scaffold(
-        appBar: AppBar(
-            leading: IconButton(
-                icon: Icon(Icons.arrow_back_ios, color: Colors.white),
+      appBar: AppBar(
+          leading: IconButton(
+              icon: Icon(Icons.arrow_back_ios, color: Colors.white),
+              onPressed: () {
+                Route route = MaterialPageRoute(builder: (c) => StoreHome());
+                Navigator.pushReplacement(context, route);
+              }
+          ),
+          actions: [
+            FlatButton(
+                child: Text("Logout",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.bold,
+                    )),
                 onPressed: () {
-                  Route route = MaterialPageRoute(builder: (c) => StoreHome());
+                 // logOut();
+                  Route route = MaterialPageRoute(builder: (c) => SplashScreen());
                   Navigator.pushReplacement(context, route);
                 }
-            ),
-            actions: [
-              FlatButton(
-                  child: Text("Logout",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 16.0,
-                        fontWeight: FontWeight.bold,
-                      )),
-                  onPressed: () {
-                    Route route = MaterialPageRoute(builder: (c) => SplashScreen());
-                    Navigator.pushReplacement(context, route);
-                  }
-              )
-            ]
-        ),
-        body: getNewPostBody(),
+            )
+          ]
+      ),
+      body: getNewPostBody(),
       floatingActionButton: FloatingActionButton(
         //  icon: Icon(Icons.add, color: Colors.blue,),
         onPressed: () {
@@ -354,7 +360,7 @@ class _UploadPageState extends State<UploadPage> {
       }
     }
   }
-  
+
   void showSnackBar(BuildContext context){
     Scaffold.of(context).showSnackBar(SnackBar(content: Text('A new item is posted')));
   }

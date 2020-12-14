@@ -7,9 +7,9 @@ import 'package:hyper_garage/Store/product_page.dart';
 import 'package:hyper_garage/Widgets/loadingWidget.dart';
 import '../Models/item.dart';
 import '../NewPost/UploadItems.dart';
+import '../main.dart';
 
 double width;
-final _firestore = Firestore.instance;
 FirebaseUser loggedInUser;
 
 class StoreHome extends StatefulWidget {
@@ -39,6 +39,10 @@ class _StoreHomeState extends State<StoreHome> {
     }
   }
 
+  Future<void> logOut() async {
+    FirebaseUser user = _auth.signOut() as FirebaseUser;
+  }
+
   @override
   Widget build(BuildContext context) {
     width = MediaQuery.of(context).size.width;
@@ -49,6 +53,31 @@ class _StoreHomeState extends State<StoreHome> {
               "🐱find your lovely cat🐱",
             ),
             centerTitle: true,
+            flexibleSpace: Container(
+              decoration: new BoxDecoration(
+                gradient: new LinearGradient(
+                  colors: [Colors.blue, Colors.blueGrey],
+                  begin: const FractionalOffset(0.0, 0.0 ),
+                  end: const FractionalOffset(1.0, 0.0),
+                  stops:[0.0, 1.0],
+                ),
+              ),
+            ),
+              actions: [
+                FlatButton(
+                    child: Text("Logout",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16.0,
+                          fontWeight: FontWeight.bold,
+                        )),
+                    onPressed: () {
+                      logOut();
+                      Route route = MaterialPageRoute(builder: (c) => SplashScreen());
+                      Navigator.pushReplacement(context, route);
+                    }
+                )
+              ]
           ),
           body:  ShowPosts(),
           floatingActionButton: FloatingActionButton(
@@ -110,7 +139,11 @@ class _ShowPostsState extends State<ShowPosts> {
             GestureDetector(
               child: ListTile(
                 leading:
-                Image.network(model.thumbnailUrl),
+                Image.network(
+                    model.thumbnailUrl,
+                    height: 40.0,
+                    width:40.0,
+                ),
                 /*Text(
                   '\$${record.price}',
                   style: textStyle.get('price'),

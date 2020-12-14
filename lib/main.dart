@@ -49,18 +49,18 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
 
-    //   displaySplash();
+    displaySplash();
   }
 
   displaySplash() {
-   Timer(Duration(seconds: 5), () async {
-    if(await HyperGarageApp.auth.currentUser() != null) {
-       // Route route = MaterialPageRoute(builder: (_) => StoreHome());
-       // Navigator.pushReplacement(context, route);
-     } else {
-       Route route = MaterialPageRoute(builder: (_) => AuthenticScreen());
-       Navigator.pushReplacement(context, route);
-     }
+    Timer(Duration(seconds: 5), () async {
+      if(await HyperGarageApp.auth.currentUser() != null) {
+        Route route = MaterialPageRoute(builder: (_) => StoreHome());
+        Navigator.pushReplacement(context, route);
+      } else {
+        Route route = MaterialPageRoute(builder: (_) => AuthenticScreen());
+        Navigator.pushReplacement(context, route);
+      }
     });
   }
 
@@ -90,7 +90,7 @@ class _SplashScreenState extends State<SplashScreen> {
                         Navigator.pushNamed(context, '/login');
                       },
                       child: Text(
-                          "Login",
+                        "Login or Register",
                       )
                   ),
                   // FlatButton(
@@ -108,4 +108,3 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
 }
-

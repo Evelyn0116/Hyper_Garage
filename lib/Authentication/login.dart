@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hyper_garage/Config/config.dart';
 import 'package:hyper_garage/DialogBox/errorDialog.dart';
+import 'package:hyper_garage/DialogBox/loadingDialog.dart';
 import 'package:hyper_garage/Store/storehome.dart';
 import 'package:hyper_garage/Widgets/customTextField.dart';
 import '../NewPost/UploadItems.dart';
@@ -77,7 +78,7 @@ class _LoginState extends State<Login>
                     }
                 );
               },
-              color: Colors.blue,
+              color: Colors.orangeAccent,
               child: Text("Log in", style: TextStyle(color: Colors.white),),
             ),
             SizedBox(
@@ -105,44 +106,44 @@ class _LoginState extends State<Login>
 
 
   FirebaseAuth _auth = FirebaseAuth.instance;
-// TODO: authenticate user
-  void loginUser() {
-    Route route = MaterialPageRoute(builder: (_) => StoreHome());
-    Navigator.pushReplacement(context, route);
-  }
+// // TODO: authenticate user
+//   void loginUser() {
+//     Route route = MaterialPageRoute(builder: (_) => StoreHome());
+//     Navigator.pushReplacement(context, route);
+//   }
 
-  // void loginUser() async {
-  //   showDialog(
-  //     context: context,
-  //     builder: (c) {
-  //       return LoadingAlertDialog(message: "Authenticating, Please wait..",);
-  //     }
-  //   );
-  //
-  //   FirebaseUser firebaseUser;
-  //   await _auth.signInWithEmailAndPassword(
-  //     email: _emailTextEditingController.text.trim(),
-  //     password: _passwordTextEditingController.text.trim(),
-  //   ).then((authUser) {
-  //     firebaseUser = authUser.user;
-  //   }).catchError((error) {
-  //     Navigator.pop(context);
-  //     showDialog(
-  //       context: context,
-  //       builder: (c) {
-  //         return ErrorAlertDialog(message: error.message.toString(),);
-  //       }
-  //     );
-  //   });
-  //
-  //   if (firebaseUser != null) {
-  //     readData(firebaseUser).then((s) {
-  //       Navigator.pop(context);
-  //       Route route = MaterialPageRoute(builder: (c) => StoreHome());
-  //       Navigator.pushReplacement(context, route);
-  //     });
-  //   }
-  // }
+  void loginUser() async {
+    showDialog(
+      context: context,
+      builder: (c) {
+        return LoadingAlertDialog(message: "Authenticating, Please wait..",);
+      }
+    );
+
+    FirebaseUser firebaseUser;
+    await _auth.signInWithEmailAndPassword(
+      email: _emailTextEditingController.text.trim(),
+      password: _passwordTextEditingController.text.trim(),
+    ).then((authUser) {
+      firebaseUser = authUser.user;
+    }).catchError((error) {
+      Navigator.pop(context);
+      showDialog(
+        context: context,
+        builder: (c) {
+          return ErrorAlertDialog(message: error.message.toString(),);
+        }
+      );
+    });
+
+    if (firebaseUser != null) {
+      readData(firebaseUser).then((s) {
+        Navigator.pop(context);
+        Route route = MaterialPageRoute(builder: (c) => StoreHome());
+        Navigator.pushReplacement(context, route);
+      });
+    }
+  }
 
   Future readData(FirebaseUser fUser) async{
     Firestore.instance.collection("MFUser").document(fUser.uid).get().then((dataSnapshot)
