@@ -10,8 +10,6 @@ import 'package:hyper_garage/main.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:hyper_garage/DialogBox/loadingDialog.dart';
-import 'package:image/image.dart' as ImD;
 
 FirebaseUser loggedInUser;
 
@@ -22,6 +20,7 @@ class UploadPage extends StatefulWidget {
 
 class _UploadPageState extends State<UploadPage> {
   final _auth = FirebaseAuth.instance;
+  GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
@@ -62,6 +61,7 @@ class _UploadPageState extends State<UploadPage> {
 
   displayNewPostScreen() {
     return Scaffold(
+      key: scaffoldKey,
       appBar: AppBar(
           flexibleSpace: Container(
             decoration: new BoxDecoration(
@@ -73,13 +73,7 @@ class _UploadPageState extends State<UploadPage> {
               ),
             ),
           ),
-          // leading: IconButton(
-          //     icon: Icon(Icons.arrow_back_ios, color: Colors.white),
-          //     onPressed: () {
-          //       Route route = MaterialPageRoute(builder: (c) => StoreHome());
-          //       Navigator.pushReplacement(context, route);
-          //     }
-          //     ),
+
           actions: [
             FlatButton(
                 child: Text("Logout",
@@ -235,7 +229,7 @@ class _UploadPageState extends State<UploadPage> {
                           fontSize: 23),
                     ),
                     color: Colors.blue[400],
-                    onPressed: () => uploadImageAndSaveItemInfo(),
+                    onPressed: () => uploadImageAndSaveItemInfo(context),
                   )),
             ]),
           ),
@@ -335,10 +329,6 @@ class _UploadPageState extends State<UploadPage> {
     File imageFile = await ImagePicker.pickImage(
         source: ImageSource.camera, maxHeight: 680.0, maxWidth: 970.0);
 
-    // setState(() {
-    //   file = imageFile;
-    // });
-
     setState(() {
       files.add(imageFile);
     });
@@ -347,10 +337,6 @@ class _UploadPageState extends State<UploadPage> {
   selectFromGallery() async {
     Navigator.pop(context);
     File imageFile = await ImagePicker.pickImage(source: ImageSource.gallery);
-
-    // setState(() {
-    //   file = imageFile;
-    // });
 
     setState(() {
       files.add(imageFile);
@@ -366,7 +352,7 @@ class _UploadPageState extends State<UploadPage> {
     });
   }
 
-  uploadImageAndSaveItemInfo() async {
+  uploadImageAndSaveItemInfo(BuildContext mContext) async {
     if (files.length < 0) {
       showDialog(
           context: context,
@@ -389,18 +375,12 @@ class _UploadPageState extends State<UploadPage> {
         }
 
         saveItemInfo(urls);
-        displayDialog("Upload successfully");
-        //TODO: notification
-        showSnackBar(context);
+        // displayDialog("Upload Successfully");
+        showSnackBar(mContext);
       } else {
         displayDialog("Please fill up the form ");
       }
     }
-  }
-
-  void showSnackBar(BuildContext context) {
-    Scaffold.of(context)
-        .showSnackBar(SnackBar(content: Text('A new item is posted')));
   }
 
   Future<String> uploadItemImage(mFileImage, i) async {
@@ -432,7 +412,6 @@ class _UploadPageState extends State<UploadPage> {
     });
 
     setState(() {
-      // file = null;
       files.clear();
       uploading = false;
       productId = DateTime.now().millisecondsSinceEpoch.toString();
@@ -450,5 +429,10 @@ class _UploadPageState extends State<UploadPage> {
             message: msg,
           );
         });
+  }
+
+  showSnackBar(BuildContext context) {
+    final snackBar = SnackBar(content: Text('Upload Successfully'));
+    scaffoldKey.currentState.showSnackBar(snackBar);
   }
 }
