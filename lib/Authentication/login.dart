@@ -14,11 +14,11 @@ class Login extends StatefulWidget {
   _LoginState createState() => _LoginState();
 }
 
-class _LoginState extends State<Login>
-{
-
-  final TextEditingController _emailTextEditingController = TextEditingController();
-  final TextEditingController _passwordTextEditingController = TextEditingController();
+class _LoginState extends State<Login> {
+  final TextEditingController _emailTextEditingController =
+      TextEditingController();
+  final TextEditingController _passwordTextEditingController =
+      TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   @override
@@ -77,19 +77,26 @@ class _LoginState extends State<Login>
             ),
             RaisedButton(
               // onPressed:(){uploadAndSaveImage();},
-              onPressed:() {
-                _emailTextEditingController.text.isNotEmpty
-                    && _passwordTextEditingController.text.isNotEmpty
+              onPressed: () {
+                _emailTextEditingController.text.isNotEmpty &&
+                        _passwordTextEditingController.text.isNotEmpty
                     ? loginUser()
-                    : showDialog (
-                    context: context,
-                    builder: (c) {
-                      return ErrorAlertDialog(message: "please fill in the form",);
-                    }
-                );
+                    : showDialog(
+                        context: context,
+                        builder: (c) {
+                          return ErrorAlertDialog(
+                            message: "please fill in the form",
+                          );
+                        });
               },
               color: Colors.cyanAccent[700],
-              child: Text("Log in", style: TextStyle(color: Colors.white, fontFamily: "IndieFlower", fontSize: 25),),
+              child: Text(
+                "Log in",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontFamily: "IndieFlower",
+                    fontSize: 25),
+              ),
             ),
 
             // Container(
@@ -111,9 +118,8 @@ class _LoginState extends State<Login>
     );
   }
 
-
-
   FirebaseAuth _auth = FirebaseAuth.instance;
+
 // // TODO: authenticate user
 //   void loginUser() {
 //     Route route = MaterialPageRoute(builder: (_) => StoreHome());
@@ -122,26 +128,30 @@ class _LoginState extends State<Login>
 
   void loginUser() async {
     showDialog(
-      context: context,
-      builder: (c) {
-        return LoadingAlertDialog(message: "Authenticating, Please wait..",);
-      }
-    );
+        context: context,
+        builder: (c) {
+          return LoadingAlertDialog(
+            message: "Authenticating, Please wait..",
+          );
+        });
 
     FirebaseUser firebaseUser;
-    await _auth.signInWithEmailAndPassword(
+    await _auth
+        .signInWithEmailAndPassword(
       email: _emailTextEditingController.text.trim(),
       password: _passwordTextEditingController.text.trim(),
-    ).then((authUser) {
+    )
+        .then((authUser) {
       firebaseUser = authUser.user;
     }).catchError((error) {
       Navigator.pop(context);
       showDialog(
-        context: context,
-        builder: (c) {
-          return ErrorAlertDialog(message: error.message.toString(),);
-        }
-      );
+          context: context,
+          builder: (c) {
+            return ErrorAlertDialog(
+              message: error.message.toString(),
+            );
+          });
     });
 
     if (firebaseUser != null) {
@@ -153,21 +163,25 @@ class _LoginState extends State<Login>
     }
   }
 
-  Future readData(FirebaseUser fUser) async{
-    Firestore.instance.collection("MFUser").document(fUser.uid).get().then((dataSnapshot)
-    async{
-      await HyperGarageApp.sharedPreferences.setString(
-          "uid", dataSnapshot.data[HyperGarageApp.userUID]);
-      await HyperGarageApp.sharedPreferences.setString(
-          HyperGarageApp.userEmail, dataSnapshot.data[HyperGarageApp.userEmail]);
+  Future readData(FirebaseUser fUser) async {
+    Firestore.instance
+        .collection("MFUser")
+        .document(fUser.uid)
+        .get()
+        .then((dataSnapshot) async {
+      await HyperGarageApp.sharedPreferences
+          .setString("uid", dataSnapshot.data[HyperGarageApp.userUID]);
+      await HyperGarageApp.sharedPreferences.setString(HyperGarageApp.userEmail,
+          dataSnapshot.data[HyperGarageApp.userEmail]);
       await HyperGarageApp.sharedPreferences.setString(
           HyperGarageApp.userName, dataSnapshot.data[HyperGarageApp.userName]);
       await HyperGarageApp.sharedPreferences.setString(
-          HyperGarageApp.userAvatarUrl, dataSnapshot.data[HyperGarageApp.userAvatarUrl]);
-      List<String> cartList = dataSnapshot.data[HyperGarageApp.userCartList].cast<String>();
-      await HyperGarageApp.sharedPreferences.setStringList(
-          HyperGarageApp.userCartList, cartList);
-
+          HyperGarageApp.userAvatarUrl,
+          dataSnapshot.data[HyperGarageApp.userAvatarUrl]);
+      List<String> cartList =
+          dataSnapshot.data[HyperGarageApp.userCartList].cast<String>();
+      await HyperGarageApp.sharedPreferences
+          .setStringList(HyperGarageApp.userCartList, cartList);
     });
   }
 }

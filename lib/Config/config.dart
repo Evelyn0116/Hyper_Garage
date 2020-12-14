@@ -3,14 +3,13 @@ import 'package:firebase_auth/firebase_auth.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
 
-class HyperGarageApp
-{
+class HyperGarageApp {
   static const String appName = 'hyper-garage';
 
   static SharedPreferences sharedPreferences;
   static FirebaseUser user;
   static FirebaseAuth auth;
-  static Firestore firestore ;
+  static Firestore firestore;
 
   static String collectionUser = "MFItems";
   static String collectionOrders = "orders";
@@ -26,8 +25,7 @@ class HyperGarageApp
   static final String addressID = 'addressID';
   static final String totalAmount = 'totalAmount';
   static final String productID = 'productIDs';
-  static final String paymentDetails ='paymentDetails';
-  static final String orderTime ='orderTime';
-  static final String isSuccess ='isSuccess';
-
+  static final String paymentDetails = 'paymentDetails';
+  static final String orderTime = 'orderTime';
+  static final String isSuccess = 'isSuccess';
 }

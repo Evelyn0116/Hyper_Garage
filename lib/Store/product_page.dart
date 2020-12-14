@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import '../Models/item.dart';
 
 class ProductPage extends StatefulWidget {
-
   final ItemModel itemModel;
+
   ProductPage({this.itemModel});
 
   @override
@@ -11,12 +11,10 @@ class ProductPage extends StatefulWidget {
 }
 
 class _ProductPageState extends State<ProductPage> {
-
   int quantityOfItems = 1;
 
   @override
-  Widget build(BuildContext context)
-  {
+  Widget build(BuildContext context) {
     Size screenSize = MediaQuery.of(context).size;
     return SafeArea(
       child: Scaffold(
@@ -28,9 +26,9 @@ class _ProductPageState extends State<ProductPage> {
               decoration: new BoxDecoration(
                 gradient: new LinearGradient(
                   colors: [Colors.blue[300], Colors.blue[400]],
-                  begin: const FractionalOffset(0.0, 0.0 ),
+                  begin: const FractionalOffset(0.0, 0.0),
                   end: const FractionalOffset(1.0, 0.0),
-                  stops:[0.0, 1.0],
+                  stops: [0.0, 1.0],
                 ),
               ),
             ),
@@ -54,86 +52,64 @@ class _ProductPageState extends State<ProductPage> {
                         children: [
                           Center(
                             child: SmallPicture(
-                                tag: 'thumbnailUrl', imagePath: widget.itemModel.thumbnailUrl
-                            ),
+                                tag: 'thumbnailUrl',
+                                imagePath: widget.itemModel.thumbnailUrl),
                             // width: screenSize.width * 0.85,
                             // height: 300.0,
-
                           ),
                           Container(
                               color: Colors.grey[300],
                               child: SizedBox(
                                 height: 1.0,
                                 width: double.infinity,
-                              )
-                          )
+                              ))
                         ],
                       ),
                       Container(
                           padding: EdgeInsets.all(20.0),
                           child: Center(
                               child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    widget.itemModel.title.toUpperCase(),
-                                    style: boldTextStyle,
-                                  ),
-                                  SizedBox(
-                                      height: 10.0
-                                  ),
-
-                                  Text(
-                                    "💰" + widget.itemModel.price.toString(),
-                                    style: boldTextStyle,
-                                  ),
-                                  SizedBox(
-                                      height: 10.0
-                                  ),
-
-                                  Text(
-                                    widget.itemModel.description,
-                                  ),
-                                  SizedBox(
-                                      height: 10.0
-                                  ),
-                                ],
-                              )
-                          )
-                      ),
-                      widget.itemModel.image1 == null ?
-                      Text("") :
-                      SmallPicture(
-                          tag: 'picture1', imagePath: widget.itemModel.image1),
-                      SizedBox(
-                          height: 8.0
-                      ),
-
-                      widget.itemModel.image2 == null ?
-                      Text("") :
-                      SmallPicture(
-                          tag: 'picture2', imagePath: widget.itemModel.image2),
-                      SizedBox(
-                          height: 8.0
-                      ),
-
-                      SizedBox(
-                          height: 8.0
-                      ),
-
-                      widget.itemModel.image3 == null ?
-                      Text("") :
-                      SmallPicture(
-                          tag: 'picture3', imagePath: widget.itemModel.image3),
-                      SizedBox(
-                          height: 8.0
-                      ),
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Text(
+                                widget.itemModel.title.toUpperCase(),
+                                style: boldTextStyle,
+                              ),
+                              SizedBox(height: 10.0),
+                              Text(
+                                "💰" + widget.itemModel.price.toString(),
+                                style: boldTextStyle,
+                              ),
+                              SizedBox(height: 10.0),
+                              Text(
+                                widget.itemModel.description,
+                              ),
+                              SizedBox(height: 10.0),
+                            ],
+                          ))),
+                      widget.itemModel.image1 == null
+                          ? Text("")
+                          : SmallPicture(
+                              tag: 'picture1',
+                              imagePath: widget.itemModel.image1),
+                      SizedBox(height: 8.0),
+                      widget.itemModel.image2 == null
+                          ? Text("")
+                          : SmallPicture(
+                              tag: 'picture2',
+                              imagePath: widget.itemModel.image2),
+                      SizedBox(height: 8.0),
+                      SizedBox(height: 8.0),
+                      widget.itemModel.image3 == null
+                          ? Text("")
+                          : SmallPicture(
+                              tag: 'picture3',
+                              imagePath: widget.itemModel.image3),
+                      SizedBox(height: 8.0),
                     ],
-                  )
-              )
+                  ))
             ],
-          )
-      ),
+          )),
     );
   }
 }
@@ -158,7 +134,7 @@ class SmallPicture extends StatelessWidget {
       child: Hero(
         tag: tag,
         child: Container(
-            width: MediaQuery.of(context).size.width *0.8,
+            width: MediaQuery.of(context).size.width * 0.8,
             child: Image.network(imagePath)),
       ),
     );
@@ -189,5 +165,6 @@ class FullPicture extends StatelessWidget {
   }
 }
 
-const boldTextStyle = TextStyle(fontWeight: FontWeight.bold, fontSize: 30, fontFamily: "EastSeaDokdo");
+const boldTextStyle = TextStyle(
+    fontWeight: FontWeight.bold, fontSize: 25, fontFamily: "IndieFlower");
 const largeTextStyle = TextStyle(fontWeight: FontWeight.normal, fontSize: 20);

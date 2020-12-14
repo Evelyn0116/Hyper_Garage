@@ -1,4 +1,3 @@
-
 import 'dart:io';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -13,40 +12,48 @@ import 'package:hyper_garage/Store/storehome.dart';
 import 'package:hyper_garage/Widgets/customTextField.dart';
 import 'package:image_picker/image_picker.dart';
 
-
 class Register extends StatefulWidget {
   @override
   _RegisterState createState() => _RegisterState();
 }
 
-
-
-class _RegisterState extends State<Register>
-{
-  final TextEditingController _nameTextEditingController = TextEditingController();
-  final TextEditingController _emailTextEditingController = TextEditingController();
-  final TextEditingController _passwordTextEditingController = TextEditingController();
-  final TextEditingController _cPasswordTextEditingController = TextEditingController();
+class _RegisterState extends State<Register> {
+  final TextEditingController _nameTextEditingController =
+      TextEditingController();
+  final TextEditingController _emailTextEditingController =
+      TextEditingController();
+  final TextEditingController _passwordTextEditingController =
+      TextEditingController();
+  final TextEditingController _cPasswordTextEditingController =
+      TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   String userImageUrl = "";
- // File _imageFile;
+
+  // File _imageFile;
 
   @override
   Widget build(BuildContext context) {
-    double _screenWidth = MediaQuery
-        .of(context)
-        .size
-        .width,
-        _screenHeight = MediaQuery
-            .of(context)
-            .size
-            .height;
+    double _screenWidth = MediaQuery.of(context).size.width,
+        _screenHeight = MediaQuery.of(context).size.height;
     return SingleChildScrollView(
       child: Container(
         child: Column(
           mainAxisSize: MainAxisSize.max,
           children: [
-            SizedBox(height: 40.0,),
+            SizedBox(
+              height: 30.0,
+            ),
+            Text(
+              "💙 Welcome to cat world 💙",
+              style: TextStyle(
+                  fontFamily: "SueEllenFrancisco",
+                  color: Colors.white,
+                  fontSize: 30),
+            ),
+            SizedBox(
+              height: 10.0,
+            ),
+
             // InkWell(
             //   onTap: _selectAndPickImage,
             //   child: CircleAvatar(
@@ -96,9 +103,17 @@ class _RegisterState extends State<Register>
               height: 20.0,
             ),
             RaisedButton(
-              onPressed:(){uploadAndSaveImage();},
+              onPressed: () {
+                uploadAndSaveImage();
+              },
               color: Colors.cyanAccent[700],
-              child: Text("Sign up", style: TextStyle(color: Colors.white, fontFamily:"IndieFlower", fontSize: 25),),
+              child: Text(
+                "Sign up",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontFamily: "IndieFlower",
+                    fontSize: 25),
+              ),
             ),
             SizedBox(
               height: 20.0,
@@ -109,23 +124,19 @@ class _RegisterState extends State<Register>
             //   color: Colors.orange,
             // ),
             SizedBox(
-              height: 15.0,
+              height: 10.0,
             ),
-            Text(
-              "💙 Welcome to cat world 💙"
-            )
           ],
         ),
       ),
     );
   }
 
-
   // Future<void> _selectAndPickImage() async{
   //   _imageFile = await ImagePicker.pickImage(source: ImageSource.gallery);
   // }
 
-  Future<void> uploadAndSaveImage() async{
+  Future<void> uploadAndSaveImage() async {
     // if (_imageFile == null) {
     //   showDialog(
     //       context: context,
@@ -134,50 +145,48 @@ class _RegisterState extends State<Register>
     //       }
     //   );
     // } else {
-      _passwordTextEditingController.text == _cPasswordTextEditingController.text
-
-          ? _emailTextEditingController.text.isNotEmpty &&
-          _passwordTextEditingController.text.isNotEmpty &&
-          _cPasswordTextEditingController.text.isNotEmpty &&
-          _nameTextEditingController.text.isNotEmpty
-
-          ? uploadToStorage()
-
-          : displayDialog("Please fill up the registration form ")
-
-          : displayDialog("Password do not match");
-  // }
+    _passwordTextEditingController.text == _cPasswordTextEditingController.text
+        ? _emailTextEditingController.text.isNotEmpty &&
+                _passwordTextEditingController.text.isNotEmpty &&
+                _cPasswordTextEditingController.text.isNotEmpty &&
+                _nameTextEditingController.text.isNotEmpty
+            ? uploadToStorage()
+            : displayDialog("Please fill up the registration form ")
+        : displayDialog("Password do not match");
+    // }
   }
 
   displayDialog(String msg) {
     showDialog(
         context: context,
         builder: (c) {
-          return ErrorAlertDialog(message: msg,);
-        }
-    );
+          return ErrorAlertDialog(
+            message: msg,
+          );
+        });
   }
 
   uploadToStorage() async {
     showDialog(
         context: context,
         builder: (c) {
-          return LoadingAlertDialog(message: "'Authenticating, Please wait...'",);
-        }
-    );
+          return LoadingAlertDialog(
+            message: "'Authenticating, Please wait...'",
+          );
+        });
 
-   // String imageFileName = DateTime.now().millisecondsSinceEpoch.toString();
+    // String imageFileName = DateTime.now().millisecondsSinceEpoch.toString();
 
-   //  StorageReference storageReference = FirebaseStorage.instance.ref().child(imageFileName);
-   //
-   // StorageUploadTask storageUploadTask = storageReference.putFile(_imageFile);
-   //
-   // StorageTaskSnapshot taskSnapshot = await storageUploadTask.onComplete;
-   //
-   //  await taskSnapshot.ref.getDownloadURL().then((urlImage){
-   //   userImageUrl = urlImage;
-       _registerUser();
-   // });
+    //  StorageReference storageReference = FirebaseStorage.instance.ref().child(imageFileName);
+    //
+    // StorageUploadTask storageUploadTask = storageReference.putFile(_imageFile);
+    //
+    // StorageTaskSnapshot taskSnapshot = await storageUploadTask.onComplete;
+    //
+    //  await taskSnapshot.ref.getDownloadURL().then((urlImage){
+    //   userImageUrl = urlImage;
+    _registerUser();
+    // });
   }
 
   FirebaseAuth _auth = FirebaseAuth.instance;
@@ -185,20 +194,22 @@ class _RegisterState extends State<Register>
   void _registerUser() async {
     FirebaseUser firebaseUser;
 
-    await _auth.createUserWithEmailAndPassword(
+    await _auth
+        .createUserWithEmailAndPassword(
       email: _emailTextEditingController.text.trim(),
       password: _passwordTextEditingController.text.trim(),
-    ).then((auth){
+    )
+        .then((auth) {
       firebaseUser = auth.user;
-    }).catchError((error){
+    }).catchError((error) {
       Navigator.pop(context);
       showDialog(
           context: context,
           builder: (c) {
-            return ErrorAlertDialog(message: error.message.toString(),);
-
-          }
-      );
+            return ErrorAlertDialog(
+              message: error.message.toString(),
+            );
+          });
     });
 
     if (firebaseUser != null) {
@@ -212,18 +223,21 @@ class _RegisterState extends State<Register>
 
   Future saveUserInfoToFireStore(FirebaseUser fUser) async {
     Firestore.instance.collection("MFUsers").document(fUser.uid).setData({
-      "uid":fUser.uid,
+      "uid": fUser.uid,
       "email": fUser.email,
       "name": _nameTextEditingController.text.trim(),
-      "url":userImageUrl,
-      HyperGarageApp.userCartList:["garbageValue"],
+      "url": userImageUrl,
+      HyperGarageApp.userCartList: ["garbageValue"],
     });
 
     await HyperGarageApp.sharedPreferences.setString("uid", fUser.uid);
-    await HyperGarageApp.sharedPreferences.setString(HyperGarageApp.userEmail, fUser.email);
-    await HyperGarageApp.sharedPreferences.setString(HyperGarageApp.userName, _nameTextEditingController.text);
-    await HyperGarageApp.sharedPreferences.setString(HyperGarageApp.userAvatarUrl, userImageUrl);
-    await HyperGarageApp.sharedPreferences.setStringList(HyperGarageApp.userCartList, ["garbageValue"]);
-
+    await HyperGarageApp.sharedPreferences
+        .setString(HyperGarageApp.userEmail, fUser.email);
+    await HyperGarageApp.sharedPreferences
+        .setString(HyperGarageApp.userName, _nameTextEditingController.text);
+    await HyperGarageApp.sharedPreferences
+        .setString(HyperGarageApp.userAvatarUrl, userImageUrl);
+    await HyperGarageApp.sharedPreferences
+        .setStringList(HyperGarageApp.userCartList, ["garbageValue"]);
   }
 }

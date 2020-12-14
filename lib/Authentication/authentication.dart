@@ -21,7 +21,7 @@ class _AuthenticScreenState extends State<AuthenticScreen> {
                 colors: [Colors.blue[300], Colors.blue[400]],
                 begin: const FractionalOffset(0.0, 0.0),
                 end: const FractionalOffset(1.0, 0.0),
-                stops:[0.0, 1.0],
+                stops: [0.0, 1.0],
               ),
             ),
           ),
@@ -31,13 +31,19 @@ class _AuthenticScreenState extends State<AuthenticScreen> {
           // ),
           centerTitle: true,
           bottom: TabBar(
-            tabs:[
+            tabs: [
               Tab(
-                icon: Icon(Icons.lock, color: Colors.white,),
+                icon: Icon(
+                  Icons.lock,
+                  color: Colors.white,
+                ),
                 text: "Login",
               ),
               Tab(
-                icon: Icon(Icons.person, color: Colors.white,),
+                icon: Icon(
+                  Icons.person,
+                  color: Colors.white,
+                ),
                 text: "Register",
               )
             ],
@@ -47,11 +53,11 @@ class _AuthenticScreenState extends State<AuthenticScreen> {
         ),
         body: Container(
           decoration: BoxDecoration(
-              gradient: new LinearGradient(
-                colors: [Colors.blue[400], Colors.blue[300]],
-                begin: Alignment.topRight,
-                end: Alignment.bottomLeft,
-              ),
+            gradient: new LinearGradient(
+              colors: [Colors.blue[400], Colors.blue[300]],
+              begin: Alignment.topRight,
+              end: Alignment.bottomLeft,
+            ),
           ),
           child: TabBarView(
             children: [

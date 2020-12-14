@@ -9,7 +9,6 @@ import 'Authentication/authentication.dart';
 import 'NewPost/UploadItems.dart';
 import 'package:firebase_core/firebase_core.dart';
 
-
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   HyperGarageApp.auth = FirebaseAuth.instance;
@@ -23,19 +22,19 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          // is not restarted.
-          primarySwatch: Colors.blue,
-        ),
-        initialRoute: '/',
-        routes: {
-          '/' : (context) => SplashScreen(),
-          '/newpost': (context) => UploadPage(),
-          '/login': (context) => AuthenticScreen(),
-          '/storehome': (context) => StoreHome(),
-        },
-        color: Colors.amber[300],
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        // is not restarted.
+        primarySwatch: Colors.blue,
+      ),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => SplashScreen(),
+        '/newpost': (context) => UploadPage(),
+        '/login': (context) => AuthenticScreen(),
+        '/storehome': (context) => StoreHome(),
+      },
+      color: Colors.amber[300],
     );
   }
 }
@@ -50,12 +49,12 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
 
-  //  displaySplash();
+    //  displaySplash();
   }
 
   displaySplash() {
     Timer(Duration(seconds: 5), () async {
-      if(await HyperGarageApp.auth.currentUser() != null) {
+      if (await HyperGarageApp.auth.currentUser() != null) {
         Route route = MaterialPageRoute(builder: (_) => StoreHome());
         Navigator.pushReplacement(context, route);
       } else {
@@ -70,49 +69,42 @@ class _SplashScreenState extends State<SplashScreen> {
     return Material(
         child: Container(
             padding: EdgeInsets.all(20),
-            child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+            child:
+                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+              Text(
+                "Welcome to Cat World !",
+                style: TextStyle(
+                  color: Colors.redAccent[100],
+                  fontSize: 50,
+                  fontFamily: "SueEllenFrancisco",
+                ),
+              ),
+              SizedBox(height: 20.0),
+              Image.asset("images/welcome2.jpg"),
 
-                children: [
-                  Text(
-                      "Welcome to Cat World !",
-                      style: TextStyle(
-                          color: Colors.redAccent[100],
-                          fontSize: 50,
-                          fontFamily: "SueEllenFrancisco",
-                      ),
-                  ),
-                  SizedBox(height: 20.0),
-                  Image.asset("images/welcome2.jpg"),
-
-                  SizedBox(height: 20.0),
-                  FlatButton(
-                      padding: EdgeInsets.all(5.0),
-                      color: Colors.redAccent[100],
-                      textColor: Colors.white,
-                      onPressed: () {
-                        Navigator.pushNamed(context, '/login');
-                      },
-                      child: Text(
-                        "Login or Register",
-                        style: TextStyle(
-                          fontFamily:"IndieFlower",
-                          fontSize: 20,
-                        ),
-                      )
-                  ),
-                  // FlatButton(
-                  //     onPressed: () {
-                  //       Navigator.pushNamed(context, '/storehome');
-                  //     },
-                  //     child: Text(
-                  //         "StoreHome"
-                  //     )
-                  // )
-                ]
-            )
-        )
-    );
+              SizedBox(height: 20.0),
+              FlatButton(
+                  padding: EdgeInsets.all(5.0),
+                  color: Colors.redAccent[100],
+                  textColor: Colors.white,
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/login');
+                  },
+                  child: Text(
+                    "Login or Register",
+                    style: TextStyle(
+                      fontFamily: "IndieFlower",
+                      fontSize: 20,
+                    ),
+                  )),
+              // FlatButton(
+              //     onPressed: () {
+              //       Navigator.pushNamed(context, '/storehome');
+              //     },
+              //     child: Text(
+              //         "StoreHome"
+              //     )
+              // )
+            ])));
   }
-
 }

@@ -48,52 +48,49 @@ class _StoreHomeState extends State<StoreHome> {
     width = MediaQuery.of(context).size.width;
     return SafeArea(
       child: Scaffold(
-          appBar: AppBar(
+        appBar: AppBar(
             title: Text(
-              "find your lovely cat 🔍",
+              "🔍 find your lovely cat    ",
               style: TextStyle(
-                  fontFamily: "EastSeaDokdo",
-                fontSize: 30
-              ),
+                  fontFamily: "IndieFlower", fontWeight: FontWeight.bold,
+                  fontSize: 23),
             ),
             centerTitle: true,
             flexibleSpace: Container(
               decoration: new BoxDecoration(
                 gradient: new LinearGradient(
                   colors: [Colors.blue[300], Colors.blue[400]],
-                  begin: const FractionalOffset(0.0, 0.0 ),
+                  begin: const FractionalOffset(0.0, 0.0),
                   end: const FractionalOffset(1.0, 0.0),
-                  stops:[0.0, 1.0],
+                  stops: [0.0, 1.0],
                 ),
               ),
             ),
-              actions: [
-                FlatButton(
-                    child: Text("Logout",
-                        style: TextStyle(
+            actions: [
+              FlatButton(
+                  child: Text("Logout",
+                      style: TextStyle(
                           color: Colors.white,
-                          fontSize: 30.0,
-                         // fontWeight: FontWeight.bold,
-                          fontFamily: "EastSeaDokdo"
-                        )),
-                    onPressed: () {
-                      logOut();
-                      Route route = MaterialPageRoute(builder: (c) => SplashScreen());
-                      Navigator.pushReplacement(context, route);
-                    }
-                )
-              ]
-          ),
-          body:  ShowPosts(),
-          floatingActionButton: FloatingActionButton(
-            //  icon: Icon(Icons.add, color: Colors.blue,),
-            onPressed: () {
-              Route route = MaterialPageRoute(builder: (_) => UploadPage());
-              Navigator.pushReplacement(context, route);
-            },
-            child: Icon(Icons.add),
-            backgroundColor: Colors.amber[400],
-          ),
+                          fontSize: 23.0,
+                          // fontWeight: FontWeight.bold,
+                          fontFamily: "IndieFlower")),
+                  onPressed: () {
+                    logOut();
+                    Route route =
+                        MaterialPageRoute(builder: (c) => SplashScreen());
+                    Navigator.pushReplacement(context, route);
+                  })
+            ]),
+        body: ShowPosts(),
+        floatingActionButton: FloatingActionButton(
+          //  icon: Icon(Icons.add, color: Colors.blue,),
+          onPressed: () {
+            Route route = MaterialPageRoute(builder: (_) => UploadPage());
+            Navigator.pushReplacement(context, route);
+          },
+          child: Icon(Icons.add),
+          backgroundColor: Colors.amber[400],
+        ),
       ),
     );
   }
@@ -132,7 +129,7 @@ class _ShowPostsState extends State<ShowPosts> {
 
   Widget _buildListItem(BuildContext context, DocumentSnapshot dataSnapshot) {
     final model = ItemModel.fromJson(dataSnapshot.data);
-  //  MyTextStyle textStyle = new MyTextStyle();
+    //  MyTextStyle textStyle = new MyTextStyle();
 
     return Center(
       child: Card(
@@ -141,11 +138,10 @@ class _ShowPostsState extends State<ShowPosts> {
           children: <Widget>[
             GestureDetector(
               child: ListTile(
-                leading:
-                Image.network(
-                    model.thumbnailUrl,
-                    height: 40.0,
-                    width:40.0,
+                leading: Image.network(
+                  model.thumbnailUrl,
+                  height: 40.0,
+                  width: 40.0,
                 ),
                 /*Text(
                   '\$${record.price}',
@@ -157,33 +153,32 @@ class _ShowPostsState extends State<ShowPosts> {
                     Text(
                       '${model.title}',
                       style: TextStyle(
-                          fontSize: 25,
+                          fontSize: 23,
                           fontWeight: FontWeight.w500,
-                          fontFamily: "EastSeaDokdo"
-                      ),
+                          fontFamily: "IndieFlower"),
                     ),
                     Text(
-                      '💰\$${model.price}',
+                      ' 💰${model.price}',
                       style: TextStyle(
-                          fontSize: 25,
+                          fontSize: 20,
                           fontWeight: FontWeight.w500,
-                          fontFamily: "EastSeaDokdo"
-
-                      ),
+                          fontFamily: "IndieFlower"),
                     )
                   ],
                 ),
                 subtitle: Text(
                   '${model.description}',
                   maxLines: 3,
-                //  style: textStyle.get('description'),
+                  //  style: textStyle.get('description'),
                 ),
               ),
               onTap: () {
                 Navigator.push(context,
                     new MaterialPageRoute(builder: (BuildContext context) {
-                      return ProductPage(itemModel: model,);
-                    }));
+                  return ProductPage(
+                    itemModel: model,
+                  );
+                }));
               },
             ),
           ],

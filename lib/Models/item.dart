@@ -10,16 +10,16 @@ class ItemModel {
   String image2;
   String image3;
 
-  ItemModel(
-      {this.title,
-        this.publishedDate,
-        this.thumbnailUrl,
-        this.description,
-        this.price,
-        this.image1,
-        this.image2,
-        this.image3,
-      });
+  ItemModel({
+    this.title,
+    this.publishedDate,
+    this.thumbnailUrl,
+    this.description,
+    this.price,
+    this.image1,
+    this.image2,
+    this.image3,
+  });
 
   ItemModel.fromJson(Map<String, dynamic> json) {
     title = json['title'];
