@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:hyper_garage/NewPost/UploadItems.dart';
 import 'package:hyper_garage/Store/product_page.dart';
+import 'package:hyper_garage/Widgets/drawer.dart';
 import 'package:hyper_garage/Widgets/loadingWidget.dart';
 import '../Models/item.dart';
 import '../NewPost/UploadItems.dart';
@@ -52,7 +53,8 @@ class _StoreHomeState extends State<StoreHome> {
             title: Text(
               "🔍 find your lovely cat    ",
               style: TextStyle(
-                  fontFamily: "IndieFlower", fontWeight: FontWeight.bold,
+                  fontFamily: "IndieFlower",
+                  fontWeight: FontWeight.bold,
                   fontSize: 23),
             ),
             centerTitle: true,
@@ -80,7 +82,9 @@ class _StoreHomeState extends State<StoreHome> {
                         MaterialPageRoute(builder: (c) => SplashScreen());
                     Navigator.pushReplacement(context, route);
                   })
-            ]),
+            ]
+        ),
+        drawer: MyDrawer(),
         body: ShowPosts(),
         floatingActionButton: FloatingActionButton(
           //  icon: Icon(Icons.add, color: Colors.blue,),

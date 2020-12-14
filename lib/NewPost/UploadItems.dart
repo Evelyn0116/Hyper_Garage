@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:hyper_garage/DialogBox/errorDialog.dart';
 import 'package:hyper_garage/Store/storehome.dart';
+import 'package:hyper_garage/Widgets/drawer.dart';
 import 'package:hyper_garage/Widgets/loadingWidget.dart';
 import 'package:hyper_garage/main.dart';
 import 'package:firebase_storage/firebase_storage.dart';
@@ -72,12 +73,13 @@ class _UploadPageState extends State<UploadPage> {
               ),
             ),
           ),
-          leading: IconButton(
-              icon: Icon(Icons.arrow_back_ios, color: Colors.white),
-              onPressed: () {
-                Route route = MaterialPageRoute(builder: (c) => StoreHome());
-                Navigator.pushReplacement(context, route);
-              }),
+          // leading: IconButton(
+          //     icon: Icon(Icons.arrow_back_ios, color: Colors.white),
+          //     onPressed: () {
+          //       Route route = MaterialPageRoute(builder: (c) => StoreHome());
+          //       Navigator.pushReplacement(context, route);
+          //     }
+          //     ),
           actions: [
             FlatButton(
                 child: Text("Logout",
@@ -92,7 +94,9 @@ class _UploadPageState extends State<UploadPage> {
                       MaterialPageRoute(builder: (c) => SplashScreen());
                   Navigator.pushReplacement(context, route);
                 })
-          ]),
+          ]
+      ),
+      drawer: MyDrawer(),
       body: getNewPostBody(),
       floatingActionButton: FloatingActionButton(
         //  icon: Icon(Icons.add, color: Colors.blue,),
