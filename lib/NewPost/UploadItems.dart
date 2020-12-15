@@ -5,7 +5,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:hyper_garage/DialogBox/errorDialog.dart';
 import 'package:hyper_garage/Store/storehome.dart';
 import 'package:hyper_garage/Widgets/drawer.dart';
-import 'package:hyper_garage/Widgets/loadingWidget.dart';
 import 'package:hyper_garage/main.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
@@ -93,7 +92,6 @@ class _UploadPageState extends State<UploadPage> {
       drawer: MyDrawer(),
       body: getNewPostBody(),
       floatingActionButton: FloatingActionButton(
-        //  icon: Icon(Icons.add, color: Colors.blue,),
         onPressed: () {
           Route route = MaterialPageRoute(builder: (_) => StoreHome());
           Navigator.pushReplacement(context, route);
@@ -108,7 +106,6 @@ class _UploadPageState extends State<UploadPage> {
     return ListView(
       padding: EdgeInsets.only(left: 10.0, right: 10.0),
       children: [
-        uploading ? circularProgress() : Text(""),
         Container(
           child: Center(
             child:
@@ -353,7 +350,7 @@ class _UploadPageState extends State<UploadPage> {
   }
 
   uploadImageAndSaveItemInfo(BuildContext mContext) async {
-    if (files.length < 0) {
+    if (files.isEmpty) {
       showDialog(
           context: context,
           builder: (c) {
@@ -375,7 +372,6 @@ class _UploadPageState extends State<UploadPage> {
         }
 
         saveItemInfo(urls);
-        // displayDialog("Upload Successfully");
         showSnackBar(mContext);
       } else {
         displayDialog("Please fill up the form ");
