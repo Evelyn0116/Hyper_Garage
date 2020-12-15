@@ -87,7 +87,6 @@ class _StoreHomeState extends State<StoreHome> {
         drawer: MyDrawer(),
         body: ShowPosts(),
         floatingActionButton: FloatingActionButton(
-          //  icon: Icon(Icons.add, color: Colors.blue,),
           onPressed: () {
             Route route = MaterialPageRoute(builder: (_) => UploadPage());
             Navigator.pushReplacement(context, route);
@@ -133,7 +132,6 @@ class _ShowPostsState extends State<ShowPosts> {
 
   Widget _buildListItem(BuildContext context, DocumentSnapshot dataSnapshot) {
     final model = ItemModel.fromJson(dataSnapshot.data);
-    //  MyTextStyle textStyle = new MyTextStyle();
 
     return Center(
       child: Card(
@@ -147,10 +145,6 @@ class _ShowPostsState extends State<ShowPosts> {
                   height: 40.0,
                   width: 40.0,
                 ),
-                /*Text(
-                  '\$${record.price}',
-                  style: textStyle.get('price'),
-                ),*/
 
                 title: Row(
                   children: <Widget>[
@@ -173,7 +167,6 @@ class _ShowPostsState extends State<ShowPosts> {
                 subtitle: Text(
                   '${model.description}',
                   maxLines: 3,
-                  //  style: textStyle.get('description'),
                 ),
               ),
               onTap: () {

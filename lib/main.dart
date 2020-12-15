@@ -18,13 +18,11 @@ Future<void> main() async {
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        // is not restarted.
         primarySwatch: Colors.blue,
       ),
       initialRoute: '/',
@@ -49,7 +47,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
 
-    //  displaySplash();
+   // displaySplash();
   }
 
   displaySplash() {
@@ -70,7 +68,7 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Container(
             padding: EdgeInsets.all(20),
             child:
-                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+            Column(mainAxisAlignment: MainAxisAlignment.center, children: [
               Text(
                 "Welcome to Cat World !",
                 style: TextStyle(
@@ -97,14 +95,8 @@ class _SplashScreenState extends State<SplashScreen> {
                       fontSize: 20,
                     ),
                   )),
-              // FlatButton(
-              //     onPressed: () {
-              //       Navigator.pushNamed(context, '/storehome');
-              //     },
-              //     child: Text(
-              //         "StoreHome"
-              //     )
-              // )
-            ])));
+            ])
+        )
+    );
   }
 }

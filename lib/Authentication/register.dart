@@ -29,8 +29,6 @@ class _RegisterState extends State<Register> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   String userImageUrl = "";
 
-  // File _imageFile;
-
   @override
   Widget build(BuildContext context) {
     double _screenWidth = MediaQuery.of(context).size.width,
@@ -53,21 +51,6 @@ class _RegisterState extends State<Register> {
             SizedBox(
               height: 10.0,
             ),
-
-            // InkWell(
-            //   onTap: _selectAndPickImage,
-            //   child: CircleAvatar(
-            //     radius: _screenWidth * 0.15,
-            //     backgroundColor: Colors.white,
-            //     backgroundImage: _imageFile == null ? null : FileImage(
-            //         _imageFile),
-            //     child: _imageFile == null
-            //         ? Icon(Icons.add_photo_alternate, size: _screenWidth * 0.15,
-            //       color: Colors.grey,)
-            //         : null,
-            //   ),
-            // ),
-            // SizedBox(height: 8.0,),
             Form(
               key: _formKey,
               child: Column(
@@ -118,11 +101,6 @@ class _RegisterState extends State<Register> {
             SizedBox(
               height: 20.0,
             ),
-            // Container(
-            //   height: 4.0,
-            //   width: _screenWidth * 8.0,
-            //   color: Colors.orange,
-            // ),
             SizedBox(
               height: 10.0,
             ),
@@ -132,19 +110,7 @@ class _RegisterState extends State<Register> {
     );
   }
 
-  // Future<void> _selectAndPickImage() async{
-  //   _imageFile = await ImagePicker.pickImage(source: ImageSource.gallery);
-  // }
-
   Future<void> uploadAndSaveImage() async {
-    // if (_imageFile == null) {
-    //   showDialog(
-    //       context: context,
-    //       builder: (c){
-    //         return ErrorAlertDialog(message: "please select an image file", );
-    //       }
-    //   );
-    // } else {
     _passwordTextEditingController.text == _cPasswordTextEditingController.text
         ? _emailTextEditingController.text.isNotEmpty &&
                 _passwordTextEditingController.text.isNotEmpty &&
@@ -153,7 +119,6 @@ class _RegisterState extends State<Register> {
             ? uploadToStorage()
             : displayDialog("Please fill up the registration form ")
         : displayDialog("Password do not match");
-    // }
   }
 
   displayDialog(String msg) {
@@ -175,18 +140,7 @@ class _RegisterState extends State<Register> {
           );
         });
 
-    // String imageFileName = DateTime.now().millisecondsSinceEpoch.toString();
-
-    //  StorageReference storageReference = FirebaseStorage.instance.ref().child(imageFileName);
-    //
-    // StorageUploadTask storageUploadTask = storageReference.putFile(_imageFile);
-    //
-    // StorageTaskSnapshot taskSnapshot = await storageUploadTask.onComplete;
-    //
-    //  await taskSnapshot.ref.getDownloadURL().then((urlImage){
-    //   userImageUrl = urlImage;
     _registerUser();
-    // });
   }
 
   FirebaseAuth _auth = FirebaseAuth.instance;

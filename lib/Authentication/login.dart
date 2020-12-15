@@ -42,17 +42,6 @@ class _LoginState extends State<Login> {
                 width: 240.0,
               ),
             ),
-            // Padding(
-            //   padding: EdgeInsets.all(8.0),
-            //   child: Text(
-            //     "Login to your account",
-            //     style: TextStyle(
-            //         color: Colors.white,
-            //         fontFamily: "IndieFlower",
-            //         fontSize: 15,
-            //     ),
-            //   ),
-            // ),
             Form(
               key: _formKey,
               child: Column(
@@ -76,7 +65,6 @@ class _LoginState extends State<Login> {
               height: 25.0,
             ),
             RaisedButton(
-              // onPressed:(){uploadAndSaveImage();},
               onPressed: () {
                 _emailTextEditingController.text.isNotEmpty &&
                         _passwordTextEditingController.text.isNotEmpty
@@ -98,20 +86,9 @@ class _LoginState extends State<Login> {
                     fontSize: 25),
               ),
             ),
-
-            // Container(
-            //   height: 4.0,
-            //   width: _screenWidth * 8.0,
-            //   color: Colors.orange,
-            // ),
             SizedBox(
               height: 10.0,
             ),
-            // FlatButton.icon(
-            //   onPressed: () => Navigator.push(context, MaterialPageRoute(builder:(context) => AdminSignInPage() )),
-            //   icon:(Icon(Icons.nature_people,color:Colors.orange,)),
-            //   label: Text,
-            // ),
           ],
         ),
       ),
@@ -119,12 +96,6 @@ class _LoginState extends State<Login> {
   }
 
   FirebaseAuth _auth = FirebaseAuth.instance;
-
-// // TODO: authenticate user
-//   void loginUser() {
-//     Route route = MaterialPageRoute(builder: (_) => StoreHome());
-//     Navigator.pushReplacement(context, route);
-//   }
 
   void loginUser() async {
     showDialog(

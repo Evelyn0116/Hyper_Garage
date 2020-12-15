@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'login.dart';
 import 'register.dart';
-// import 'package:e_shop/Config/config.dart';
 
 class AuthenticScreen extends StatefulWidget {
   @override
@@ -25,10 +24,6 @@ class _AuthenticScreenState extends State<AuthenticScreen> {
               ),
             ),
           ),
-          // title: Text(
-          //   "🧡 🐱 🧡",
-          //   style: TextStyle(fontSize: 20.0, color: Colors.white),
-          // ),
           centerTitle: true,
           bottom: TabBar(
             tabs: [
